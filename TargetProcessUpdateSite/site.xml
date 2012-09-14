@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <description url="www.targetprocess.com">
+      TargetProcess Connector
+   </description>
+   <feature url="features/TargetProcess_1.0.0.200911051254.jar" id="TargetProcess" version="1.0.0.200911051254">
+      <category name="TargetProcess Connector"/>
+   </feature>
+   <category-def name="TargetProcess Connector" label="TargetProcess Connector"/>
+</site>

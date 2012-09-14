@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension id="org.eclipse.mylyn.targetprocess.repository" 
+         name="Target process bla bla bla"
+         point="org.eclipse.mylyn.tasks.ui.repositories">
+      <connectorCore
+            class="org.eclipse.mylyn.targetprocess.core.TargetProcessRepositoryConnector">
+      </connectorCore>
+      <connectorUi
+            brandingIcon="icons/targetprocess.png"
+            class="org.eclipse.mylyn.targetprocess.ui.taskslist.TargetProcessConnectorUi"
+            overlayIcon="icons/targetprocess.png">
+      </connectorUi>
+      <taskListMigrator
+            class="org.eclipse.mylyn.targetprocess.ui.taskslist.TargetProcessTaskListMigrator">
+      </taskListMigrator>
+   </extension>
+   <extension
+         point="org.eclipse.mylyn.tasks.ui.editors">
+      <pageFactory
+            class="org.eclipse.mylyn.targetprocess.editors.TargetProcessTaskEditorPageFactory"
+            id="org.eclipse.mylyn.targetprocess.ui.pageFactory">
+      </pageFactory>
+   </extension>
+</plugin>

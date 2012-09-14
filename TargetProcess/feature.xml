@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="TargetProcess"
+      label="TargetProcess Connector"
+      version="2.23.8.qualifier">
+
+   <description url="http://www.example.com/description">
+      TargetProcess Connector
+Integration for TargetProcess agile project management software.
+
+TargetProcess connector allows you to see all your Bugs, Tasks, User Stories and Requests from TargetProcess ToDo list.
+
+You can view and edit your Bugs, Tasks, User Stories and Requests from your ToDo list, attach new files or screenshots, add comments.
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      Copyright (c) 2009, TargetProcess, Inc.
+All rights reserved.
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+Redistributions of source code must retain the above copyright
+notice, this list of conditions and the following disclaimer.
+Redistributions in binary form must reproduce the above copyright
+notice, this list of conditions and the following disclaimer
+in the documentation and/or other materials provided with the
+distribution.
+Neither the name of the TargetProcess nor the names of its contributors
+may be used to endorse or promote products derived from this
+software without specific prior written permission.
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+&quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT
+NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
+FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT
+SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY
+DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
+GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+   </license>
+
+   <url>
+      <update url="http://www.targetprocess.com"/>
+      <discovery label="Mylyn Update Site" url="http://download.eclipse.org/tools/mylyn/update/e3.4"/>
+   </url>
+
+   <requires>
+      <import plugin="org.eclipse.mylyn.commons.core" version="3.2.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.mylyn.commons.net" version="3.2.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.mylyn.tasks.core" version="3.2.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.net" version="1.2.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.runtime" version="3.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui" version="3.5.0" match="greaterOrEqual"/>
+      <import plugin="org.apache.commons.logging" version="1.0.4" match="greaterOrEqual"/>
+      <import plugin="javax.wsdl" version="1.5.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.mylyn.targetprocess.modules" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.osgi"/>
+      <import plugin="org.eclipse.core.resources" version="3.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.jface.text" version="3.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.mylyn.commons.ui" version="3.2.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.editors" version="3.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.views" version="3.4.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.workbench.texteditor" version="3.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.mylyn.tasks.ui" version="3.2.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.forms" version="3.4.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.mylyn.targetprocess.core" version="1.0.0" match="greaterOrEqual"/>
+   </requires>
+
+   <plugin
+         id="org.eclipse.mylyn.targetprocess.core"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.mylyn.targetprocess.modules"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.mylyn.targetprocess.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>
