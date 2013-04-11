@@ -109,6 +109,22 @@
             }
                 
            /**
+            * auto generated Axis2 call back method for retrieveAll method
+            * override this method for handling normal response from retrieveAll operation
+            */
+           public void receiveResultretrieveAll(
+                    org.eclipse.mylyn.targetprocess.modules.services.UserStoryServiceStub.RetrieveAllResponse result
+                        ) {
+           }
+
+          /**
+           * auto generated Axis2 Error handler
+           * override this method for handling error response from retrieveAll operation
+           */
+            public void receiveErrorretrieveAll(java.lang.Exception e) {
+            }
+                
+           /**
             * auto generated Axis2 call back method for addTeamToUserStory method
             * override this method for handling normal response from addTeamToUserStory operation
             */
@@ -141,22 +157,6 @@
             }
                 
            /**
-            * auto generated Axis2 call back method for retrieveAll method
-            * override this method for handling normal response from retrieveAll operation
-            */
-           public void receiveResultretrieveAll(
-                    org.eclipse.mylyn.targetprocess.modules.services.UserStoryServiceStub.RetrieveAllResponse result
-                        ) {
-           }
-
-          /**
-           * auto generated Axis2 Error handler
-           * override this method for handling error response from retrieveAll operation
-           */
-            public void receiveErrorretrieveAll(java.lang.Exception e) {
-            }
-                
-           /**
             * auto generated Axis2 call back method for retrieveTasksForUserStory method
             * override this method for handling normal response from retrieveTasksForUserStory operation
             */
@@ -170,22 +170,6 @@
            * override this method for handling error response from retrieveTasksForUserStory operation
            */
             public void receiveErrorretrieveTasksForUserStory(java.lang.Exception e) {
-            }
-                
-           /**
-            * auto generated Axis2 call back method for removeRequestGeneralFromUserStory method
-            * override this method for handling normal response from removeRequestGeneralFromUserStory operation
-            */
-           public void receiveResultremoveRequestGeneralFromUserStory(
-                    org.eclipse.mylyn.targetprocess.modules.services.UserStoryServiceStub.RemoveRequestGeneralFromUserStoryResponse result
-                        ) {
-           }
-
-          /**
-           * auto generated Axis2 Error handler
-           * override this method for handling error response from removeRequestGeneralFromUserStory operation
-           */
-            public void receiveErrorremoveRequestGeneralFromUserStory(java.lang.Exception e) {
             }
                 
            /**
@@ -234,22 +218,6 @@
            * override this method for handling error response from retrieveNames operation
            */
             public void receiveErrorretrieveNames(java.lang.Exception e) {
-            }
-                
-           /**
-            * auto generated Axis2 call back method for addRequestGeneralToUserStory method
-            * override this method for handling normal response from addRequestGeneralToUserStory operation
-            */
-           public void receiveResultaddRequestGeneralToUserStory(
-                    org.eclipse.mylyn.targetprocess.modules.services.UserStoryServiceStub.AddRequestGeneralToUserStoryResponse result
-                        ) {
-           }
-
-          /**
-           * auto generated Axis2 Error handler
-           * override this method for handling error response from addRequestGeneralToUserStory operation
-           */
-            public void receiveErroraddRequestGeneralToUserStory(java.lang.Exception e) {
             }
                 
            /**
@@ -362,22 +330,6 @@
            * override this method for handling error response from assignUserByEmailOrLoginAsRole operation
            */
             public void receiveErrorassignUserByEmailOrLoginAsRole(java.lang.Exception e) {
-            }
-                
-           /**
-            * auto generated Axis2 call back method for retrieveAttachedRequestsForUserStory method
-            * override this method for handling normal response from retrieveAttachedRequestsForUserStory operation
-            */
-           public void receiveResultretrieveAttachedRequestsForUserStory(
-                    org.eclipse.mylyn.targetprocess.modules.services.UserStoryServiceStub.RetrieveAttachedRequestsForUserStoryResponse result
-                        ) {
-           }
-
-          /**
-           * auto generated Axis2 Error handler
-           * override this method for handling error response from retrieveAttachedRequestsForUserStory operation
-           */
-            public void receiveErrorretrieveAttachedRequestsForUserStory(java.lang.Exception e) {
             }
                 
            /**
@@ -717,6 +669,22 @@
             }
                 
            /**
+            * auto generated Axis2 call back method for addCommentToUserStory method
+            * override this method for handling normal response from addCommentToUserStory operation
+            */
+           public void receiveResultaddCommentToUserStory(
+                    org.eclipse.mylyn.targetprocess.modules.services.UserStoryServiceStub.AddCommentToUserStoryResponse result
+                        ) {
+           }
+
+          /**
+           * auto generated Axis2 Error handler
+           * override this method for handling error response from addCommentToUserStory operation
+           */
+            public void receiveErroraddCommentToUserStory(java.lang.Exception e) {
+            }
+                
+           /**
             * auto generated Axis2 call back method for removeTeamFromUserStory method
             * override this method for handling normal response from removeTeamFromUserStory operation
             */
@@ -749,19 +717,19 @@
             }
                 
            /**
-            * auto generated Axis2 call back method for addCommentToUserStory method
-            * override this method for handling normal response from addCommentToUserStory operation
+            * auto generated Axis2 call back method for assignUserAsRole method
+            * override this method for handling normal response from assignUserAsRole operation
             */
-           public void receiveResultaddCommentToUserStory(
-                    org.eclipse.mylyn.targetprocess.modules.services.UserStoryServiceStub.AddCommentToUserStoryResponse result
+           public void receiveResultassignUserAsRole(
+                    org.eclipse.mylyn.targetprocess.modules.services.UserStoryServiceStub.AssignUserAsRoleResponse result
                         ) {
            }
 
           /**
            * auto generated Axis2 Error handler
-           * override this method for handling error response from addCommentToUserStory operation
+           * override this method for handling error response from assignUserAsRole operation
            */
-            public void receiveErroraddCommentToUserStory(java.lang.Exception e) {
+            public void receiveErrorassignUserAsRole(java.lang.Exception e) {
             }
                 
            /**
@@ -778,22 +746,6 @@
            * override this method for handling error response from getIDs operation
            */
             public void receiveErrorgetIDs(java.lang.Exception e) {
-            }
-                
-           /**
-            * auto generated Axis2 call back method for assignUserAsRole method
-            * override this method for handling normal response from assignUserAsRole operation
-            */
-           public void receiveResultassignUserAsRole(
-                    org.eclipse.mylyn.targetprocess.modules.services.UserStoryServiceStub.AssignUserAsRoleResponse result
-                        ) {
-           }
-
-          /**
-           * auto generated Axis2 Error handler
-           * override this method for handling error response from assignUserAsRole operation
-           */
-            public void receiveErrorassignUserAsRole(java.lang.Exception e) {
             }
                 
 

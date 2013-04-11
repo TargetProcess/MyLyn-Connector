@@ -47,8 +47,7 @@ public class TargetProcessRepositoryStatus extends RepositoryStatus {
 	public String getMessage() {
 		switch (getCode()) {
 		case RepositoryStatus.ERROR_NETWORK:
-			return NLS.bind(Messages.TargetProcessClient_Server_Connect_to_server_failed, getRepositoryUrl(),
-					errorMessage);
+			return NLS.bind(errorMessage, getRepositoryUrl());
 		case TargetProcessRepositoryStatus.ENTITY_NOT_FOUND:
 			return NLS.bind(Messages.TargetProcessClient_Entity_was_deleted, errorMessage);
 		case TargetProcessRepositoryStatus.ENTITY_NOT_FOUND_WHILE_GETTASKDATA:

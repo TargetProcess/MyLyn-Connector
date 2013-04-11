@@ -141,22 +141,6 @@
             }
                 
            /**
-            * auto generated Axis2 call back method for addRequestGeneralToBug method
-            * override this method for handling normal response from addRequestGeneralToBug operation
-            */
-           public void receiveResultaddRequestGeneralToBug(
-                    org.eclipse.mylyn.targetprocess.modules.services.BugServiceStub.AddRequestGeneralToBugResponse result
-                        ) {
-           }
-
-          /**
-           * auto generated Axis2 Error handler
-           * override this method for handling error response from addRequestGeneralToBug operation
-           */
-            public void receiveErroraddRequestGeneralToBug(java.lang.Exception e) {
-            }
-                
-           /**
             * auto generated Axis2 call back method for retrieveAllForOwner method
             * override this method for handling normal response from retrieveAllForOwner operation
             */
@@ -218,22 +202,6 @@
            * override this method for handling error response from removeTeamFromBug operation
            */
             public void receiveErrorremoveTeamFromBug(java.lang.Exception e) {
-            }
-                
-           /**
-            * auto generated Axis2 call back method for retrieveAttachedRequestsForBug method
-            * override this method for handling normal response from retrieveAttachedRequestsForBug operation
-            */
-           public void receiveResultretrieveAttachedRequestsForBug(
-                    org.eclipse.mylyn.targetprocess.modules.services.BugServiceStub.RetrieveAttachedRequestsForBugResponse result
-                        ) {
-           }
-
-          /**
-           * auto generated Axis2 Error handler
-           * override this method for handling error response from retrieveAttachedRequestsForBug operation
-           */
-            public void receiveErrorretrieveAttachedRequestsForBug(java.lang.Exception e) {
             }
                 
            /**
@@ -333,6 +301,22 @@
             }
                 
            /**
+            * auto generated Axis2 call back method for retrieveAllForEntityState method
+            * override this method for handling normal response from retrieveAllForEntityState operation
+            */
+           public void receiveResultretrieveAllForEntityState(
+                    org.eclipse.mylyn.targetprocess.modules.services.BugServiceStub.RetrieveAllForEntityStateResponse result
+                        ) {
+           }
+
+          /**
+           * auto generated Axis2 Error handler
+           * override this method for handling error response from retrieveAllForEntityState operation
+           */
+            public void receiveErrorretrieveAllForEntityState(java.lang.Exception e) {
+            }
+                
+           /**
             * auto generated Axis2 call back method for assignUserByEmailOrLogin method
             * override this method for handling normal response from assignUserByEmailOrLogin operation
             */
@@ -362,22 +346,6 @@
            * override this method for handling error response from retrieveCount operation
            */
             public void receiveErrorretrieveCount(java.lang.Exception e) {
-            }
-                
-           /**
-            * auto generated Axis2 call back method for retrieveAllForEntityState method
-            * override this method for handling normal response from retrieveAllForEntityState operation
-            */
-           public void receiveResultretrieveAllForEntityState(
-                    org.eclipse.mylyn.targetprocess.modules.services.BugServiceStub.RetrieveAllForEntityStateResponse result
-                        ) {
-           }
-
-          /**
-           * auto generated Axis2 Error handler
-           * override this method for handling error response from retrieveAllForEntityState operation
-           */
-            public void receiveErrorretrieveAllForEntityState(java.lang.Exception e) {
             }
                 
            /**
@@ -493,22 +461,6 @@
             }
                 
            /**
-            * auto generated Axis2 call back method for retrieveAllForIteration method
-            * override this method for handling normal response from retrieveAllForIteration operation
-            */
-           public void receiveResultretrieveAllForIteration(
-                    org.eclipse.mylyn.targetprocess.modules.services.BugServiceStub.RetrieveAllForIterationResponse result
-                        ) {
-           }
-
-          /**
-           * auto generated Axis2 Error handler
-           * override this method for handling error response from retrieveAllForIteration operation
-           */
-            public void receiveErrorretrieveAllForIteration(java.lang.Exception e) {
-            }
-                
-           /**
             * auto generated Axis2 call back method for retrieveRoleEffortsForBug method
             * override this method for handling normal response from retrieveRoleEffortsForBug operation
             */
@@ -554,6 +506,22 @@
            * override this method for handling error response from retrieveAllForPriority operation
            */
             public void receiveErrorretrieveAllForPriority(java.lang.Exception e) {
+            }
+                
+           /**
+            * auto generated Axis2 call back method for retrieveAllForIteration method
+            * override this method for handling normal response from retrieveAllForIteration operation
+            */
+           public void receiveResultretrieveAllForIteration(
+                    org.eclipse.mylyn.targetprocess.modules.services.BugServiceStub.RetrieveAllForIterationResponse result
+                        ) {
+           }
+
+          /**
+           * auto generated Axis2 Error handler
+           * override this method for handling error response from retrieveAllForIteration operation
+           */
+            public void receiveErrorretrieveAllForIteration(java.lang.Exception e) {
             }
                 
            /**
@@ -685,22 +653,6 @@
             }
                 
            /**
-            * auto generated Axis2 call back method for addRevisionAssignableToBug method
-            * override this method for handling normal response from addRevisionAssignableToBug operation
-            */
-           public void receiveResultaddRevisionAssignableToBug(
-                    org.eclipse.mylyn.targetprocess.modules.services.BugServiceStub.AddRevisionAssignableToBugResponse result
-                        ) {
-           }
-
-          /**
-           * auto generated Axis2 Error handler
-           * override this method for handling error response from addRevisionAssignableToBug operation
-           */
-            public void receiveErroraddRevisionAssignableToBug(java.lang.Exception e) {
-            }
-                
-           /**
             * auto generated Axis2 call back method for retrieveAllForSeverity method
             * override this method for handling normal response from retrieveAllForSeverity operation
             */
@@ -717,6 +669,22 @@
             }
                 
            /**
+            * auto generated Axis2 call back method for addRevisionAssignableToBug method
+            * override this method for handling normal response from addRevisionAssignableToBug operation
+            */
+           public void receiveResultaddRevisionAssignableToBug(
+                    org.eclipse.mylyn.targetprocess.modules.services.BugServiceStub.AddRevisionAssignableToBugResponse result
+                        ) {
+           }
+
+          /**
+           * auto generated Axis2 Error handler
+           * override this method for handling error response from addRevisionAssignableToBug operation
+           */
+            public void receiveErroraddRevisionAssignableToBug(java.lang.Exception e) {
+            }
+                
+           /**
             * auto generated Axis2 call back method for addBugWithAttachment method
             * override this method for handling normal response from addBugWithAttachment operation
             */
@@ -730,22 +698,6 @@
            * override this method for handling error response from addBugWithAttachment operation
            */
             public void receiveErroraddBugWithAttachment(java.lang.Exception e) {
-            }
-                
-           /**
-            * auto generated Axis2 call back method for removeRequestGeneralFromBug method
-            * override this method for handling normal response from removeRequestGeneralFromBug operation
-            */
-           public void receiveResultremoveRequestGeneralFromBug(
-                    org.eclipse.mylyn.targetprocess.modules.services.BugServiceStub.RemoveRequestGeneralFromBugResponse result
-                        ) {
-           }
-
-          /**
-           * auto generated Axis2 Error handler
-           * override this method for handling error response from removeRequestGeneralFromBug operation
-           */
-            public void receiveErrorremoveRequestGeneralFromBug(java.lang.Exception e) {
             }
                 
            /**

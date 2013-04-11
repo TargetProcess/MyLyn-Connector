@@ -45,22 +45,6 @@
 
         
            /**
-            * auto generated Axis2 call back method for updatePartial method
-            * override this method for handling normal response from updatePartial operation
-            */
-           public void receiveResultupdatePartial(
-                    org.eclipse.mylyn.targetprocess.modules.services.CommentServiceStub.UpdatePartialResponse result
-                        ) {
-           }
-
-          /**
-           * auto generated Axis2 Error handler
-           * override this method for handling error response from updatePartial operation
-           */
-            public void receiveErrorupdatePartial(java.lang.Exception e) {
-            }
-                
-           /**
             * auto generated Axis2 call back method for getByID method
             * override this method for handling normal response from getByID operation
             */
@@ -74,6 +58,22 @@
            * override this method for handling error response from getByID operation
            */
             public void receiveErrorgetByID(java.lang.Exception e) {
+            }
+                
+           /**
+            * auto generated Axis2 call back method for updatePartial method
+            * override this method for handling normal response from updatePartial operation
+            */
+           public void receiveResultupdatePartial(
+                    org.eclipse.mylyn.targetprocess.modules.services.CommentServiceStub.UpdatePartialResponse result
+                        ) {
+           }
+
+          /**
+           * auto generated Axis2 Error handler
+           * override this method for handling error response from updatePartial operation
+           */
+            public void receiveErrorupdatePartial(java.lang.Exception e) {
             }
                 
            /**

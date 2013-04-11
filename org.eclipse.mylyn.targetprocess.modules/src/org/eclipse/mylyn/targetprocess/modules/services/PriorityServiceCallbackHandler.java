@@ -45,22 +45,6 @@
 
         
            /**
-            * auto generated Axis2 call back method for updatePartial method
-            * override this method for handling normal response from updatePartial operation
-            */
-           public void receiveResultupdatePartial(
-                    org.eclipse.mylyn.targetprocess.modules.services.PriorityServiceStub.UpdatePartialResponse result
-                        ) {
-           }
-
-          /**
-           * auto generated Axis2 Error handler
-           * override this method for handling error response from updatePartial operation
-           */
-            public void receiveErrorupdatePartial(java.lang.Exception e) {
-            }
-                
-           /**
             * auto generated Axis2 call back method for getByID method
             * override this method for handling normal response from getByID operation
             */
@@ -77,19 +61,19 @@
             }
                 
            /**
-            * auto generated Axis2 call back method for retrieveAll method
-            * override this method for handling normal response from retrieveAll operation
+            * auto generated Axis2 call back method for updatePartial method
+            * override this method for handling normal response from updatePartial operation
             */
-           public void receiveResultretrieveAll(
-                    org.eclipse.mylyn.targetprocess.modules.services.PriorityServiceStub.RetrieveAllResponse result
+           public void receiveResultupdatePartial(
+                    org.eclipse.mylyn.targetprocess.modules.services.PriorityServiceStub.UpdatePartialResponse result
                         ) {
            }
 
           /**
            * auto generated Axis2 Error handler
-           * override this method for handling error response from retrieveAll operation
+           * override this method for handling error response from updatePartial operation
            */
-            public void receiveErrorretrieveAll(java.lang.Exception e) {
+            public void receiveErrorupdatePartial(java.lang.Exception e) {
             }
                 
            /**
@@ -106,6 +90,22 @@
            * override this method for handling error response from getAssignablePriorities operation
            */
             public void receiveErrorgetAssignablePriorities(java.lang.Exception e) {
+            }
+                
+           /**
+            * auto generated Axis2 call back method for retrieveAll method
+            * override this method for handling normal response from retrieveAll operation
+            */
+           public void receiveResultretrieveAll(
+                    org.eclipse.mylyn.targetprocess.modules.services.PriorityServiceStub.RetrieveAllResponse result
+                        ) {
+           }
+
+          /**
+           * auto generated Axis2 Error handler
+           * override this method for handling error response from retrieveAll operation
+           */
+            public void receiveErrorretrieveAll(java.lang.Exception e) {
             }
                 
            /**

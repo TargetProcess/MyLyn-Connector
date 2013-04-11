@@ -45,22 +45,6 @@
 
         
            /**
-            * auto generated Axis2 call back method for updatePartial method
-            * override this method for handling normal response from updatePartial operation
-            */
-           public void receiveResultupdatePartial(
-                    org.eclipse.mylyn.targetprocess.modules.services.AssignableServiceStub.UpdatePartialResponse result
-                        ) {
-           }
-
-          /**
-           * auto generated Axis2 Error handler
-           * override this method for handling error response from updatePartial operation
-           */
-            public void receiveErrorupdatePartial(java.lang.Exception e) {
-            }
-                
-           /**
             * auto generated Axis2 call back method for getByID method
             * override this method for handling normal response from getByID operation
             */
@@ -77,19 +61,19 @@
             }
                 
            /**
-            * auto generated Axis2 call back method for retrieveAttachedRequestsForAssignable method
-            * override this method for handling normal response from retrieveAttachedRequestsForAssignable operation
+            * auto generated Axis2 call back method for updatePartial method
+            * override this method for handling normal response from updatePartial operation
             */
-           public void receiveResultretrieveAttachedRequestsForAssignable(
-                    org.eclipse.mylyn.targetprocess.modules.services.AssignableServiceStub.RetrieveAttachedRequestsForAssignableResponse result
+           public void receiveResultupdatePartial(
+                    org.eclipse.mylyn.targetprocess.modules.services.AssignableServiceStub.UpdatePartialResponse result
                         ) {
            }
 
           /**
            * auto generated Axis2 Error handler
-           * override this method for handling error response from retrieveAttachedRequestsForAssignable operation
+           * override this method for handling error response from updatePartial operation
            */
-            public void receiveErrorretrieveAttachedRequestsForAssignable(java.lang.Exception e) {
+            public void receiveErrorupdatePartial(java.lang.Exception e) {
             }
                 
            /**
@@ -141,22 +125,6 @@
             }
                 
            /**
-            * auto generated Axis2 call back method for addRequestGeneralToAssignable method
-            * override this method for handling normal response from addRequestGeneralToAssignable operation
-            */
-           public void receiveResultaddRequestGeneralToAssignable(
-                    org.eclipse.mylyn.targetprocess.modules.services.AssignableServiceStub.AddRequestGeneralToAssignableResponse result
-                        ) {
-           }
-
-          /**
-           * auto generated Axis2 Error handler
-           * override this method for handling error response from addRequestGeneralToAssignable operation
-           */
-            public void receiveErroraddRequestGeneralToAssignable(java.lang.Exception e) {
-            }
-                
-           /**
             * auto generated Axis2 call back method for retrieveAllForOwner method
             * override this method for handling normal response from retrieveAllForOwner operation
             */
@@ -170,22 +138,6 @@
            * override this method for handling error response from retrieveAllForOwner operation
            */
             public void receiveErrorretrieveAllForOwner(java.lang.Exception e) {
-            }
-                
-           /**
-            * auto generated Axis2 call back method for removeRequestGeneralFromAssignable method
-            * override this method for handling normal response from removeRequestGeneralFromAssignable operation
-            */
-           public void receiveResultremoveRequestGeneralFromAssignable(
-                    org.eclipse.mylyn.targetprocess.modules.services.AssignableServiceStub.RemoveRequestGeneralFromAssignableResponse result
-                        ) {
-           }
-
-          /**
-           * auto generated Axis2 Error handler
-           * override this method for handling error response from removeRequestGeneralFromAssignable operation
-           */
-            public void receiveErrorremoveRequestGeneralFromAssignable(java.lang.Exception e) {
             }
                 
            /**
@@ -413,22 +365,6 @@
             }
                 
            /**
-            * auto generated Axis2 call back method for retrieveAllForIteration method
-            * override this method for handling normal response from retrieveAllForIteration operation
-            */
-           public void receiveResultretrieveAllForIteration(
-                    org.eclipse.mylyn.targetprocess.modules.services.AssignableServiceStub.RetrieveAllForIterationResponse result
-                        ) {
-           }
-
-          /**
-           * auto generated Axis2 Error handler
-           * override this method for handling error response from retrieveAllForIteration operation
-           */
-            public void receiveErrorretrieveAllForIteration(java.lang.Exception e) {
-            }
-                
-           /**
             * auto generated Axis2 call back method for changeEffort method
             * override this method for handling normal response from changeEffort operation
             */
@@ -461,19 +397,19 @@
             }
                 
            /**
-            * auto generated Axis2 call back method for removeCommentFromAssignable method
-            * override this method for handling normal response from removeCommentFromAssignable operation
+            * auto generated Axis2 call back method for retrieveAllForIteration method
+            * override this method for handling normal response from retrieveAllForIteration operation
             */
-           public void receiveResultremoveCommentFromAssignable(
-                    org.eclipse.mylyn.targetprocess.modules.services.AssignableServiceStub.RemoveCommentFromAssignableResponse result
+           public void receiveResultretrieveAllForIteration(
+                    org.eclipse.mylyn.targetprocess.modules.services.AssignableServiceStub.RetrieveAllForIterationResponse result
                         ) {
            }
 
           /**
            * auto generated Axis2 Error handler
-           * override this method for handling error response from removeCommentFromAssignable operation
+           * override this method for handling error response from retrieveAllForIteration operation
            */
-            public void receiveErrorremoveCommentFromAssignable(java.lang.Exception e) {
+            public void receiveErrorretrieveAllForIteration(java.lang.Exception e) {
             }
                 
            /**
@@ -490,6 +426,22 @@
            * override this method for handling error response from retrieveAllForRelease operation
            */
             public void receiveErrorretrieveAllForRelease(java.lang.Exception e) {
+            }
+                
+           /**
+            * auto generated Axis2 call back method for removeCommentFromAssignable method
+            * override this method for handling normal response from removeCommentFromAssignable operation
+            */
+           public void receiveResultremoveCommentFromAssignable(
+                    org.eclipse.mylyn.targetprocess.modules.services.AssignableServiceStub.RemoveCommentFromAssignableResponse result
+                        ) {
+           }
+
+          /**
+           * auto generated Axis2 Error handler
+           * override this method for handling error response from removeCommentFromAssignable operation
+           */
+            public void receiveErrorremoveCommentFromAssignable(java.lang.Exception e) {
             }
                 
            /**

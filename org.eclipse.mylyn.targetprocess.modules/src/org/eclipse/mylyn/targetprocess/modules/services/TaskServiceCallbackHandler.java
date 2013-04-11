@@ -269,22 +269,6 @@
             }
                 
            /**
-            * auto generated Axis2 call back method for retrieveAttachedRequestsForTask method
-            * override this method for handling normal response from retrieveAttachedRequestsForTask operation
-            */
-           public void receiveResultretrieveAttachedRequestsForTask(
-                    org.eclipse.mylyn.targetprocess.modules.services.TaskServiceStub.RetrieveAttachedRequestsForTaskResponse result
-                        ) {
-           }
-
-          /**
-           * auto generated Axis2 Error handler
-           * override this method for handling error response from retrieveAttachedRequestsForTask operation
-           */
-            public void receiveErrorretrieveAttachedRequestsForTask(java.lang.Exception e) {
-            }
-                
-           /**
             * auto generated Axis2 call back method for retrieveAllForEntityState method
             * override this method for handling normal response from retrieveAllForEntityState operation
             */
@@ -298,22 +282,6 @@
            * override this method for handling error response from retrieveAllForEntityState operation
            */
             public void receiveErrorretrieveAllForEntityState(java.lang.Exception e) {
-            }
-                
-           /**
-            * auto generated Axis2 call back method for removeRequestGeneralFromTask method
-            * override this method for handling normal response from removeRequestGeneralFromTask operation
-            */
-           public void receiveResultremoveRequestGeneralFromTask(
-                    org.eclipse.mylyn.targetprocess.modules.services.TaskServiceStub.RemoveRequestGeneralFromTaskResponse result
-                        ) {
-           }
-
-          /**
-           * auto generated Axis2 Error handler
-           * override this method for handling error response from removeRequestGeneralFromTask operation
-           */
-            public void receiveErrorremoveRequestGeneralFromTask(java.lang.Exception e) {
             }
                 
            /**
@@ -493,38 +461,6 @@
             }
                 
            /**
-            * auto generated Axis2 call back method for retrieveAllForIteration method
-            * override this method for handling normal response from retrieveAllForIteration operation
-            */
-           public void receiveResultretrieveAllForIteration(
-                    org.eclipse.mylyn.targetprocess.modules.services.TaskServiceStub.RetrieveAllForIterationResponse result
-                        ) {
-           }
-
-          /**
-           * auto generated Axis2 Error handler
-           * override this method for handling error response from retrieveAllForIteration operation
-           */
-            public void receiveErrorretrieveAllForIteration(java.lang.Exception e) {
-            }
-                
-           /**
-            * auto generated Axis2 call back method for retrieveRoleEffortsForTask method
-            * override this method for handling normal response from retrieveRoleEffortsForTask operation
-            */
-           public void receiveResultretrieveRoleEffortsForTask(
-                    org.eclipse.mylyn.targetprocess.modules.services.TaskServiceStub.RetrieveRoleEffortsForTaskResponse result
-                        ) {
-           }
-
-          /**
-           * auto generated Axis2 Error handler
-           * override this method for handling error response from retrieveRoleEffortsForTask operation
-           */
-            public void receiveErrorretrieveRoleEffortsForTask(java.lang.Exception e) {
-            }
-                
-           /**
             * auto generated Axis2 call back method for changeEffort method
             * override this method for handling normal response from changeEffort operation
             */
@@ -554,6 +490,38 @@
            * override this method for handling error response from retrieveAllForPriority operation
            */
             public void receiveErrorretrieveAllForPriority(java.lang.Exception e) {
+            }
+                
+           /**
+            * auto generated Axis2 call back method for retrieveAllForIteration method
+            * override this method for handling normal response from retrieveAllForIteration operation
+            */
+           public void receiveResultretrieveAllForIteration(
+                    org.eclipse.mylyn.targetprocess.modules.services.TaskServiceStub.RetrieveAllForIterationResponse result
+                        ) {
+           }
+
+          /**
+           * auto generated Axis2 Error handler
+           * override this method for handling error response from retrieveAllForIteration operation
+           */
+            public void receiveErrorretrieveAllForIteration(java.lang.Exception e) {
+            }
+                
+           /**
+            * auto generated Axis2 call back method for retrieveRoleEffortsForTask method
+            * override this method for handling normal response from retrieveRoleEffortsForTask operation
+            */
+           public void receiveResultretrieveRoleEffortsForTask(
+                    org.eclipse.mylyn.targetprocess.modules.services.TaskServiceStub.RetrieveRoleEffortsForTaskResponse result
+                        ) {
+           }
+
+          /**
+           * auto generated Axis2 Error handler
+           * override this method for handling error response from retrieveRoleEffortsForTask operation
+           */
+            public void receiveErrorretrieveRoleEffortsForTask(java.lang.Exception e) {
             }
                 
            /**
@@ -602,22 +570,6 @@
            * override this method for handling error response from retrieveAllForRelease operation
            */
             public void receiveErrorretrieveAllForRelease(java.lang.Exception e) {
-            }
-                
-           /**
-            * auto generated Axis2 call back method for addRequestGeneralToTask method
-            * override this method for handling normal response from addRequestGeneralToTask operation
-            */
-           public void receiveResultaddRequestGeneralToTask(
-                    org.eclipse.mylyn.targetprocess.modules.services.TaskServiceStub.AddRequestGeneralToTaskResponse result
-                        ) {
-           }
-
-          /**
-           * auto generated Axis2 Error handler
-           * override this method for handling error response from addRequestGeneralToTask operation
-           */
-            public void receiveErroraddRequestGeneralToTask(java.lang.Exception e) {
             }
                 
            /**
@@ -701,22 +653,6 @@
             }
                 
            /**
-            * auto generated Axis2 call back method for getIDs method
-            * override this method for handling normal response from getIDs operation
-            */
-           public void receiveResultgetIDs(
-                    org.eclipse.mylyn.targetprocess.modules.services.TaskServiceStub.GetIDsResponse result
-                        ) {
-           }
-
-          /**
-           * auto generated Axis2 Error handler
-           * override this method for handling error response from getIDs operation
-           */
-            public void receiveErrorgetIDs(java.lang.Exception e) {
-            }
-                
-           /**
             * auto generated Axis2 call back method for assignUserAsRole method
             * override this method for handling normal response from assignUserAsRole operation
             */
@@ -730,6 +666,22 @@
            * override this method for handling error response from assignUserAsRole operation
            */
             public void receiveErrorassignUserAsRole(java.lang.Exception e) {
+            }
+                
+           /**
+            * auto generated Axis2 call back method for getIDs method
+            * override this method for handling normal response from getIDs operation
+            */
+           public void receiveResultgetIDs(
+                    org.eclipse.mylyn.targetprocess.modules.services.TaskServiceStub.GetIDsResponse result
+                        ) {
+           }
+
+          /**
+           * auto generated Axis2 Error handler
+           * override this method for handling error response from getIDs operation
+           */
+            public void receiveErrorgetIDs(java.lang.Exception e) {
             }
                 
 

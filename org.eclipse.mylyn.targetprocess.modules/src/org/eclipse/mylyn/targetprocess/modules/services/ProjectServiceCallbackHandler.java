@@ -45,22 +45,6 @@
 
         
            /**
-            * auto generated Axis2 call back method for updatePartial method
-            * override this method for handling normal response from updatePartial operation
-            */
-           public void receiveResultupdatePartial(
-                    org.eclipse.mylyn.targetprocess.modules.services.ProjectServiceStub.UpdatePartialResponse result
-                        ) {
-           }
-
-          /**
-           * auto generated Axis2 Error handler
-           * override this method for handling error response from updatePartial operation
-           */
-            public void receiveErrorupdatePartial(java.lang.Exception e) {
-            }
-                
-           /**
             * auto generated Axis2 call back method for getByID method
             * override this method for handling normal response from getByID operation
             */
@@ -74,6 +58,22 @@
            * override this method for handling error response from getByID operation
            */
             public void receiveErrorgetByID(java.lang.Exception e) {
+            }
+                
+           /**
+            * auto generated Axis2 call back method for updatePartial method
+            * override this method for handling normal response from updatePartial operation
+            */
+           public void receiveResultupdatePartial(
+                    org.eclipse.mylyn.targetprocess.modules.services.ProjectServiceStub.UpdatePartialResponse result
+                        ) {
+           }
+
+          /**
+           * auto generated Axis2 Error handler
+           * override this method for handling error response from updatePartial operation
+           */
+            public void receiveErrorupdatePartial(java.lang.Exception e) {
             }
                 
            /**
@@ -125,22 +125,6 @@
             }
                 
            /**
-            * auto generated Axis2 call back method for retrieveAllForProgramOfProject method
-            * override this method for handling normal response from retrieveAllForProgramOfProject operation
-            */
-           public void receiveResultretrieveAllForProgramOfProject(
-                    org.eclipse.mylyn.targetprocess.modules.services.ProjectServiceStub.RetrieveAllForProgramOfProjectResponse result
-                        ) {
-           }
-
-          /**
-           * auto generated Axis2 Error handler
-           * override this method for handling error response from retrieveAllForProgramOfProject operation
-           */
-            public void receiveErrorretrieveAllForProgramOfProject(java.lang.Exception e) {
-            }
-                
-           /**
             * auto generated Axis2 call back method for removeAttachmentFromProject method
             * override this method for handling normal response from removeAttachmentFromProject operation
             */
@@ -154,6 +138,22 @@
            * override this method for handling error response from removeAttachmentFromProject operation
            */
             public void receiveErrorremoveAttachmentFromProject(java.lang.Exception e) {
+            }
+                
+           /**
+            * auto generated Axis2 call back method for retrieveAllForProgramOfProject method
+            * override this method for handling normal response from retrieveAllForProgramOfProject operation
+            */
+           public void receiveResultretrieveAllForProgramOfProject(
+                    org.eclipse.mylyn.targetprocess.modules.services.ProjectServiceStub.RetrieveAllForProgramOfProjectResponse result
+                        ) {
+           }
+
+          /**
+           * auto generated Axis2 Error handler
+           * override this method for handling error response from retrieveAllForProgramOfProject operation
+           */
+            public void receiveErrorretrieveAllForProgramOfProject(java.lang.Exception e) {
             }
                 
            /**
@@ -365,38 +365,6 @@
             }
                 
            /**
-            * auto generated Axis2 call back method for removeRequestGeneralFromProject method
-            * override this method for handling normal response from removeRequestGeneralFromProject operation
-            */
-           public void receiveResultremoveRequestGeneralFromProject(
-                    org.eclipse.mylyn.targetprocess.modules.services.ProjectServiceStub.RemoveRequestGeneralFromProjectResponse result
-                        ) {
-           }
-
-          /**
-           * auto generated Axis2 Error handler
-           * override this method for handling error response from removeRequestGeneralFromProject operation
-           */
-            public void receiveErrorremoveRequestGeneralFromProject(java.lang.Exception e) {
-            }
-                
-           /**
-            * auto generated Axis2 call back method for addRequestGeneralToProject method
-            * override this method for handling normal response from addRequestGeneralToProject operation
-            */
-           public void receiveResultaddRequestGeneralToProject(
-                    org.eclipse.mylyn.targetprocess.modules.services.ProjectServiceStub.AddRequestGeneralToProjectResponse result
-                        ) {
-           }
-
-          /**
-           * auto generated Axis2 Error handler
-           * override this method for handling error response from addRequestGeneralToProject operation
-           */
-            public void receiveErroraddRequestGeneralToProject(java.lang.Exception e) {
-            }
-                
-           /**
             * auto generated Axis2 call back method for retrieveAllForProject method
             * override this method for handling normal response from retrieveAllForProject operation
             */
@@ -477,22 +445,6 @@
             }
                 
            /**
-            * auto generated Axis2 call back method for retrieveAttachedRequestsForProject method
-            * override this method for handling normal response from retrieveAttachedRequestsForProject operation
-            */
-           public void receiveResultretrieveAttachedRequestsForProject(
-                    org.eclipse.mylyn.targetprocess.modules.services.ProjectServiceStub.RetrieveAttachedRequestsForProjectResponse result
-                        ) {
-           }
-
-          /**
-           * auto generated Axis2 Error handler
-           * override this method for handling error response from retrieveAttachedRequestsForProject operation
-           */
-            public void receiveErrorretrieveAttachedRequestsForProject(java.lang.Exception e) {
-            }
-                
-           /**
             * auto generated Axis2 call back method for removeReleaseFromProject method
             * override this method for handling normal response from removeReleaseFromProject operation
             */
@@ -509,22 +461,6 @@
             }
                 
            /**
-            * auto generated Axis2 call back method for getIDs method
-            * override this method for handling normal response from getIDs operation
-            */
-           public void receiveResultgetIDs(
-                    org.eclipse.mylyn.targetprocess.modules.services.ProjectServiceStub.GetIDsResponse result
-                        ) {
-           }
-
-          /**
-           * auto generated Axis2 Error handler
-           * override this method for handling error response from getIDs operation
-           */
-            public void receiveErrorgetIDs(java.lang.Exception e) {
-            }
-                
-           /**
             * auto generated Axis2 call back method for addProjectMemberToProject method
             * override this method for handling normal response from addProjectMemberToProject operation
             */
@@ -538,6 +474,22 @@
            * override this method for handling error response from addProjectMemberToProject operation
            */
             public void receiveErroraddProjectMemberToProject(java.lang.Exception e) {
+            }
+                
+           /**
+            * auto generated Axis2 call back method for getIDs method
+            * override this method for handling normal response from getIDs operation
+            */
+           public void receiveResultgetIDs(
+                    org.eclipse.mylyn.targetprocess.modules.services.ProjectServiceStub.GetIDsResponse result
+                        ) {
+           }
+
+          /**
+           * auto generated Axis2 Error handler
+           * override this method for handling error response from getIDs operation
+           */
+            public void receiveErrorgetIDs(java.lang.Exception e) {
             }
                 
 

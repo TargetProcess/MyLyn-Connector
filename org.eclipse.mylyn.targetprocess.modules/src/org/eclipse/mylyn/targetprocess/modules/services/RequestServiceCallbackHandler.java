@@ -285,22 +285,6 @@
             }
                 
            /**
-            * auto generated Axis2 call back method for addRequestGeneralToRequest method
-            * override this method for handling normal response from addRequestGeneralToRequest operation
-            */
-           public void receiveResultaddRequestGeneralToRequest(
-                    org.eclipse.mylyn.targetprocess.modules.services.RequestServiceStub.AddRequestGeneralToRequestResponse result
-                        ) {
-           }
-
-          /**
-           * auto generated Axis2 Error handler
-           * override this method for handling error response from addRequestGeneralToRequest operation
-           */
-            public void receiveErroraddRequestGeneralToRequest(java.lang.Exception e) {
-            }
-                
-           /**
             * auto generated Axis2 call back method for save method
             * override this method for handling normal response from save operation
             */
@@ -349,6 +333,22 @@
             }
                 
            /**
+            * auto generated Axis2 call back method for retrieveAllForEntityState method
+            * override this method for handling normal response from retrieveAllForEntityState operation
+            */
+           public void receiveResultretrieveAllForEntityState(
+                    org.eclipse.mylyn.targetprocess.modules.services.RequestServiceStub.RetrieveAllForEntityStateResponse result
+                        ) {
+           }
+
+          /**
+           * auto generated Axis2 Error handler
+           * override this method for handling error response from retrieveAllForEntityState operation
+           */
+            public void receiveErrorretrieveAllForEntityState(java.lang.Exception e) {
+            }
+                
+           /**
             * auto generated Axis2 call back method for assignUserByEmailOrLogin method
             * override this method for handling normal response from assignUserByEmailOrLogin operation
             */
@@ -378,22 +378,6 @@
            * override this method for handling error response from retrieveCount operation
            */
             public void receiveErrorretrieveCount(java.lang.Exception e) {
-            }
-                
-           /**
-            * auto generated Axis2 call back method for retrieveAllForEntityState method
-            * override this method for handling normal response from retrieveAllForEntityState operation
-            */
-           public void receiveResultretrieveAllForEntityState(
-                    org.eclipse.mylyn.targetprocess.modules.services.RequestServiceStub.RetrieveAllForEntityStateResponse result
-                        ) {
-           }
-
-          /**
-           * auto generated Axis2 Error handler
-           * override this method for handling error response from retrieveAllForEntityState operation
-           */
-            public void receiveErrorretrieveAllForEntityState(java.lang.Exception e) {
             }
                 
            /**
@@ -637,6 +621,22 @@
             }
                 
            /**
+            * auto generated Axis2 call back method for retrieveAllForRelease method
+            * override this method for handling normal response from retrieveAllForRelease operation
+            */
+           public void receiveResultretrieveAllForRelease(
+                    org.eclipse.mylyn.targetprocess.modules.services.RequestServiceStub.RetrieveAllForReleaseResponse result
+                        ) {
+           }
+
+          /**
+           * auto generated Axis2 Error handler
+           * override this method for handling error response from retrieveAllForRelease operation
+           */
+            public void receiveErrorretrieveAllForRelease(java.lang.Exception e) {
+            }
+                
+           /**
             * auto generated Axis2 call back method for retrieveRoleEffortsForRequest method
             * override this method for handling normal response from retrieveRoleEffortsForRequest operation
             */
@@ -685,22 +685,6 @@
             }
                 
            /**
-            * auto generated Axis2 call back method for retrieveAllForRelease method
-            * override this method for handling normal response from retrieveAllForRelease operation
-            */
-           public void receiveResultretrieveAllForRelease(
-                    org.eclipse.mylyn.targetprocess.modules.services.RequestServiceStub.RetrieveAllForReleaseResponse result
-                        ) {
-           }
-
-          /**
-           * auto generated Axis2 Error handler
-           * override this method for handling error response from retrieveAllForRelease operation
-           */
-            public void receiveErrorretrieveAllForRelease(java.lang.Exception e) {
-            }
-                
-           /**
             * auto generated Axis2 call back method for getRequestersCountArray method
             * override this method for handling normal response from getRequestersCountArray operation
             */
@@ -714,22 +698,6 @@
            * override this method for handling error response from getRequestersCountArray operation
            */
             public void receiveErrorgetRequestersCountArray(java.lang.Exception e) {
-            }
-                
-           /**
-            * auto generated Axis2 call back method for retrieveAttachedRequestsForRequest method
-            * override this method for handling normal response from retrieveAttachedRequestsForRequest operation
-            */
-           public void receiveResultretrieveAttachedRequestsForRequest(
-                    org.eclipse.mylyn.targetprocess.modules.services.RequestServiceStub.RetrieveAttachedRequestsForRequestResponse result
-                        ) {
-           }
-
-          /**
-           * auto generated Axis2 Error handler
-           * override this method for handling error response from retrieveAttachedRequestsForRequest operation
-           */
-            public void receiveErrorretrieveAttachedRequestsForRequest(java.lang.Exception e) {
             }
                 
            /**
@@ -813,22 +781,6 @@
             }
                 
            /**
-            * auto generated Axis2 call back method for removeRequestGeneralFromRequest method
-            * override this method for handling normal response from removeRequestGeneralFromRequest operation
-            */
-           public void receiveResultremoveRequestGeneralFromRequest(
-                    org.eclipse.mylyn.targetprocess.modules.services.RequestServiceStub.RemoveRequestGeneralFromRequestResponse result
-                        ) {
-           }
-
-          /**
-           * auto generated Axis2 Error handler
-           * override this method for handling error response from removeRequestGeneralFromRequest operation
-           */
-            public void receiveErrorremoveRequestGeneralFromRequest(java.lang.Exception e) {
-            }
-                
-           /**
             * auto generated Axis2 call back method for removeCommentFromRequest method
             * override this method for handling normal response from removeCommentFromRequest operation
             */
@@ -877,22 +829,6 @@
             }
                 
            /**
-            * auto generated Axis2 call back method for retrieveTeamsForRequest method
-            * override this method for handling normal response from retrieveTeamsForRequest operation
-            */
-           public void receiveResultretrieveTeamsForRequest(
-                    org.eclipse.mylyn.targetprocess.modules.services.RequestServiceStub.RetrieveTeamsForRequestResponse result
-                        ) {
-           }
-
-          /**
-           * auto generated Axis2 Error handler
-           * override this method for handling error response from retrieveTeamsForRequest operation
-           */
-            public void receiveErrorretrieveTeamsForRequest(java.lang.Exception e) {
-            }
-                
-           /**
             * auto generated Axis2 call back method for retrieveRelatedEntities method
             * override this method for handling normal response from retrieveRelatedEntities operation
             */
@@ -906,6 +842,22 @@
            * override this method for handling error response from retrieveRelatedEntities operation
            */
             public void receiveErrorretrieveRelatedEntities(java.lang.Exception e) {
+            }
+                
+           /**
+            * auto generated Axis2 call back method for retrieveTeamsForRequest method
+            * override this method for handling normal response from retrieveTeamsForRequest operation
+            */
+           public void receiveResultretrieveTeamsForRequest(
+                    org.eclipse.mylyn.targetprocess.modules.services.RequestServiceStub.RetrieveTeamsForRequestResponse result
+                        ) {
+           }
+
+          /**
+           * auto generated Axis2 Error handler
+           * override this method for handling error response from retrieveTeamsForRequest operation
+           */
+            public void receiveErrorretrieveTeamsForRequest(java.lang.Exception e) {
             }
                 
            /**

@@ -45,22 +45,6 @@
 
         
            /**
-            * auto generated Axis2 call back method for removeRequestGeneralFromGeneral method
-            * override this method for handling normal response from removeRequestGeneralFromGeneral operation
-            */
-           public void receiveResultremoveRequestGeneralFromGeneral(
-                    org.eclipse.mylyn.targetprocess.modules.services.GeneralServiceStub.RemoveRequestGeneralFromGeneralResponse result
-                        ) {
-           }
-
-          /**
-           * auto generated Axis2 Error handler
-           * override this method for handling error response from removeRequestGeneralFromGeneral operation
-           */
-            public void receiveErrorremoveRequestGeneralFromGeneral(java.lang.Exception e) {
-            }
-                
-           /**
             * auto generated Axis2 call back method for getByID method
             * override this method for handling normal response from getByID operation
             */
@@ -106,22 +90,6 @@
            * override this method for handling error response from retrieveAll operation
            */
             public void receiveErrorretrieveAll(java.lang.Exception e) {
-            }
-                
-           /**
-            * auto generated Axis2 call back method for retrieveAttachedRequestsForGeneral method
-            * override this method for handling normal response from retrieveAttachedRequestsForGeneral operation
-            */
-           public void receiveResultretrieveAttachedRequestsForGeneral(
-                    org.eclipse.mylyn.targetprocess.modules.services.GeneralServiceStub.RetrieveAttachedRequestsForGeneralResponse result
-                        ) {
-           }
-
-          /**
-           * auto generated Axis2 Error handler
-           * override this method for handling error response from retrieveAttachedRequestsForGeneral operation
-           */
-            public void receiveErrorretrieveAttachedRequestsForGeneral(java.lang.Exception e) {
             }
                 
            /**
@@ -330,22 +298,6 @@
            * override this method for handling error response from retrieveAttachmentsForGeneral operation
            */
             public void receiveErrorretrieveAttachmentsForGeneral(java.lang.Exception e) {
-            }
-                
-           /**
-            * auto generated Axis2 call back method for addRequestGeneralToGeneral method
-            * override this method for handling normal response from addRequestGeneralToGeneral operation
-            */
-           public void receiveResultaddRequestGeneralToGeneral(
-                    org.eclipse.mylyn.targetprocess.modules.services.GeneralServiceStub.AddRequestGeneralToGeneralResponse result
-                        ) {
-           }
-
-          /**
-           * auto generated Axis2 Error handler
-           * override this method for handling error response from addRequestGeneralToGeneral operation
-           */
-            public void receiveErroraddRequestGeneralToGeneral(java.lang.Exception e) {
             }
                 
            /**
