@@ -2,7 +2,7 @@
 <feature
       id="TargetProcess"
       label="TargetProcess Connector"
-      version="2.24.0.qualifier">
+      version="3.0.3.qualifier">
 
    <description url="http://www.example.com/description">
       TargetProcess Connector

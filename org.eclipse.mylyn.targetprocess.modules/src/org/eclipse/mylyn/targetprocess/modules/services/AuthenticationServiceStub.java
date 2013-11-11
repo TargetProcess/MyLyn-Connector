@@ -118,7 +118,7 @@
      */
     public AuthenticationServiceStub(org.apache.axis2.context.ConfigurationContext configurationContext) throws org.apache.axis2.AxisFault {
         
-                    this(configurationContext,"http://localhost/targetprocess/services/AuthenticationService.asmx" );
+                    this(configurationContext,"http://localhost/tp2/services/AuthenticationService.asmx" );
                 
     }
 
@@ -127,7 +127,7 @@
      */
     public AuthenticationServiceStub() throws org.apache.axis2.AxisFault {
         
-                    this("http://localhost/targetprocess/services/AuthenticationService.asmx" );
+                    this("http://localhost/tp2/services/AuthenticationService.asmx" );
                 
     }
 
@@ -702,7 +702,7 @@
         }
         return false;
     }
-     //http://localhost/targetprocess/services/AuthenticationService.asmx
+     //http://localhost/tp2/services/AuthenticationService.asmx
         public static class ValidateRequesterResponse
         implements org.apache.axis2.databinding.ADBBean{
         

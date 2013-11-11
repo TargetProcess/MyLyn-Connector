@@ -214,7 +214,7 @@
      */
     public GeneralUserServiceStub(org.apache.axis2.context.ConfigurationContext configurationContext) throws org.apache.axis2.AxisFault {
         
-                    this(configurationContext,"http://localhost/targetprocess/services/GeneralUserService.asmx" );
+                    this(configurationContext,"http://localhost/tp2/services/GeneralUserService.asmx" );
                 
     }
 
@@ -223,7 +223,7 @@
      */
     public GeneralUserServiceStub() throws org.apache.axis2.AxisFault {
         
-                    this("http://localhost/targetprocess/services/GeneralUserService.asmx" );
+                    this("http://localhost/tp2/services/GeneralUserService.asmx" );
                 
     }
 
@@ -2918,7 +2918,7 @@
         }
         return false;
     }
-     //http://localhost/targetprocess/services/GeneralUserService.asmx
+     //http://localhost/tp2/services/GeneralUserService.asmx
         public static class UpdatePartial
         implements org.apache.axis2.databinding.ADBBean{
         
