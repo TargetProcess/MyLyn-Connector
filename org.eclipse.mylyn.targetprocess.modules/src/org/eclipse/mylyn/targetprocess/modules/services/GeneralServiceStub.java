@@ -322,7 +322,7 @@
      */
     public GeneralServiceStub(org.apache.axis2.context.ConfigurationContext configurationContext) throws org.apache.axis2.AxisFault {
         
-                    this(configurationContext,"http://localhost/tp2/services/GeneralService.asmx" );
+                    this(configurationContext,"http://localhost/targetprocess/services/GeneralService.asmx" );
                 
     }
 
@@ -331,7 +331,7 @@
      */
     public GeneralServiceStub() throws org.apache.axis2.AxisFault {
         
-                    this("http://localhost/tp2/services/GeneralService.asmx" );
+                    this("http://localhost/targetprocess/services/GeneralService.asmx" );
                 
     }
 
@@ -5411,7 +5411,7 @@
         }
         return false;
     }
-     //http://localhost/tp2/services/GeneralService.asmx
+     //http://localhost/targetprocess/services/GeneralService.asmx
         public static class RetrieveAllForProjectResponse
         implements org.apache.axis2.databinding.ADBBean{
         

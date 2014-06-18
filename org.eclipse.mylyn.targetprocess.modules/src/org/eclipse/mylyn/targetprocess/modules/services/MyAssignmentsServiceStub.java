@@ -154,7 +154,7 @@
      */
     public MyAssignmentsServiceStub(org.apache.axis2.context.ConfigurationContext configurationContext) throws org.apache.axis2.AxisFault {
         
-                    this(configurationContext,"http://localhost/tp2/services/MyAssignmentsService.asmx" );
+                    this(configurationContext,"http://localhost/targetprocess/services/MyAssignmentsService.asmx" );
                 
     }
 
@@ -163,7 +163,7 @@
      */
     public MyAssignmentsServiceStub() throws org.apache.axis2.AxisFault {
         
-                    this("http://localhost/tp2/services/MyAssignmentsService.asmx" );
+                    this("http://localhost/targetprocess/services/MyAssignmentsService.asmx" );
                 
     }
 
@@ -1533,7 +1533,7 @@
         }
         return false;
     }
-     //http://localhost/tp2/services/MyAssignmentsService.asmx
+     //http://localhost/targetprocess/services/MyAssignmentsService.asmx
         public static class TeamDTO extends DataTransferObject
         implements org.apache.axis2.databinding.ADBBean{
         /* This type was generated from the piece of schema that had

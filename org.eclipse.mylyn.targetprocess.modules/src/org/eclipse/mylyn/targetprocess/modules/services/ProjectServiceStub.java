@@ -430,7 +430,7 @@
      */
     public ProjectServiceStub(org.apache.axis2.context.ConfigurationContext configurationContext) throws org.apache.axis2.AxisFault {
         
-                    this(configurationContext,"http://localhost/tp2/services/ProjectService.asmx" );
+                    this(configurationContext,"http://localhost/targetprocess/services/ProjectService.asmx" );
                 
     }
 
@@ -439,7 +439,7 @@
      */
     public ProjectServiceStub() throws org.apache.axis2.AxisFault {
         
-                    this("http://localhost/tp2/services/ProjectService.asmx" );
+                    this("http://localhost/targetprocess/services/ProjectService.asmx" );
                 
     }
 
@@ -7904,7 +7904,7 @@
         }
         return false;
     }
-     //http://localhost/tp2/services/ProjectService.asmx
+     //http://localhost/targetprocess/services/ProjectService.asmx
         public static class RetrieveAllForProgramOfProject
         implements org.apache.axis2.databinding.ADBBean{
         
@@ -21029,6 +21029,36 @@
                              }
                              
 
+                        /**
+                        * field for Progress
+                        */
+
+                        
+                                    protected java.math.BigDecimal localProgress ;
+                                
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.math.BigDecimal
+                           */
+                           public  java.math.BigDecimal getProgress(){
+                               return localProgress;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Progress
+                               */
+                               public void setProgress(java.math.BigDecimal param){
+                            
+                                            this.localProgress=param;
+                                    
+
+                               }
+                            
+
      /**
      * isReaderMTOMAware
      * @return true if the reader supports MTOM
@@ -24476,6 +24506,40 @@
                                         
                                     }
                                  }
+                                    namespace = "http://targetprocess.com";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"Progress", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"Progress");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("Progress");
+                                    }
+                                
+
+                                          if (localProgress==null){
+                                              // write the nil attribute
+                                              
+                                                     writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localProgress));
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             
                     xmlWriter.writeEndElement();
                
 
@@ -25494,6 +25558,12 @@
                              }
 
                         }
+                                      elementList.add(new javax.xml.namespace.QName("http://targetprocess.com",
+                                                                      "Progress"));
+                                 
+                                         elementList.add(localProgress==null?null:
+                                         org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localProgress));
+                                    
 
                 return new org.apache.axis2.databinding.utils.reader.ADBXMLStreamReaderImpl(qName, elementList.toArray(), attribList.toArray());
             
@@ -27717,7 +27787,35 @@
                                     else {
                                         
                                     }
-                                  
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://targetprocess.com","Progress").equals(reader.getName())){
+                                
+                                       nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                       if (!"true".equals(nillableValue) && !"1".equals(nillableValue)){
+                                    
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setProgress(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToDecimal(content));
+                                            
+                                       } else {
+                                           
+                                           
+                                           reader.getElementText(); // throw away text nodes if any.
+                                       }
+                                      
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                else{
+                                    // A start element we are not expecting indicates an invalid parameter was passed
+                                    throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getLocalName());
+                                }
+                              
                             while (!reader.isStartElement() && !reader.isEndElement())
                                 reader.next();
                             
@@ -49287,6 +49385,36 @@
                              }
                              
 
+                        /**
+                        * field for Progress
+                        */
+
+                        
+                                    protected java.math.BigDecimal localProgress ;
+                                
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.math.BigDecimal
+                           */
+                           public  java.math.BigDecimal getProgress(){
+                               return localProgress;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Progress
+                               */
+                               public void setProgress(java.math.BigDecimal param){
+                            
+                                            this.localProgress=param;
+                                    
+
+                               }
+                            
+
      /**
      * isReaderMTOMAware
      * @return true if the reader supports MTOM
@@ -51976,6 +52104,40 @@
                                         
                                     }
                                  }
+                                    namespace = "http://targetprocess.com";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"Progress", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"Progress");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("Progress");
+                                    }
+                                
+
+                                          if (localProgress==null){
+                                              // write the nil attribute
+                                              
+                                                     writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localProgress));
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             
                     xmlWriter.writeEndElement();
                
 
@@ -52816,6 +52978,12 @@
                              }
 
                         }
+                                      elementList.add(new javax.xml.namespace.QName("http://targetprocess.com",
+                                                                      "Progress"));
+                                 
+                                         elementList.add(localProgress==null?null:
+                                         org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localProgress));
+                                    
 
                 return new org.apache.axis2.databinding.utils.reader.ADBXMLStreamReaderImpl(qName, elementList.toArray(), attribList.toArray());
             
@@ -54470,7 +54638,35 @@
                                     else {
                                         
                                     }
-                                  
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://targetprocess.com","Progress").equals(reader.getName())){
+                                
+                                       nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                       if (!"true".equals(nillableValue) && !"1".equals(nillableValue)){
+                                    
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setProgress(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToDecimal(content));
+                                            
+                                       } else {
+                                           
+                                           
+                                           reader.getElementText(); // throw away text nodes if any.
+                                       }
+                                      
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                else{
+                                    // A start element we are not expecting indicates an invalid parameter was passed
+                                    throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getLocalName());
+                                }
+                              
                             while (!reader.isStartElement() && !reader.isEndElement())
                                 reader.next();
                             

@@ -166,7 +166,7 @@
      */
     public FileServiceStub(org.apache.axis2.context.ConfigurationContext configurationContext) throws org.apache.axis2.AxisFault {
         
-                    this(configurationContext,"http://localhost/tp2/services/FileService.asmx" );
+                    this(configurationContext,"http://localhost/targetprocess/services/FileService.asmx" );
                 
     }
 
@@ -175,7 +175,7 @@
      */
     public FileServiceStub() throws org.apache.axis2.AxisFault {
         
-                    this("http://localhost/tp2/services/FileService.asmx" );
+                    this("http://localhost/targetprocess/services/FileService.asmx" );
                 
     }
 
@@ -1810,7 +1810,7 @@
         }
         return false;
     }
-     //http://localhost/tp2/services/FileService.asmx
+     //http://localhost/targetprocess/services/FileService.asmx
         public static class GetFilesList
         implements org.apache.axis2.databinding.ADBBean{
         
