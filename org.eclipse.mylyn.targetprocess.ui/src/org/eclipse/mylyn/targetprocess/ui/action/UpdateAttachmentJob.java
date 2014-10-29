@@ -1,5 +1,6 @@
 package org.eclipse.mylyn.targetprocess.ui.action;
 
+import java.lang.reflect.Method;
 import java.util.List;
 
 import org.eclipse.core.runtime.CoreException;
@@ -10,7 +11,6 @@ import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.jobs.IJobChangeEvent;
 import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.core.runtime.jobs.JobChangeAdapter;
-import org.eclipse.mylyn.internal.provisional.commons.ui.CommonFormUtil;
 import org.eclipse.mylyn.internal.tasks.ui.util.TasksUiInternal;
 import org.eclipse.mylyn.targetprocess.core.TargetProcessCorePlugin;
 import org.eclipse.mylyn.targetprocess.core.TargetProcessTaskDataHandler;
@@ -25,27 +25,28 @@ import org.eclipse.mylyn.tasks.ui.editors.TaskEditor;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.forms.editor.IFormPage;
+import org.eclipse.ui.forms.widgets.ExpandableComposite;
 import org.eclipse.ui.forms.widgets.Section;
 
 @SuppressWarnings("restriction")
 public class UpdateAttachmentJob extends Job {
 
-	private List<ITaskAttachment> attachment;	
-	private TaskEditor editor;	
-	private boolean obsolete;	
+	private List<ITaskAttachment> attachment;
+	private TaskEditor editor;
+	private boolean obsolete;
 	private IStatus error;
-	
+
 	public UpdateAttachmentJob(List<ITaskAttachment> attachment, TaskEditor editor, boolean obsolete) {
 		super(Messages.UpdateAttachmentJob_update_attachment);
 		this.attachment = attachment;
 		this.editor = editor;
 		this.obsolete = obsolete;
 	}
-	
+
 	public IStatus getError() {
 		return error;
 	}
-	
+
 	@Override
 	protected IStatus run(IProgressMonitor monitor) {
 		final ITask task;
@@ -104,8 +105,7 @@ public class UpdateAttachmentJob extends Job {
 												final Control control = bugzillaPage.getPart(
 														AbstractTaskEditorPage.ID_PART_ATTACHMENTS).getControl();
 												if (control instanceof Section) {
-													final Section section = (Section) control;
-													CommonFormUtil.setExpanded(section, true);
+													setExpanded((Section) control, true);
 												}
 											}
 
@@ -135,6 +135,19 @@ public class UpdateAttachmentJob extends Job {
 			monitor.done();
 		}
 		return Status.OK_STATUS;
+	}
+
+	private static void setExpanded(ExpandableComposite comp, boolean expanded) {
+		if (comp.isExpanded() != expanded) {
+			Method method = null;
+			try {
+				method = ExpandableComposite.class.getDeclaredMethod("programmaticToggleState"); //$NON-NLS-1$
+				method.setAccessible(true);
+				method.invoke(comp);
+			} catch (Exception e) {
+				// ignore
+			}
+		}
 	}
 
 }

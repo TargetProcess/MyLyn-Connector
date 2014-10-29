@@ -8,20 +8,21 @@ import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.swt.graphics.Image;
 
 public class TargetProcessImages {
-	
+
 	private static ImageRegistry imageRegistry;
 
+	private static final String T_TOOL = "etool16";
 	private static final String T_VIEW = "eview16"; //$NON-NLS-1$
 
 	private static final URL baseURL = TargetProcessUiPlugin.getDefault().getBundle().getEntry("/icons/"); //$NON-NLS-1$
 
 	public static final ImageDescriptor OVERLAY_BUG = create(T_VIEW, "overlay-bug.gif"); //$NON-NLS-1$
-
 	public static final ImageDescriptor OVERLAY_STORY = create(T_VIEW, "overlay-story.gif"); //$NON-NLS-1$
-
 	public static final ImageDescriptor OVERLAY_TASK = create(T_VIEW, "overlay-task.gif"); //$NON-NLS-1$
-	
 	public static final ImageDescriptor OVERLAY_REQUEST = create(T_VIEW, "overlay-request.gif"); //$NON-NLS-1$
+
+	public static final ImageDescriptor EDIT = create(T_TOOL, "edit.gif");
+	public static final ImageDescriptor PART_MAXIMIZE = create(T_TOOL, "maximize.png");
 
 	public static ImageDescriptor create(String prefix, String name) {
 		try {
@@ -36,10 +37,7 @@ public class TargetProcessImages {
 			throw new MalformedURLException();
 		}
 
-		StringBuilder buffer = new StringBuilder(prefix);
-		buffer.append('/');
-		buffer.append(name);
-		return new URL(baseURL, buffer.toString());
+		return new URL(baseURL, prefix + '/' + name);
 	}
 
 	private static ImageRegistry getImageRegistry() {
@@ -62,5 +60,5 @@ public class TargetProcessImages {
 			imageRegistry.put("" + imageDescriptor.hashCode(), image); //$NON-NLS-1$
 		}
 		return image;
-	} 
+	}
 }

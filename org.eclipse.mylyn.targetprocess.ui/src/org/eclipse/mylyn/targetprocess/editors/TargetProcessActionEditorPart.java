@@ -2,9 +2,9 @@ package org.eclipse.mylyn.targetprocess.editors;
 
 import java.text.MessageFormat;
 
-import org.eclipse.mylyn.internal.provisional.commons.ui.CommonImages;
 import org.eclipse.mylyn.internal.tasks.ui.editors.EditorUtil;
 import org.eclipse.mylyn.internal.tasks.ui.editors.Messages;
+import org.eclipse.mylyn.targetprocess.ui.TargetProcessImages;
 import org.eclipse.mylyn.tasks.ui.TasksUiImages;
 import org.eclipse.mylyn.tasks.ui.editors.AbstractTaskEditorPart;
 import org.eclipse.swt.SWT;
@@ -16,12 +16,11 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.ui.forms.widgets.FormToolkit;
-import org.eclipse.ui.forms.widgets.Section;
 
 public class TargetProcessActionEditorPart extends AbstractTaskEditorPart {
-	
+
 	private Button submitButton;
-	
+
 	public void setSubmitEnabled(boolean enabled) {
 		if (submitButton != null && !submitButton.isDisposed()) {
 			submitButton.setEnabled(enabled);
@@ -31,10 +30,10 @@ public class TargetProcessActionEditorPart extends AbstractTaskEditorPart {
 			}
 		}
 	}
-	
+
 	private void createActionButtons(Composite buttonComposite, FormToolkit toolkit) {
 		submitButton = toolkit.createButton(buttonComposite, Messages.TaskEditorActionPart_Submit, SWT.NONE);
-		submitButton.setImage(CommonImages.getImage(TasksUiImages.REPOSITORY_SUBMIT));
+		submitButton.setImage(TargetProcessImages.getImage(TasksUiImages.REPOSITORY_SUBMIT));
 		submitButton.addListener(SWT.Selection, new Listener() {
 			public void handleEvent(Event e) {
 				getTaskEditorPage().doSubmit();
@@ -50,7 +49,6 @@ public class TargetProcessActionEditorPart extends AbstractTaskEditorPart {
 		toolkit.createLabel(buttonComposite, "    "); //$NON-NLS-1$
 	}
 
-	
 	@Override
 	public void createControl(Composite parent, FormToolkit toolkit) {
 
@@ -59,9 +57,8 @@ public class TargetProcessActionEditorPart extends AbstractTaskEditorPart {
 		buttonLayout.numColumns = 4;
 		buttonLayout.marginLeft = 488;
 		buttonComposite.setLayout(buttonLayout);
-		
+
 		createActionButtons(buttonComposite, toolkit);
-		
 	}
 
 }

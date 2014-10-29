@@ -5,21 +5,23 @@ import org.eclipse.core.runtime.Status;
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.ToolBarManager;
 import org.eclipse.mylyn.commons.core.StatusHandler;
-import org.eclipse.mylyn.internal.provisional.commons.ui.CommonFormUtil;
-import org.eclipse.mylyn.internal.provisional.commons.ui.CommonImages;
 import org.eclipse.mylyn.internal.tasks.ui.TasksUiPlugin;
 import org.eclipse.mylyn.internal.tasks.ui.editors.EditorUtil;
 import org.eclipse.mylyn.targetprocess.core.TargetProcessAttribute;
+import org.eclipse.mylyn.targetprocess.ui.TargetProcessImages;
 import org.eclipse.mylyn.targetprocess.ui.editors.DescriptionEditor;
 import org.eclipse.mylyn.tasks.core.data.TaskAttribute;
 import org.eclipse.mylyn.tasks.ui.editors.AbstractAttributeEditor;
 import org.eclipse.mylyn.tasks.ui.editors.AbstractTaskEditorPage;
 import org.eclipse.mylyn.tasks.ui.editors.AbstractTaskEditorPart;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.custom.ScrolledComposite;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Control;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.Section;
+import org.eclipse.ui.internal.forms.widgets.FormUtil;
 
 @SuppressWarnings("restriction")
 public class DescriptionPart extends AbstractTaskEditorPart {
@@ -34,7 +36,7 @@ public class DescriptionPart extends AbstractTaskEditorPart {
 
 	private Object toggleToMaximizePartAction;
 
-	private FormToolkit toolkit;
+	// private FormToolkit toolkit;
 
 	public DescriptionPart() {
 		setPartName(Messages.TaskEditorDescriptionPart_Description_);
@@ -49,8 +51,8 @@ public class DescriptionPart extends AbstractTaskEditorPart {
 		if (attribute == null) {
 			return;
 		}
-		
-		this.toolkit = toolkit;
+
+		// this.toolkit = toolkit;
 		AbstractAttributeEditor attributEditor = createAttributeEditor(attribute);
 		if (!(attributEditor instanceof DescriptionEditor)) {
 			String clazz;
@@ -75,14 +77,12 @@ public class DescriptionPart extends AbstractTaskEditorPart {
 
 		editor.getControl().setLayoutData(
 				EditorUtil.getTextControlLayoutData(getTaskEditorPage(), editor.getControl(), getExpandVertically()));
-		
+
 		editor.getControl().setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
 
-		
 		toolkit.paintBordersFor(composite);
 		section.setClient(composite);
 		setSection(toolkit, section);
-
 	}
 
 	@Override
@@ -93,35 +93,30 @@ public class DescriptionPart extends AbstractTaskEditorPart {
 
 	@Override
 	protected void fillToolBar(ToolBarManager barManager) {
-		
+
 		final Action editAction = new Action("") { //$NON-NLS-1$
 			@Override
 			public void run() {
-				
-				if (editor.isInEditMode())
-				{
-					
+
+				if (editor.isInEditMode()) {
+
 					editor.showPreview();
 					setChecked(false);
-				}
-				else
-				{
-					
+				} else {
+
 					setChecked(true);
-					editor.showEditor();	
+					editor.showEditor();
 				}
 			}
 		};
-		editAction.setImageDescriptor(CommonImages.EDIT);
+
+		editAction.setImageDescriptor(TargetProcessImages.EDIT);
 		editAction.setToolTipText(Messages.TaskEditorDescriptionPart_Edit_);
 		editAction.setChecked(true);
 		editAction.setChecked(false);
 		barManager.add(editAction);
-
-		
-		
 	}
-	
+
 	private class ToggleToMaximizePartAction extends Action {
 
 		private static final String COMMAND_ID = "org.eclipse.mylyn.tasks.ui.command.maximizePart"; //$NON-NLS-1$
@@ -134,7 +129,7 @@ public class DescriptionPart extends AbstractTaskEditorPart {
 
 		public ToggleToMaximizePartAction() {
 			super("", SWT.TOGGLE); //$NON-NLS-1$
-			setImageDescriptor(CommonImages.PART_MAXIMIZE);
+			setImageDescriptor(TargetProcessImages.PART_MAXIMIZE);
 			setToolTipText(MAXIMIZE);
 			setActionDefinitionId(COMMAND_ID);
 			setChecked(false);
@@ -173,7 +168,7 @@ public class DescriptionPart extends AbstractTaskEditorPart {
 			}
 
 			getTaskEditorPage().reflow();
-			CommonFormUtil.ensureVisible(getEditor().getControl());
+			ensureVisible(getEditor().getControl());
 		}
 	}
 
@@ -206,6 +201,13 @@ public class DescriptionPart extends AbstractTaskEditorPart {
 
 	public int getSectionStyle() {
 		return sectionStyle;
+	}
+
+	private static void ensureVisible(Control control) {
+		ScrolledComposite form = FormUtil.getScrolledComposite(control);
+		if (form != null) {
+			FormUtil.ensureVisible(form, control);
+		}
 	}
 
 }
