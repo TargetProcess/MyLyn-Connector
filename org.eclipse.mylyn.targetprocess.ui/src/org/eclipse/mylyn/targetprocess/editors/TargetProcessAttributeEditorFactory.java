@@ -10,10 +10,8 @@ import org.eclipse.mylyn.tasks.core.data.TaskDataModel;
 import org.eclipse.mylyn.tasks.ui.editors.AbstractAttributeEditor;
 import org.eclipse.mylyn.tasks.ui.editors.AbstractTaskEditorExtension;
 import org.eclipse.mylyn.tasks.ui.editors.AttributeEditorFactory;
-import org.eclipse.ui.IEditorSite;
 import org.eclipse.ui.contexts.IContextService;
 import org.eclipse.ui.services.IServiceLocator;
-
 
 public class TargetProcessAttributeEditorFactory extends AttributeEditorFactory {
 
@@ -21,8 +19,9 @@ public class TargetProcessAttributeEditorFactory extends AttributeEditorFactory 
 	private TaskDataModel model;
 	private IServiceLocator serviceLocator;
 
-	public TargetProcessAttributeEditorFactory(TaskDataModel model, TaskRepository taskRepository, IServiceLocator serviceLocator) {
-		super(model,taskRepository,serviceLocator);
+	public TargetProcessAttributeEditorFactory(TaskDataModel model, TaskRepository taskRepository,
+			IServiceLocator serviceLocator) {
+		super(model, taskRepository, serviceLocator);
 		Assert.isNotNull(model);
 		Assert.isNotNull(taskRepository);
 		this.model = model;
@@ -31,14 +30,14 @@ public class TargetProcessAttributeEditorFactory extends AttributeEditorFactory 
 	}
 
 	public AbstractAttributeEditor createEditor(String type, TaskAttribute taskAttribute) {
-		if (TargetProcessAttribute.Description.getType().equals(type ))
-		{
+		if (TargetProcessAttribute.Description.getType().equals(type)) {
 			IContextService contextService = (IContextService) serviceLocator.getService(IContextService.class);
-			
-			AbstractTaskEditorExtension extension = TaskEditorExtensions.getTaskEditorExtension(model.getTaskRepository());
-			return new DescriptionEditor(model, taskRepository, taskAttribute,contextService,extension);
+
+			AbstractTaskEditorExtension extension = TaskEditorExtensions.getTaskEditorExtension(model
+					.getTaskRepository());
+			return new DescriptionEditor(model, taskRepository, taskAttribute, contextService, extension);
 		}
-		
+
 		return super.createEditor(type, taskAttribute);
 	}
 

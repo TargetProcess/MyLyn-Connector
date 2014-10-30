@@ -14,7 +14,6 @@ import java.util.Set;
 import javax.activation.DataHandler;
 import javax.activation.DataSource;
 
-import org.apache.axis2.AxisFault;
 import org.apache.commons.httpclient.HttpClient;
 import org.eclipse.core.net.proxy.IProxyData;
 import org.eclipse.core.runtime.CoreException;
@@ -45,9 +44,9 @@ import org.eclipse.mylyn.targetprocess.modules.services.interfaces.IFileServiceS
 import org.eclipse.mylyn.targetprocess.modules.services.interfaces.IMyAssignmentsServiceStub;
 import org.eclipse.mylyn.tasks.core.IRepositoryQuery;
 import org.eclipse.mylyn.tasks.core.RepositoryResponse;
+import org.eclipse.mylyn.tasks.core.RepositoryResponse.ResponseKind;
 import org.eclipse.mylyn.tasks.core.RepositoryStatus;
 import org.eclipse.mylyn.tasks.core.TaskRepository;
-import org.eclipse.mylyn.tasks.core.RepositoryResponse.ResponseKind;
 import org.eclipse.mylyn.tasks.core.data.AbstractTaskAttachmentSource;
 import org.eclipse.mylyn.tasks.core.data.TaskAttribute;
 import org.eclipse.mylyn.tasks.core.data.TaskAttributeMapper;
@@ -108,15 +107,14 @@ public class TargetProcessClient {
 
 		ArrayOfAssignableToDoDTO myAssignables = myAssignments.getAssignableEntities();
 
-		if (myAssignables != null)
-		{	
+		if (myAssignables != null) {
 			AssignableToDoDTO[] assignableSimpleDTOs = myAssignables.getAssignableToDoDTO();
 
 			if (assignableSimpleDTOs != null) {
 				for (AssignableToDoDTO assignableSimpleDTO : assignableSimpleDTOs) {
 					entityCollector.accept(assignableSimpleDTO, myAssignments, repository);
 				}
-	
+
 				entityCollector.exportTo(resultCollector);
 			}
 		}
@@ -190,13 +188,12 @@ public class TargetProcessClient {
 						}
 
 						taskIds.remove(taskId);
-						
-						if(entityNotFound)
-						{
+
+						if (entityNotFound) {
 							throw new CoreException(new TargetProcessRepositoryStatus(IStatus.ERROR,
 									TargetProcessCorePlugin.ID_PLUGIN,
-									TargetProcessRepositoryStatus.ENTITY_NOT_FOUND_WHILE_GETTASKDATA, repositoryUrl
-											.toString()));
+									TargetProcessRepositoryStatus.ENTITY_NOT_FOUND_WHILE_GETTASKDATA,
+									repositoryUrl.toString()));
 						}
 					} catch (NumberFormatException e) {
 						// TODO Auto-generated catch block
@@ -205,18 +202,18 @@ public class TargetProcessClient {
 						if (e.getMessage().contains("Tp.Integration.Common.EntityNotFoundException")) {
 							throw new CoreException(new TargetProcessRepositoryStatus(IStatus.ERROR,
 									TargetProcessCorePlugin.ID_PLUGIN,
-									TargetProcessRepositoryStatus.ENTITY_NOT_FOUND_WHILE_GETTASKDATA, repositoryUrl
-											.toString(), e));
+									TargetProcessRepositoryStatus.ENTITY_NOT_FOUND_WHILE_GETTASKDATA,
+									repositoryUrl.toString(), e));
 						}
 						if (e.getMessage().contains("Tp.Integration.Common.AccessDeniedException")) {
 							throw new CoreException(new TargetProcessRepositoryStatus(IStatus.ERROR,
 									TargetProcessCorePlugin.ID_PLUGIN,
-									TargetProcessRepositoryStatus.ENTITY_ACCESS_DENIED_WHILE_GETTASKDATA, repositoryUrl
-											.toString(), e));
+									TargetProcessRepositoryStatus.ENTITY_ACCESS_DENIED_WHILE_GETTASKDATA,
+									repositoryUrl.toString(), e));
 						}
 						throw new CoreException(new TargetProcessRepositoryStatus(IStatus.ERROR,
-								TargetProcessCorePlugin.ID_PLUGIN, RepositoryStatus.ERROR_NETWORK, repositoryUrl
-										.toString(), e));
+								TargetProcessCorePlugin.ID_PLUGIN, RepositoryStatus.ERROR_NETWORK,
+								repositoryUrl.toString(), e));
 					}
 
 				}
@@ -243,8 +240,7 @@ public class TargetProcessClient {
 	}
 
 	public RepositoryResponse postTaskData(TaskData taskData, Set<TaskAttribute> changedAttributes,
-			IProgressMonitor monitor) throws AxisFault, RemoteException, EntityValidationException,
-			EntityWasDeletedException {
+			IProgressMonitor monitor) throws RemoteException, EntityValidationException, EntityWasDeletedException {
 
 		TargetProcessCredentials targetProcessCredentials = TargetProcessCredentialsFactory
 				.createTargetProcessCredentials(taskData.getAttributeMapper().getTaskRepository());
@@ -254,8 +250,8 @@ public class TargetProcessClient {
 		try {
 			performer.update(taskData, changedAttributes);
 		} catch (RemoteException e) {
-			if (e.getMessage().contains("Tp.Integration.Common.EntityNotFoundException") ||
-					e.getMessage().contains("is not found")) {
+			if (e.getMessage().contains("Tp.Integration.Common.EntityNotFoundException")
+					|| e.getMessage().contains("is not found")) {
 				throw new EntityWasDeletedException(performer.getEntityKind().getReadableName());
 			}
 			throw e;

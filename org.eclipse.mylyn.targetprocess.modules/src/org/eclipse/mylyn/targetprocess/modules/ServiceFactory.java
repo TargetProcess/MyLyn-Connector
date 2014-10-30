@@ -2,6 +2,7 @@ package org.eclipse.mylyn.targetprocess.modules;
 
 import java.lang.reflect.Constructor;
 import java.net.URL;
+import java.rmi.RemoteException;
 import java.util.HashMap;
 
 import org.apache.axis2.AxisFault;
@@ -39,7 +40,6 @@ import org.eclipse.mylyn.targetprocess.modules.services.tpstubs.TPRequestService
 import org.eclipse.mylyn.targetprocess.modules.services.tpstubs.TPTaskServiceStub;
 import org.eclipse.mylyn.targetprocess.modules.services.tpstubs.TPUserStoryServiceStub;
 
-@SuppressWarnings("deprecation")
 public class ServiceFactory implements IServiceFactory {
 
 	private HashMap<TargetProcessCredentials, HashMap<Class<? extends Stub>, Stub>> entityStates;
@@ -67,88 +67,89 @@ public class ServiceFactory implements IServiceFactory {
 	}
 
 	public AuthenticationServiceStub getAuthentificationServiceStub(TargetProcessCredentials targetProcessCredentials)
-			throws AxisFault {
+			throws RemoteException {
 		return getServiceStub(AuthenticationServiceStub.class, targetProcessCredentials,
 				"/services/AuthenticationService.asmx");
 	}
 
 	public IMyAssignmentsServiceStub getMyAssignmentServiceStub(TargetProcessCredentials targetProcessCredentials)
-			throws AxisFault {
+			throws RemoteException {
 		return getServiceStub(TPMyAssignmentsServiceStub.class, targetProcessCredentials,
 				"/services/MyAssignmentsService.asmx");
 	}
 
-	public IBugServiceStub getBugServiceStub(TargetProcessCredentials targetProcessCredentials) throws AxisFault {
+	public IBugServiceStub getBugServiceStub(TargetProcessCredentials targetProcessCredentials) throws RemoteException {
 		return getServiceStub(TPBugServiceStub.class, targetProcessCredentials, "/services/BugService.asmx");
 	}
 
 	public IGeneralServiceStub getGeneralServiceStub(TargetProcessCredentials targetProcessCredentials)
-			throws AxisFault {
+			throws RemoteException {
 		return getServiceStub(TPGeneralServiceStub.class, targetProcessCredentials, "/services/GeneralService.asmx");
 	}
 
 	@Override
 	public ICommentServiceStub getCommentServiceStub(TargetProcessCredentials targetProcessCredentials)
-			throws AxisFault {
+			throws RemoteException {
 		return getServiceStub(TPCommentServiceStub.class, targetProcessCredentials, "/services/CommentService.asmx");
 	}
 
 	public IGeneralUserServiceStub getGeneralUserServiceStub(TargetProcessCredentials serviceCreationParams)
-			throws AxisFault {
-
+			throws RemoteException {
 		return getServiceStub(TPGeneralUserServiceStub.class, serviceCreationParams,
 				"/services/GeneralUserService.asmx");
 	}
 
 	public IAssignableServiceStub getAssignableServiceStub(TargetProcessCredentials targetProcessCredentials)
-			throws AxisFault {
-
+			throws RemoteException {
 		return getServiceStub(TPAssignableServiceStub.class, targetProcessCredentials,
 				"/services/AssignableService.asmx");
 	}
 
-	public ProjectServiceStub getProjectServiceStub(TargetProcessCredentials targetProcessCredentials) throws AxisFault {
+	public ProjectServiceStub getProjectServiceStub(TargetProcessCredentials targetProcessCredentials)
+			throws RemoteException {
 		return getServiceStub(ProjectServiceStub.class, targetProcessCredentials, "/services/ProjectService.asmx");
 	}
 
 	@Override
 	public IUserStoryServiceStub getUserStoryServiceStub(TargetProcessCredentials targetProcessCredentials)
-			throws AxisFault {
+			throws RemoteException {
 		return getServiceStub(TPUserStoryServiceStub.class, targetProcessCredentials, "/services/UserStoryService.asmx");
 	}
 
 	@Override
-	public ITaskServiceStub getTaskServiceStub(TargetProcessCredentials targetProcessCredentials) throws AxisFault {
+	public ITaskServiceStub getTaskServiceStub(TargetProcessCredentials targetProcessCredentials)
+			throws RemoteException {
 		return getServiceStub(TPTaskServiceStub.class, targetProcessCredentials, "/services/TaskService.asmx");
 	}
 
 	@Override
 	public IPriorityServiceStub getPriorityServiceStub(TargetProcessCredentials targetProcessCredentials)
-			throws AxisFault {
+			throws RemoteException {
 		return getServiceStub(TPPriorityServiceStub.class, targetProcessCredentials, "/services/PriorityService.asmx");
 	}
 
 	@Override
 	public IRequestServiceStub getRequestServiceStub(TargetProcessCredentials targetProcessCredentials)
-			throws AxisFault {
+			throws RemoteException {
 		return getServiceStub(TPRequestServiceStub.class, targetProcessCredentials, "/services/RequestService.asmx");
 	}
 
 	@Override
 	public IEntityStateServiceStub getEntityStateServiceStub(TargetProcessCredentials targetProcessCredentials)
-			throws AxisFault {
+			throws RemoteException {
 		return getServiceStub(TPEntityStateServiceStub.class, targetProcessCredentials,
 				"/services/EntityStateService.asmx");
 	}
 
 	@Override
-	public IFileServiceStub getFileServiceStub(TargetProcessCredentials targetProcessCredentials) throws AxisFault {
+	public IFileServiceStub getFileServiceStub(TargetProcessCredentials targetProcessCredentials)
+			throws RemoteException {
 		return getServiceStub(TPFileServiceStub.class, targetProcessCredentials, "/services/FileService.asmx");
 	}
 
 	@SuppressWarnings("unchecked")
 	public <T extends org.apache.axis2.client.Stub> T getServiceStub(Class<T> t,
-			TargetProcessCredentials targetProcessCredentials, String serviceName) throws AxisFault {
+			TargetProcessCredentials targetProcessCredentials, String serviceName) throws RemoteException {
 
 		HashMap<Class<? extends Stub>, Stub> services = null;
 
@@ -168,27 +169,23 @@ public class ServiceFactory implements IServiceFactory {
 			Constructor<T> cnstr = null;
 			try {
 				cnstr = t.getConstructor(new Class[] { ConfigurationContext.class, String.class });
-			} catch (Exception e1) {
-				return null;
-			}
-			try {
-
 				stub = cnstr.newInstance(createContext(), targetProcessCredentials.getRepositoryUrl() + serviceName);
 				services.put(t, stub);
-			} catch (Exception e1) {
-				return null;
+			} catch (Exception e) {
+				throw new RemoteException("Cannot create service stub for " + t.getSimpleName(), e);
+				// return null;
 			}
 		}
 
 		if (targetProcessCredentials.isWindowsAuthentication()) {
-			NtlmJcifsCredentials.register(targetProcessCredentials.getUserName(), targetProcessCredentials
-					.getPassword(), targetProcessCredentials.getDomain());
+			NtlmJcifsCredentials.register(targetProcessCredentials.getUserName(),
+					targetProcessCredentials.getPassword(), targetProcessCredentials.getDomain());
 		} else {
 			NtlmJcifsCredentials.unregister();
 		}
 
 		setSecurityHeader(stub, targetProcessCredentials.getOriginalUserName(), targetProcessCredentials.getPassword());
-		
+
 		return stub;
 	}
 

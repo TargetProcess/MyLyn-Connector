@@ -1,6 +1,7 @@
 package org.eclipse.mylyn.targetprocess.modules;
 
-import org.apache.axis2.AxisFault;
+import java.rmi.RemoteException;
+
 import org.eclipse.mylyn.targetprocess.modules.services.AuthenticationServiceStub;
 import org.eclipse.mylyn.targetprocess.modules.services.ProjectServiceStub;
 import org.eclipse.mylyn.targetprocess.modules.services.interfaces.IAssignableServiceStub;
@@ -19,40 +20,44 @@ import org.eclipse.mylyn.targetprocess.modules.services.interfaces.IUserStorySer
 public interface IServiceFactory {
 
 	public AuthenticationServiceStub getAuthentificationServiceStub(TargetProcessCredentials targetProcessCredentials)
-			throws AxisFault;
+			throws RemoteException;
 
 	public IMyAssignmentsServiceStub getMyAssignmentServiceStub(TargetProcessCredentials targetProcessCredentials)
-			throws AxisFault;
+			throws RemoteException;
 
-	public IBugServiceStub getBugServiceStub(TargetProcessCredentials targetProcessCredentials) throws AxisFault;
+	public IBugServiceStub getBugServiceStub(TargetProcessCredentials targetProcessCredentials) throws RemoteException;
 
 	public IGeneralUserServiceStub getGeneralUserServiceStub(TargetProcessCredentials targetProcessCredentials)
-			throws AxisFault;
+			throws RemoteException;
 
 	public IAssignableServiceStub getAssignableServiceStub(TargetProcessCredentials targetProcessCredentials)
-			throws AxisFault;
+			throws RemoteException;
 
-	public ProjectServiceStub getProjectServiceStub(TargetProcessCredentials targetProcessCredentials) throws AxisFault;
+	public ProjectServiceStub getProjectServiceStub(TargetProcessCredentials targetProcessCredentials)
+			throws RemoteException;
 
 	public IUserStoryServiceStub getUserStoryServiceStub(TargetProcessCredentials targetProcessCredentials)
-			throws AxisFault;
+			throws RemoteException;
 
-	public ITaskServiceStub getTaskServiceStub(TargetProcessCredentials targetProcessCredentials) throws AxisFault;
+	public ITaskServiceStub getTaskServiceStub(TargetProcessCredentials targetProcessCredentials)
+			throws RemoteException;
 
 	public IEntityStateServiceStub getEntityStateServiceStub(TargetProcessCredentials targetProcessCredentials)
-			throws AxisFault;
+			throws RemoteException;
 
 	public IPriorityServiceStub getPriorityServiceStub(TargetProcessCredentials targetProcessCredentials)
-			throws AxisFault;
+			throws RemoteException;
 
 	public IRequestServiceStub getRequestServiceStub(TargetProcessCredentials targetProcessCredentials)
-			throws AxisFault;
+			throws RemoteException;
 
 	public IGeneralServiceStub getGeneralServiceStub(TargetProcessCredentials targetProcessCredentials)
-			throws AxisFault;
+			throws RemoteException;
 
-	public IFileServiceStub getFileServiceStub(TargetProcessCredentials targetProcessCredentials) throws AxisFault;
+	public IFileServiceStub getFileServiceStub(TargetProcessCredentials targetProcessCredentials)
+			throws RemoteException;
 
-	public ICommentServiceStub getCommentServiceStub(TargetProcessCredentials targetProcessCredentials) throws AxisFault;
+	public ICommentServiceStub getCommentServiceStub(TargetProcessCredentials targetProcessCredentials)
+			throws RemoteException;
 
 }

@@ -6,7 +6,6 @@ import java.rmi.RemoteException;
 import java.util.Calendar;
 import java.util.Date;
 
-import org.apache.axis2.AxisFault;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
@@ -19,8 +18,8 @@ import org.eclipse.mylyn.targetprocess.modules.TargetProcessCredentials;
 import org.eclipse.mylyn.tasks.core.AbstractRepositoryConnector;
 import org.eclipse.mylyn.tasks.core.IRepositoryQuery;
 import org.eclipse.mylyn.tasks.core.ITask;
-import org.eclipse.mylyn.tasks.core.TaskRepository;
 import org.eclipse.mylyn.tasks.core.ITask.PriorityLevel;
+import org.eclipse.mylyn.tasks.core.TaskRepository;
 import org.eclipse.mylyn.tasks.core.data.AbstractTaskAttachmentHandler;
 import org.eclipse.mylyn.tasks.core.data.AbstractTaskDataHandler;
 import org.eclipse.mylyn.tasks.core.data.TaskAttribute;
@@ -117,9 +116,11 @@ public class TargetProcessRepositoryConnector extends AbstractRepositoryConnecto
 					IServiceFactory serviceFactory = TargetProcessCorePlugin.getDefault().getServiceFactory();
 					TargetProcessCredentials targetProcessCredentials = null;
 					try {
-						targetProcessCredentials = new TargetProcessCredentials(new URL(taskData.getRepositoryUrl()),
-								credentials.getUserName(), credentials.getPassword(), taskRepository
-										.getProperty(TargetProcessCorePlugin.IS_WINDOWS_AUTHENTICATION_KEY) != null);
+						targetProcessCredentials = new TargetProcessCredentials(
+								new URL(taskData.getRepositoryUrl()),
+								credentials.getUserName(),
+								credentials.getPassword(),
+								taskRepository.getProperty(TargetProcessCorePlugin.IS_WINDOWS_AUTHENTICATION_KEY) != null);
 
 					} catch (MalformedURLException e) {
 						e.printStackTrace();
@@ -128,8 +129,6 @@ public class TargetProcessRepositoryConnector extends AbstractRepositoryConnecto
 					try {
 						return new PriorityConverter(serviceFactory.getPriorityServiceStub(targetProcessCredentials),
 								taskData.getRepositoryUrl()).getMylynPriorityFromTaskData(taskData);
-					} catch (AxisFault e) {
-						e.printStackTrace();
 					} catch (RemoteException e) {
 						e.printStackTrace();
 					}
@@ -147,7 +146,7 @@ public class TargetProcessRepositoryConnector extends AbstractRepositoryConnecto
 	@Override
 	public String getTaskUrl(String repositoryUrl, String taskId) {
 
-		return 	null;
+		return null;
 	}
 
 	@Override
@@ -155,7 +154,7 @@ public class TargetProcessRepositoryConnector extends AbstractRepositoryConnecto
 		TaskMapper scheme = getTaskMapping(taskData);
 		Date repositoryDate = scheme.getModificationDate();
 		Date localDate = task.getModificationDate();
-		if (repositoryDate != null && repositoryDate.equals(localDate)) {			
+		if (repositoryDate != null && repositoryDate.equals(localDate)) {
 			return false;
 		}
 		return true;

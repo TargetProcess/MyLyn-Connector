@@ -7,13 +7,8 @@ import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Comparator;
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.Set;
 
-import org.apache.axiom.om.OMAbstractFactory;
-import org.apache.axiom.om.OMElement;
-import org.apache.axiom.om.OMFactory;
-import org.apache.axiom.om.OMNamespace;
 import org.apache.commons.lang.StringEscapeUtils;
 import org.eclipse.mylyn.targetprocess.core.EntityStateManager;
 import org.eclipse.mylyn.targetprocess.core.TargetProcessAttachmentMapper;
@@ -21,16 +16,16 @@ import org.eclipse.mylyn.targetprocess.core.TargetProcessAttribute;
 import org.eclipse.mylyn.targetprocess.core.TargetProcessAttributeMapper;
 import org.eclipse.mylyn.targetprocess.modules.IServiceFactory;
 import org.eclipse.mylyn.targetprocess.modules.TargetProcessCredentials;
-import org.eclipse.mylyn.targetprocess.modules.services.CommentServiceStub;
-import org.eclipse.mylyn.targetprocess.modules.services.GeneralUserServiceStub;
-import org.eclipse.mylyn.targetprocess.modules.services.MyAssignmentsServiceStub;
 import org.eclipse.mylyn.targetprocess.modules.services.AssignableServiceStub.RetrieveTeamsForAssignable;
 import org.eclipse.mylyn.targetprocess.modules.services.AssignableServiceStub.TeamDTO;
+import org.eclipse.mylyn.targetprocess.modules.services.CommentServiceStub;
 import org.eclipse.mylyn.targetprocess.modules.services.CommentServiceStub.Create;
 import org.eclipse.mylyn.targetprocess.modules.services.EntityStateServiceStub.EntityStateDTO;
+import org.eclipse.mylyn.targetprocess.modules.services.GeneralUserServiceStub;
 import org.eclipse.mylyn.targetprocess.modules.services.GeneralUserServiceStub.ArrayOfAnyType;
 import org.eclipse.mylyn.targetprocess.modules.services.GeneralUserServiceStub.GeneralUserDTO;
 import org.eclipse.mylyn.targetprocess.modules.services.GeneralUserServiceStub.Retrieve;
+import org.eclipse.mylyn.targetprocess.modules.services.MyAssignmentsServiceStub;
 import org.eclipse.mylyn.targetprocess.modules.services.MyAssignmentsServiceStub.ArrayOfEntityStateDTO;
 import org.eclipse.mylyn.targetprocess.modules.services.MyAssignmentsServiceStub.AssignableToDoDTO;
 import org.eclipse.mylyn.targetprocess.modules.services.MyAssignmentsServiceStub.AttachmentDTO;
@@ -62,13 +57,13 @@ public abstract class PerformerBase implements IPerformer {
 
 	public GeneralUserDTO getUserByLoginName(String loginName) throws RemoteException {
 		Retrieve retrieve12 = new Retrieve();
-		
-		retrieve12.setHql("select user from User as user where (user.Login = '" + loginName + 
-					"' or user.ActiveDirectoryName = '" + loginName + "') and user.DeleteDate is null");
 
-        ArrayOfAnyType param = new ArrayOfAnyType();
+		retrieve12.setHql("select user from User as user where (user.Login = '" + loginName
+				+ "' or user.ActiveDirectoryName = '" + loginName + "') and user.DeleteDate is null");
+
+		ArrayOfAnyType param = new ArrayOfAnyType();
 		retrieve12.setParameters(param);
-		
+
 		GeneralUserDTO[] users = generalUserService.retrieve(retrieve12).getRetrieveResult().getGeneralUserDTO();
 		if (users.length != 0) {
 			return users[0];
@@ -105,8 +100,8 @@ public abstract class PerformerBase implements IPerformer {
 	}
 
 	public TaskData createTaskData(int entityID, TaskRepository taskRepository) {
-		TaskData taskData = new TaskData(new TargetProcessAttributeMapper(taskRepository), taskRepository
-				.getConnectorKind(), taskRepository.getRepositoryUrl(), Integer.toString(entityID));
+		TaskData taskData = new TaskData(new TargetProcessAttributeMapper(taskRepository),
+				taskRepository.getConnectorKind(), taskRepository.getRepositoryUrl(), Integer.toString(entityID));
 
 		addAttributeTo(taskData, TargetProcessAttribute.TaskKey, String.format("#%s", entityID));
 		addAttributeTo(taskData, TargetProcessAttribute.NewComment, "");
@@ -115,8 +110,9 @@ public abstract class PerformerBase implements IPerformer {
 	}
 
 	protected TaskData createTaskData(AssignableToDoDTO assignable, TaskRepository taskRepository) {
-		TaskData taskData = new TaskData(new TargetProcessAttributeMapper(taskRepository), taskRepository
-				.getConnectorKind(), taskRepository.getRepositoryUrl(), Integer.toString(assignable.getID()));
+		TaskData taskData = new TaskData(new TargetProcessAttributeMapper(taskRepository),
+				taskRepository.getConnectorKind(), taskRepository.getRepositoryUrl(), Integer.toString(assignable
+						.getID()));
 
 		addAttributeTo(taskData, TargetProcessAttribute.TaskKey, String.format("#%s", assignable.getID()));
 		addAttributeTo(taskData, TargetProcessAttribute.NewComment, "");
@@ -167,14 +163,14 @@ public abstract class PerformerBase implements IPerformer {
 	public void addStateAttribute(TaskData taskData, int entityStateID, String entityStateName,
 			ArrayOfEntityStateDTO entityStates) {
 		TaskAttribute stateAttribute = taskData.getRoot().createAttribute(TargetProcessAttribute.State.getKey());
-		stateAttribute.getMetaData().defaults().setReadOnly(TargetProcessAttribute.State.isReadOnly()).setLabel(
-				TargetProcessAttribute.State.toString()).setType(TargetProcessAttribute.State.getType());
+		stateAttribute.getMetaData().defaults().setReadOnly(TargetProcessAttribute.State.isReadOnly())
+				.setLabel(TargetProcessAttribute.State.toString()).setType(TargetProcessAttribute.State.getType());
 
 		stateAttribute.putOption(String.valueOf(entityStateID), entityStateName);
 
 		if (entityStates.getEntityStateDTO() != null) {
-			MyAssignmentsServiceStub.EntityStateDTO currentState = findEntity(entityStateID, entityStates
-					.getEntityStateDTO());
+			MyAssignmentsServiceStub.EntityStateDTO currentState = findEntity(entityStateID,
+					entityStates.getEntityStateDTO());
 			if (currentState != null) {
 				if (currentState.getNextStates() != null && currentState.getNextStates().trim().length() > 0) {
 
@@ -220,8 +216,8 @@ public abstract class PerformerBase implements IPerformer {
 				int userID = teamDTO.getUserID();
 				GeneralUserDTO userDTO = getGeneralUser(userID);
 				if (assigmentsUsers.containsKey(getShortActorName(teamDTO))) {
-					assigmentsUsers.put(getShortActorName(teamDTO), String.format("%s | %s", assigmentsUsers
-							.get(getShortActorName(teamDTO)), getShortName(userDTO)));
+					assigmentsUsers.put(getShortActorName(teamDTO), String.format("%s | %s",
+							assigmentsUsers.get(getShortActorName(teamDTO)), getShortName(userDTO)));
 				} else {
 					assigmentsUsers.put(getShortActorName(teamDTO), getShortName(userDTO));
 				}
@@ -240,11 +236,11 @@ public abstract class PerformerBase implements IPerformer {
 				}
 			});
 
-			addAttributeTo(taskData, TargetProcessAttribute.AssignedPeople, getUserNameWithRole(assigmentsUsers,
-					keys[0]));
+			addAttributeTo(taskData, TargetProcessAttribute.AssignedPeople,
+					getUserNameWithRole(assigmentsUsers, keys[0]));
 			if (keys.length > 1) {
-				addAttributeTo(taskData, TargetProcessAttribute.AssignedPeople2, getUserNameWithRole(assigmentsUsers,
-						keys[1]));
+				addAttributeTo(taskData, TargetProcessAttribute.AssignedPeople2,
+						getUserNameWithRole(assigmentsUsers, keys[1]));
 			}
 
 		}
@@ -299,9 +295,9 @@ public abstract class PerformerBase implements IPerformer {
 
 	protected void addAttributeTo(TaskData taskData, TargetProcessAttribute targetProcessAttribute, String value) {
 		TaskAttribute taskAttribute = taskData.getRoot().createAttribute(targetProcessAttribute.getKey());
-		taskAttribute.getMetaData().defaults().setReadOnly(targetProcessAttribute.isReadOnly()).setLabel(
-				targetProcessAttribute.toString()).setType(targetProcessAttribute.getType()).setReadOnly(
-				targetProcessAttribute.isReadOnly());
+		taskAttribute.getMetaData().defaults().setReadOnly(targetProcessAttribute.isReadOnly())
+				.setLabel(targetProcessAttribute.toString()).setType(targetProcessAttribute.getType())
+				.setReadOnly(targetProcessAttribute.isReadOnly());
 		if (value != null) {
 			taskAttribute.setValue(value);
 		}
@@ -340,9 +336,9 @@ public abstract class PerformerBase implements IPerformer {
 	public static String addRepositoryUrlToImg(TaskData taskData, String description) {
 		if (description != null) {
 			return description.replaceAll("src=\"&#126;&#47;", "src=\"" + taskData.getRepositoryUrl() + "/")
-					.replaceAll("src='&#126;&#47;", "src='" + taskData.getRepositoryUrl() + "/").replaceAll("src='~/",
-							"src='" + taskData.getRepositoryUrl() + "/").replaceAll("src=\"~/",
-							"src=\"" + taskData.getRepositoryUrl() + "/");
+					.replaceAll("src='&#126;&#47;", "src='" + taskData.getRepositoryUrl() + "/")
+					.replaceAll("src='~/", "src='" + taskData.getRepositoryUrl() + "/")
+					.replaceAll("src=\"~/", "src=\"" + taskData.getRepositoryUrl() + "/");
 		}
 		return description;
 	}
@@ -389,8 +385,8 @@ public abstract class PerformerBase implements IPerformer {
 		addAttributeTo(taskData, TargetProcessAttribute.Name, taskDTO.getName());
 		addDescriptionAttribute(taskData, taskDTO.getDescription());
 		addDateAttribute(taskData, TargetProcessAttribute.CreationDate, taskDTO.getCreateDate());
-		addStateAttribute(taskData, taskDTO.getEntityStateID(), taskDTO.getEntityStateName(), toDoList
-				.getEntityStates());
+		addStateAttribute(taskData, taskDTO.getEntityStateID(), taskDTO.getEntityStateName(),
+				toDoList.getEntityStates());
 
 		addAttributeTo(taskData, TargetProcessAttribute.ProjectName, taskDTO.getProjectName());
 		addOwnerAttribute(taskData, taskDTO, toDoList);
@@ -444,8 +440,8 @@ public abstract class PerformerBase implements IPerformer {
 			taskComment.setNumber(commentNum);
 
 			GeneralUserDTO commentOwner = getGeneralUser(commentDTO.getOwnerID());
-			IRepositoryPerson author = taskData.getAttributeMapper().getTaskRepository().createPerson(
-					String.valueOf(commentOwner.getLogin()));
+			IRepositoryPerson author = taskData.getAttributeMapper().getTaskRepository()
+					.createPerson(String.valueOf(commentOwner.getLogin()));
 
 			author.setName(getGeneralUserFullName(commentOwner));
 			taskComment.setAuthor(author);
@@ -484,8 +480,8 @@ public abstract class PerformerBase implements IPerformer {
 			attachmentMapper.setFileName(attachment.getOriginalFileName());
 			attachmentMapper.setUrl(getAttachmentUrl(attachment.getID()));
 
-			IRepositoryPerson author = taskData.getAttributeMapper().getTaskRepository().createPerson(
-					getGeneralUserFullName(getGeneralUser(attachment.getOwnerId())));
+			IRepositoryPerson author = taskData.getAttributeMapper().getTaskRepository()
+					.createPerson(getGeneralUserFullName(getGeneralUser(attachment.getOwnerId())));
 
 			attachmentMapper.setAuthor(author);
 
@@ -562,8 +558,8 @@ public abstract class PerformerBase implements IPerformer {
 				attachmentMapper.setFileName(attachment.getOriginalFileName());
 				attachmentMapper.setUrl(getAttachmentUrl(attachment.getID()));
 
-				IRepositoryPerson author = taskData.getAttributeMapper().getTaskRepository().createPerson(
-						getUserFullName(getUser(attachment.getOwnerID(), toDoList)));
+				IRepositoryPerson author = taskData.getAttributeMapper().getTaskRepository()
+						.createPerson(getUserFullName(getUser(attachment.getOwnerID(), toDoList)));
 
 				attachmentMapper.setAuthor(author);
 
@@ -586,8 +582,8 @@ public abstract class PerformerBase implements IPerformer {
 				taskComment.setNumber(commentNum);
 
 				UserDTO commentOwner = getUser(commentDTO.getOwnerID(), toDoList);
-				IRepositoryPerson author = taskData.getAttributeMapper().getTaskRepository().createPerson(
-						String.valueOf(commentOwner.getLogin()));
+				IRepositoryPerson author = taskData.getAttributeMapper().getTaskRepository()
+						.createPerson(String.valueOf(commentOwner.getLogin()));
 
 				author.setName(getUserFullName(commentOwner));
 				taskComment.setAuthor(author);
@@ -616,8 +612,8 @@ public abstract class PerformerBase implements IPerformer {
 				int userID = teamDTO.getUserID();
 				UserDTO userDTO = getUser(userID, toDoList);
 				if (assigmentsUsers.containsKey(getShortActorName(teamDTO))) {
-					assigmentsUsers.put(getShortActorName(teamDTO), String.format("%s | %s", assigmentsUsers
-							.get(getShortActorName(teamDTO)), getShortName(userDTO)));
+					assigmentsUsers.put(getShortActorName(teamDTO), String.format("%s | %s",
+							assigmentsUsers.get(getShortActorName(teamDTO)), getShortName(userDTO)));
 				} else {
 					assigmentsUsers.put(getShortActorName(teamDTO), getShortName(userDTO));
 				}
@@ -636,11 +632,11 @@ public abstract class PerformerBase implements IPerformer {
 				}
 			});
 
-			addAttributeTo(taskData, TargetProcessAttribute.AssignedPeople, getUserNameWithRole(assigmentsUsers,
-					keys[0]));
+			addAttributeTo(taskData, TargetProcessAttribute.AssignedPeople,
+					getUserNameWithRole(assigmentsUsers, keys[0]));
 			if (keys.length > 1) {
-				addAttributeTo(taskData, TargetProcessAttribute.AssignedPeople2, getUserNameWithRole(assigmentsUsers,
-						keys[1]));
+				addAttributeTo(taskData, TargetProcessAttribute.AssignedPeople2,
+						getUserNameWithRole(assigmentsUsers, keys[1]));
 			}
 
 		}
@@ -648,8 +644,7 @@ public abstract class PerformerBase implements IPerformer {
 
 	private String getShortActorName(MyAssignmentsServiceStub.TeamDTO teamDTO) {
 		return teamDTO.getRoleName() == null || teamDTO.getRoleName().length() <= 3 ? teamDTO.getRoleName() : teamDTO
-				.getRoleName().substring(0, 3)
-				+ ".";
+				.getRoleName().substring(0, 3) + ".";
 	}
 
 	private UserDTO getUser(int userID, MyAssignmentsToDo toDoList) {

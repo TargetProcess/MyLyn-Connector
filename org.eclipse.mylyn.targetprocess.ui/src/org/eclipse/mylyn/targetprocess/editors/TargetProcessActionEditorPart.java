@@ -51,7 +51,6 @@ public class TargetProcessActionEditorPart extends AbstractTaskEditorPart {
 
 	@Override
 	public void createControl(Composite parent, FormToolkit toolkit) {
-
 		Composite buttonComposite = toolkit.createComposite(parent);
 		GridLayout buttonLayout = EditorUtil.createSectionClientLayout();
 		buttonLayout.numColumns = 4;
