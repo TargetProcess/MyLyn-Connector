@@ -5,7 +5,6 @@ import java.util.Set;
 
 import org.eclipse.mylyn.internal.tasks.ui.editors.TaskEditorAttachmentPart;
 import org.eclipse.mylyn.internal.tasks.ui.editors.TaskEditorCommentPart;
-import org.eclipse.mylyn.internal.tasks.ui.editors.TaskEditorDescriptionPart;
 import org.eclipse.mylyn.internal.tasks.ui.editors.TaskEditorNewCommentPart;
 import org.eclipse.mylyn.targetprocess.core.TargetProcessCorePlugin;
 import org.eclipse.mylyn.tasks.ui.editors.AbstractTaskEditorPage;
@@ -31,8 +30,8 @@ public class TargetProcessTaskEditorPage extends AbstractTaskEditorPage {
 
 	@Override
 	protected Set<TaskEditorPartDescriptor> createPartDescriptors() {
-
 		Set<TaskEditorPartDescriptor> descriptors = new LinkedHashSet<TaskEditorPartDescriptor>();
+
 		descriptors.add(new TaskEditorPartDescriptor(ID_PART_SUMMARY) {
 			@Override
 			public AbstractTaskEditorPart createPart() {
@@ -40,25 +39,24 @@ public class TargetProcessTaskEditorPage extends AbstractTaskEditorPage {
 			}
 		}.setPath(PATH_HEADER));
 
-		
 		descriptors.add(new TaskEditorPartDescriptor(ID_PART_PLANNING) {
 			@Override
 			public AbstractTaskEditorPart createPart() {
 				DescriptionPart part = new DescriptionPart();
-					part.setExpandVertically(true);
-					part.setSectionStyle(ExpandableComposite.TITLE_BAR | ExpandableComposite.EXPANDED);
-				
+				part.setExpandVertically(true);
+				part.setSectionStyle(ExpandableComposite.TITLE_BAR | ExpandableComposite.EXPANDED);
+
 				return part;
 			}
 		}.setPath(PATH_PLANNING));
-		
-		descriptors.add(new TaskEditorPartDescriptor(ID_PART_COMMENTS) {			
+
+		descriptors.add(new TaskEditorPartDescriptor(ID_PART_COMMENTS) {
 			@Override
 			public AbstractTaskEditorPart createPart() {
 				return new TaskEditorCommentPart();
 			}
 		}.setPath(PATH_COMMENTS));
-		
+
 		descriptors.add(new TaskEditorPartDescriptor(ID_PART_NEW_COMMENT) {
 			@Override
 			public AbstractTaskEditorPart createPart() {
@@ -66,8 +64,6 @@ public class TargetProcessTaskEditorPage extends AbstractTaskEditorPage {
 				return part;
 			}
 		}.setPath(PATH_COMMENTS));
-		
-
 
 		descriptors.add(new TaskEditorPartDescriptor(ID_PART_ATTACHMENTS) {
 			@Override
@@ -75,9 +71,6 @@ public class TargetProcessTaskEditorPage extends AbstractTaskEditorPage {
 				return new TaskEditorAttachmentPart();
 			}
 		}.setPath(PATH_ATTACHMENTS));
-		
-		
-		
 
 		descriptors.add(new TaskEditorPartDescriptor(ID_PART_ACTIONS) {
 			@Override
@@ -92,7 +85,7 @@ public class TargetProcessTaskEditorPage extends AbstractTaskEditorPage {
 	protected AttributeEditorFactory createAttributeEditorFactory() {
 		return new TargetProcessAttributeEditorFactory(getModel(), getTaskRepository(), getEditorSite());
 	}
-	
+
 	@Override
 	public void doSubmit() {
 		super.doSubmit();

@@ -64,7 +64,7 @@ public class EntityCollectorTests {
 	private final String repositoryUrl = "http://repositoryUrl";
 
 	@After
-	public void TerDown() {
+	public void tearDown() {
 		EntityStateManager.clean();
 	}
 

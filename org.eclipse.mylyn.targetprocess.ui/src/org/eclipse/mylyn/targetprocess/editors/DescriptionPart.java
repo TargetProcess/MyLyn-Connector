@@ -53,16 +53,11 @@ public class DescriptionPart extends AbstractTaskEditorPart {
 		}
 
 		// this.toolkit = toolkit;
-		AbstractAttributeEditor attributEditor = createAttributeEditor(attribute);
-		if (!(attributEditor instanceof DescriptionEditor)) {
-			String clazz;
-			if (attributEditor != null) {
-				clazz = attributEditor.getClass().getName();
-			} else {
-				clazz = "<null>"; //$NON-NLS-1$
-			}
+		AbstractAttributeEditor attributeEditor = createAttributeEditor(attribute);
+		if (!(attributeEditor instanceof DescriptionEditor)) {
+			String clazzName = attributeEditor == null ? "<null>" : attributeEditor.getClass().getName();
 			StatusHandler.log(new Status(IStatus.WARNING, TasksUiPlugin.ID_PLUGIN,
-					"Expected an instance of RichTextAttributeEditor, got \"" + clazz + "\"")); //$NON-NLS-1$ //$NON-NLS-2$
+					"Expected an instance of RichTextAttributeEditor, got \"" + clazzName + "\"")); //$NON-NLS-1$ //$NON-NLS-2$
 			return;
 		}
 
@@ -71,7 +66,7 @@ public class DescriptionPart extends AbstractTaskEditorPart {
 		composite = toolkit.createComposite(section);
 		composite.setLayout(EditorUtil.createSectionClientLayout());
 
-		editor = (DescriptionEditor) attributEditor;
+		editor = (DescriptionEditor) attributeEditor;
 
 		editor.createControl(composite, toolkit);
 
@@ -97,13 +92,10 @@ public class DescriptionPart extends AbstractTaskEditorPart {
 		final Action editAction = new Action("") { //$NON-NLS-1$
 			@Override
 			public void run() {
-
 				if (editor.isInEditMode()) {
-
 					editor.showPreview();
 					setChecked(false);
 				} else {
-
 					setChecked(true);
 					editor.showEditor();
 				}
