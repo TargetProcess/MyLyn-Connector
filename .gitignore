@@ -2,7 +2,6 @@
 .metadata
 *.pydevproject
 .project
-.metadata
 bin/**
 tmp/**
 tmp/**/*
@@ -14,6 +13,7 @@ local.properties
 .classpath
 .settings/
 .loadpath
+.idea
 
 # Java class files
 *.class
