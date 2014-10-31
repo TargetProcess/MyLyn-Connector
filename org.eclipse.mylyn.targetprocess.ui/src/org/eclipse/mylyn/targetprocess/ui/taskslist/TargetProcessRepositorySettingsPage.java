@@ -33,7 +33,7 @@ import org.eclipse.swt.widgets.Label;
 public class TargetProcessRepositorySettingsPage extends AbstractRepositorySettingsPage {
 
 	private static final String TIITLE = "Connection settings";
-	private static final String DESCRIPTION = "TargetProcess connection settings";
+	private static final String DESCRIPTION = "Targetprocess connection settings";
 	private Combo authenticationTypeCombo;
 	private TargetProcessFieldEditor targetProcessUrlEditor;
 	private TargetProcessFieldEditor targetProcessLoginEditor;
@@ -41,7 +41,8 @@ public class TargetProcessRepositorySettingsPage extends AbstractRepositorySetti
 	private TargetProcessFieldEditor targetProcessLabelEditor;
 	private String originalUrl;
 	private HashSet<String> repositoryUrls;
-	private Object originalUserName;
+
+	// private Object originalUserName;
 
 	public TargetProcessRepositorySettingsPage(TaskRepository taskRepository) {
 		super(TIITLE, DESCRIPTION, taskRepository);
@@ -96,7 +97,7 @@ public class TargetProcessRepositorySettingsPage extends AbstractRepositorySetti
 
 		if (repository != null) {
 			originalUrl = repository.getRepositoryUrl().trim();
-			originalUserName = repository.getUserName();
+			// originalUserName = repository.getUserName();
 
 			targetProcessUrlEditor.setStringValue(repository.getRepositoryUrl());
 			targetProcessLabelEditor.setStringValue(repository.getRepositoryLabel());
@@ -186,7 +187,7 @@ public class TargetProcessRepositorySettingsPage extends AbstractRepositorySetti
 		return null;
 	}
 
-	private boolean isMissingCredentials() {
+	protected boolean isMissingCredentials() {
 		return targetProcessLoginEditor.getStringValue().trim().equals("") //$NON-NLS-1$
 				|| targetProcessPasswordEditor.getStringValue().trim().equals(""); //$NON-NLS-1$
 	}

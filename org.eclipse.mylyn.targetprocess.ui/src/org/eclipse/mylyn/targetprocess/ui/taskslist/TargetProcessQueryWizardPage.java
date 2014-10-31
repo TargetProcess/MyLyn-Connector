@@ -1,26 +1,13 @@
 package org.eclipse.mylyn.targetprocess.ui.taskslist;
 
-import java.rmi.RemoteException;
-
-import org.apache.axis2.AxisFault;
 import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.preference.StringFieldEditor;
 import org.eclipse.jface.wizard.IWizardPage;
-import org.eclipse.mylyn.targetprocess.core.TargetProcessCorePlugin;
-import org.eclipse.mylyn.targetprocess.core.TargetProcessCredentialsFactory;
-import org.eclipse.mylyn.targetprocess.modules.TargetProcessCredentials;
-import org.eclipse.mylyn.targetprocess.modules.services.ProjectServiceStub;
-import org.eclipse.mylyn.targetprocess.modules.services.ProjectServiceStub.ArrayOfAnyType;
-import org.eclipse.mylyn.targetprocess.modules.services.ProjectServiceStub.GetIDsResponse;
-import org.eclipse.mylyn.targetprocess.modules.services.ProjectServiceStub.RetrieveAll;
-import org.eclipse.mylyn.targetprocess.modules.services.ProjectServiceStub.RetrieveResponse;
 import org.eclipse.mylyn.tasks.core.IRepositoryQuery;
 import org.eclipse.mylyn.tasks.core.TaskRepository;
 import org.eclipse.mylyn.tasks.ui.TasksUiImages;
 import org.eclipse.mylyn.tasks.ui.wizards.AbstractRepositoryQueryPage;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.events.ModifyEvent;
-import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
@@ -33,15 +20,9 @@ public class TargetProcessQueryWizardPage extends AbstractRepositoryQueryPage {
 
 	private static final String DESCRIPTION = Messages.TargetProcessQueryTypeWizardPage_Select_from_the_available_query_types;
 
-	private Composite checkButtons;
-	private Button teamToDoListButton;
 	private Button myToDOListButton;
 
-	private TargetProcessFieldEditor queryTitleFieldEditor;
-
 	private Label queryDescription;
-
-	private Label queryTitleLabel;
 
 	private StringFieldEditor queryTitleEditor;
 
@@ -67,7 +48,6 @@ public class TargetProcessQueryWizardPage extends AbstractRepositoryQueryPage {
 
 	@Override
 	public void createControl(Composite parent) {
-
 		Composite composite = new Composite(parent, SWT.NONE);
 		GridData gridData = new GridData(GridData.FILL_HORIZONTAL);
 		gridData.grabExcessVerticalSpace = false;
@@ -94,7 +74,7 @@ public class TargetProcessQueryWizardPage extends AbstractRepositoryQueryPage {
 		queryTitleLayout.marginHeight = 0;
 		queryTitleLayout.horizontalSpacing = 2;
 		queryTitleLayout.numColumns = 1;
-		queryTitleComposite.setLayout(queryTitleLayout);		
+		queryTitleComposite.setLayout(queryTitleLayout);
 
 		composite.setLayoutData(gridData);
 		composite.setLayout(new GridLayout(1, false));
@@ -121,7 +101,7 @@ public class TargetProcessQueryWizardPage extends AbstractRepositoryQueryPage {
 
 	@Override
 	public void applyTo(IRepositoryQuery query) {
-		if(getQueryTitle().trim().length() > 0)
+		if (getQueryTitle().trim().length() > 0)
 			query.setSummary(getQueryTitle());
 	}
 

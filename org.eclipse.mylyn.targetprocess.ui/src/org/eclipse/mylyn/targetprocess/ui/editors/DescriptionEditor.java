@@ -1,6 +1,5 @@
 package org.eclipse.mylyn.targetprocess.ui.editors;
 
-
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.mylyn.internal.tasks.ui.editors.RichTextAttributeEditor;
@@ -10,7 +9,6 @@ import org.eclipse.mylyn.tasks.core.data.TaskDataModel;
 import org.eclipse.mylyn.tasks.ui.editors.AbstractRenderingEngine;
 import org.eclipse.mylyn.tasks.ui.editors.AbstractTaskEditorExtension;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.browser.Browser;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.contexts.IContextService;
 import org.eclipse.ui.forms.widgets.FormToolkit;
@@ -18,56 +16,55 @@ import org.eclipse.ui.forms.widgets.FormToolkit;
 @SuppressWarnings("restriction")
 public class DescriptionEditor extends RichTextAttributeEditor {
 
-	private TaskRepository taskRepository;
-	private Composite parent;
-	private FormToolkit toolkit;
-	private Browser viewer;
-	private TaskDataModel manager;
-	private TaskAttribute taskAttribute;
-	private RichTextAttributeEditor rich;
 	private boolean isInEditMode;
 
-	public DescriptionEditor(TaskDataModel manager, TaskRepository taskRepository, TaskAttribute taskAttribute, IContextService contextService, AbstractTaskEditorExtension extension) {
-		super(manager, taskRepository, taskAttribute,SWT.MULTI ,contextService,extension);
-		this.taskRepository = taskRepository;
-		this.manager = manager;
-		this.taskAttribute = taskAttribute;
-		super.setRenderingEngine( new AbstractRenderingEngine(){
-			 @Override
+	public DescriptionEditor(TaskDataModel manager, TaskRepository taskRepository, TaskAttribute taskAttribute,
+			IContextService contextService, AbstractTaskEditorExtension extension) {
+		super(manager, taskRepository, taskAttribute, SWT.MULTI, contextService, extension);
+		//this.taskRepository = taskRepository;
+		//this.manager = manager;
+		//this.taskAttribute = taskAttribute;
+		super.setRenderingEngine(new AbstractRenderingEngine() {
+			@Override
 			public String renderAsHtml(TaskRepository repository, String text, IProgressMonitor monitor)
-					throws CoreException {			
+					throws CoreException {
 				return text;
 			}
 		});
 	}
-	
+
 	@Override
 	public void createControl(Composite parent, FormToolkit toolkit) {
 		super.createControl(parent, toolkit);
 		showBrowser();
-		isInEditMode = false;		
+		isInEditMode = false;
 	}
+
 	public String getValue() {
 		return getAttributeMapper().getValue(getTaskAttribute());
 	}
-	
-	public boolean isInEditMode() { 
+
+	public boolean isInEditMode() {
 		return isInEditMode;
 	}
 
-	public void showPreview()
-	{
+	public void showPreview() {
 		isInEditMode = false;
 		showBrowser();
-	}	
-	public void showEditor()
-	{
-		
+	}
+
+	public void showEditor() {
+
 		super.showEditor();
 		isInEditMode = true;
 	}
 
 /*
+	private TaskDataModel manager;
+	private TaskAttribute taskAttribute;
+	private FormToolkit toolkit;
+	private RichTextAttributeEditor rich;
+
 	private TaskRepository taskRepository;
 	private Browser viewer;
 	private Control editor;
