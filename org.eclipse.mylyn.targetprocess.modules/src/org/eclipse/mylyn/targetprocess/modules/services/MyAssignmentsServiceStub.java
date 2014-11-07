@@ -3,7 +3,7 @@
  * MyAssignmentsServiceStub.java
  *
  * This file was auto-generated from WSDL
- * by the Apache Axis2 version: 1.5  Built on : Apr 30, 2009 (06:07:24 EDT)
+ * by the Apache Axis2 version: 1.5.6  Built on : Aug 30, 2011 (10:00:16 CEST)
  */
         package org.eclipse.mylyn.targetprocess.modules.services;
 
@@ -31,7 +31,7 @@
                 counter = 0;
             }
             counter = counter + 1; 
-            return java.lang.Long.toString(System.currentTimeMillis()) + "_" + counter;
+            return java.lang.Long.toString(java.lang.System.currentTimeMillis()) + "_" + counter;
         }
 
     
@@ -292,7 +292,9 @@
                 throw f;
             }
             } finally {
-                _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                if (_messageContext.getTransportOut() != null) {
+                      _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                }
             }
         }
             
@@ -557,7 +559,9 @@
                 throw f;
             }
             } finally {
-                _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                if (_messageContext.getTransportOut() != null) {
+                      _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                }
             }
         }
             
@@ -822,7 +826,9 @@
                 throw f;
             }
             } finally {
-                _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                if (_messageContext.getTransportOut() != null) {
+                      _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                }
             }
         }
             
@@ -1087,7 +1093,9 @@
                 throw f;
             }
             } finally {
-                _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                if (_messageContext.getTransportOut() != null) {
+                      _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                }
             }
         }
             
@@ -1352,7 +1360,9 @@
                 throw f;
             }
             } finally {
-                _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                if (_messageContext.getTransportOut() != null) {
+                      _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                }
             }
         }
             
@@ -1760,6 +1770,50 @@
                                }
                             
 
+                        /**
+                        * field for AssignableType
+                        */
+
+                        
+                                    protected java.lang.String localAssignableType ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localAssignableTypeTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getAssignableType(){
+                               return localAssignableType;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param AssignableType
+                               */
+                               public void setAssignableType(java.lang.String param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localAssignableTypeTracker = true;
+                                       } else {
+                                          localAssignableTypeTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localAssignableType=param;
+                                    
+
+                               }
+                            
+
      /**
      * isReaderMTOMAware
      * @return true if the reader supports MTOM
@@ -2065,6 +2119,40 @@
                                           }
                                     
                                    xmlWriter.writeEndElement();
+                             } if (localAssignableTypeTracker){
+                                    namespace = "http://targetprocess.com";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"AssignableType", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"AssignableType");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("AssignableType");
+                                    }
+                                
+
+                                          if (localAssignableType==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("AssignableType cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localAssignableType);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
                              }
                     xmlWriter.writeEndElement();
                
@@ -2277,6 +2365,15 @@
                                             elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localRoleName));
                                         } else {
                                            throw new org.apache.axis2.databinding.ADBException("RoleName cannot be null!!");
+                                        }
+                                    } if (localAssignableTypeTracker){
+                                      elementList.add(new javax.xml.namespace.QName("http://targetprocess.com",
+                                                                      "AssignableType"));
+                                 
+                                        if (localAssignableType != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localAssignableType));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("AssignableType cannot be null!!");
                                         }
                                     }
 
@@ -2530,6 +2627,24 @@
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setRoleName(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://targetprocess.com","AssignableType").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setAssignableType(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
                                               
                                         reader.next();
@@ -18163,6 +18278,50 @@
                                }
                             
 
+                        /**
+                        * field for GeneralType
+                        */
+
+                        
+                                    protected java.lang.String localGeneralType ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localGeneralTypeTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getGeneralType(){
+                               return localGeneralType;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param GeneralType
+                               */
+                               public void setGeneralType(java.lang.String param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localGeneralTypeTracker = true;
+                                       } else {
+                                          localGeneralTypeTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localGeneralType=param;
+                                    
+
+                               }
+                            
+
      /**
      * isReaderMTOMAware
      * @return true if the reader supports MTOM
@@ -18502,6 +18661,40 @@
                                           }
                                     
                                    xmlWriter.writeEndElement();
+                             } if (localGeneralTypeTracker){
+                                    namespace = "http://targetprocess.com";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"GeneralType", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"GeneralType");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("GeneralType");
+                                    }
+                                
+
+                                          if (localGeneralType==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("GeneralType cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localGeneralType);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
                              }
                     xmlWriter.writeEndElement();
                
@@ -18720,6 +18913,15 @@
                                             elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localGeneralName));
                                         } else {
                                            throw new org.apache.axis2.databinding.ADBException("GeneralName cannot be null!!");
+                                        }
+                                    } if (localGeneralTypeTracker){
+                                      elementList.add(new javax.xml.namespace.QName("http://targetprocess.com",
+                                                                      "GeneralType"));
+                                 
+                                        if (localGeneralType != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localGeneralType));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("GeneralType cannot be null!!");
                                         }
                                     }
 
@@ -19001,6 +19203,24 @@
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setGeneralName(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://targetprocess.com","GeneralType").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setGeneralType(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
                                               
                                         reader.next();
@@ -19434,6 +19654,50 @@
                                        }
                                    
                                             this.localGeneralName=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for GeneralType
+                        */
+
+                        
+                                    protected java.lang.String localGeneralType ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localGeneralTypeTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getGeneralType(){
+                               return localGeneralType;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param GeneralType
+                               */
+                               public void setGeneralType(java.lang.String param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localGeneralTypeTracker = true;
+                                       } else {
+                                          localGeneralTypeTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localGeneralType=param;
                                     
 
                                }
@@ -19904,6 +20168,40 @@
                                           }
                                     
                                    xmlWriter.writeEndElement();
+                             } if (localGeneralTypeTracker){
+                                    namespace = "http://targetprocess.com";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"GeneralType", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"GeneralType");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("GeneralType");
+                                    }
+                                
+
+                                          if (localGeneralType==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("GeneralType cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localGeneralType);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
                              }
                     xmlWriter.writeEndElement();
                
@@ -20152,6 +20450,15 @@
                                             elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localGeneralName));
                                         } else {
                                            throw new org.apache.axis2.databinding.ADBException("GeneralName cannot be null!!");
+                                        }
+                                    } if (localGeneralTypeTracker){
+                                      elementList.add(new javax.xml.namespace.QName("http://targetprocess.com",
+                                                                      "GeneralType"));
+                                 
+                                        if (localGeneralType != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localGeneralType));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("GeneralType cannot be null!!");
                                         }
                                     }
 
@@ -20529,6 +20836,24 @@
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setGeneralName(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://targetprocess.com","GeneralType").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setGeneralType(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
                                               
                                         reader.next();

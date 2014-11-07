@@ -2,23 +2,22 @@
 <feature
       id="TargetProcess"
       label="TargetProcess Connector"
-      version="3.2.3.qualifier">
+      version="3.4.1.qualifier">
 
-   <description url="http://www.example.com/description">
-      TargetProcess Connector
-Integration for TargetProcess agile project management software.
-
-TargetProcess connector allows you to see all your Bugs, Tasks, User Stories and Requests from TargetProcess ToDo list.
-
-You can view and edit your Bugs, Tasks, User Stories and Requests from your ToDo list, attach new files or screenshots, add comments.
+   <description>
+      Targetprocess Connector
+Integration for Targetprocess agile project management software.
+Targetprocess connector allows you to see all your Bugs, Tasks,
+User Stories and Requests from Targetprocess ToDo list.
+You can view and edit your Bugs, Tasks, User Stories and Requests
+from your ToDo list, attach new files or screenshots, add comments.
    </description>
 
-   <copyright url="http://www.example.com/copyright">
-      Copyright (c) 2009, TargetProcess, Inc.
-All rights reserved.
+   <copyright>
+      Copyright (c) 2009, 2014 Targetprocess, Inc. All rights reserved.
    </copyright>
 
-   <license url="http://www.example.com/license">
+   <license url="">
       Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
 are met:
