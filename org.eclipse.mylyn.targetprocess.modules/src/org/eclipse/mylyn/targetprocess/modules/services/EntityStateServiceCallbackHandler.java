@@ -3,7 +3,7 @@
  * EntityStateServiceCallbackHandler.java
  *
  * This file was auto-generated from WSDL
- * by the Apache Axis2 version: 1.5  Built on : Apr 30, 2009 (06:07:24 EDT)
+ * by the Apache Axis2 version: 1.5.6  Built on : Aug 30, 2011 (10:00:16 CEST)
  */
 
     package org.eclipse.mylyn.targetprocess.modules.services;
