@@ -96,8 +96,6 @@ public class TargetProcessClient {
 		TargetProcessCredentials targetProcessCredentials = TargetProcessCredentialsFactory
 				.createTargetProcessCredentials(repository);
 
-		EntityCollector entityCollector = new EntityCollector(serviceFactory, targetProcessCredentials);
-
 		IMyAssignmentsServiceStub myAssigmentService = serviceFactory
 				.getMyAssignmentServiceStub(targetProcessCredentials);
 
@@ -111,6 +109,8 @@ public class TargetProcessClient {
 			AssignableToDoDTO[] assignableSimpleDTOs = myAssignables.getAssignableToDoDTO();
 
 			if (assignableSimpleDTOs != null) {
+				EntityCollector entityCollector = new EntityCollector(serviceFactory, targetProcessCredentials);
+
 				for (AssignableToDoDTO assignableSimpleDTO : assignableSimpleDTOs) {
 					entityCollector.accept(assignableSimpleDTO, myAssignments, repository);
 				}

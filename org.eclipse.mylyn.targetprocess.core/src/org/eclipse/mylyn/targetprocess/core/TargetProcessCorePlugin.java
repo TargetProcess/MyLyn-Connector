@@ -17,15 +17,15 @@ import org.osgi.framework.BundleContext;
 public class TargetProcessCorePlugin extends Plugin {
 
 	public static final String CONNECTOR_KIND = "targetprocess"; //$NON-NLS-1$
-	
+
 	public static final String ID_PLUGIN = "targetprocess plugin";
 
-	private static final String ERROR_INCOMPATIBLE_CONFIGURATION = "Reset TargetProcess repository configuration cache due to format change"; //$NON-NLS-1$;
+	private static final String ERROR_INCOMPATIBLE_CONFIGURATION = "Reset Targetprocess repository configuration cache due to format change"; //$NON-NLS-1$;
 
 	private static final String ERROR_DELETING_CONFIGURATION = "Error removing corrupt repository configuration file."; //$NON-NLS-1$
 
 	public static final String IS_WINDOWS_AUTHENTICATION_KEY = "IsWindowsAuthentication";
-	
+
 	private static TargetProcessCorePlugin INSTANCE;
 
 	private static boolean cacheFileRead = false;
@@ -36,17 +36,15 @@ public class TargetProcessCorePlugin extends Plugin {
 
 	private IServiceFactory serviceFactory;
 
-	public TargetProcessCorePlugin()
-	{
+	public TargetProcessCorePlugin() {
 		super();
 		INSTANCE = this;
 	}
-	
-	public static TargetProcessCorePlugin getDefault()
-	{
+
+	public static TargetProcessCorePlugin getDefault() {
 		return INSTANCE;
 	}
-	
+
 	@Override
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
@@ -68,18 +66,18 @@ public class TargetProcessCorePlugin extends Plugin {
 			}
 		}
 	}
-	
+
 	private static void internalAddConfiguration(RepositoryConfiguration config) {
 		repositoryConfigurations.remove(config.getRepositoryUrl());
-		repositoryConfigurations.put(config.getRepositoryUrl(), config);		
+		repositoryConfigurations.put(config.getRepositoryUrl(), config);
 	}
 
 	public static RepositoryConfiguration getRepositoryConfiguration(String repositoryUrl) {
 		readRepositoryConfigurationFile();
 
 		return repositoryConfigurations.get(repositoryUrl);
-	}	
-	
+	}
+
 	public static synchronized void readRepositoryConfigurationFile() {
 
 		// IPath configFile = getProductConfigurationCachePath();

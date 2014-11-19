@@ -32,7 +32,7 @@ import org.eclipse.mylyn.tasks.core.sync.ISynchronizationSession;
 public class TargetProcessRepositoryConnector extends AbstractRepositoryConnector {
 
 	private final TargetProcessTaskDataHandler taskDataHandler = new TargetProcessTaskDataHandler(this);
-	private static final String CONNECTOR_LABEL = "TargetProcess";
+	private static final String CONNECTOR_LABEL = "Targetprocess";
 	private final TargetProcessTaskAttachmentHandler attachmentHandler = new TargetProcessTaskAttachmentHandler(this);
 
 	@Override
@@ -49,7 +49,6 @@ public class TargetProcessRepositoryConnector extends AbstractRepositoryConnecto
 
 	@Override
 	public String getConnectorKind() {
-		// TODO Auto-generated method stub
 		return TargetProcessCorePlugin.CONNECTOR_KIND;
 	}
 
@@ -72,7 +71,6 @@ public class TargetProcessRepositoryConnector extends AbstractRepositoryConnecto
 	@Override
 	public TaskData getTaskData(TaskRepository taskRepository, String taskId, IProgressMonitor monitor)
 			throws CoreException {
-		// TODO Auto-generated method stub
 		return taskDataHandler.getTaskData(taskRepository, taskId, monitor);
 	}
 
@@ -97,7 +95,7 @@ public class TargetProcessRepositoryConnector extends AbstractRepositoryConnecto
 
 			@Override
 			public String getTaskKey() {
-				TaskAttribute attribute = getTaskData().getRoot().getAttribute(TargetProcessAttribute.ID.getKey());
+				TaskAttribute attribute = getAttribute(TargetProcessAttribute.ID);
 				if (attribute != null) {
 					return attribute.getValue();
 				}
@@ -106,14 +104,13 @@ public class TargetProcessRepositoryConnector extends AbstractRepositoryConnecto
 
 			@Override
 			public PriorityLevel getPriorityLevel() {
-				TaskAttribute attribute = getTaskData().getRoot()
-						.getAttribute(TargetProcessAttribute.Priority.getKey());
-				TaskRepository taskRepository = getTaskData().getAttributeMapper().getTaskRepository();
-
-				AuthenticationCredentials credentials = taskRepository.getCredentials(AuthenticationType.REPOSITORY);
+				TaskAttribute attribute = getAttribute(TargetProcessAttribute.Priority);
 
 				if (attribute != null) {
-					IServiceFactory serviceFactory = TargetProcessCorePlugin.getDefault().getServiceFactory();
+					TaskRepository taskRepository = getTaskData().getAttributeMapper().getTaskRepository();
+					AuthenticationCredentials credentials = taskRepository
+							.getCredentials(AuthenticationType.REPOSITORY);
+
 					TargetProcessCredentials targetProcessCredentials = null;
 					try {
 						targetProcessCredentials = new TargetProcessCredentials(
@@ -126,6 +123,7 @@ public class TargetProcessRepositoryConnector extends AbstractRepositoryConnecto
 						e.printStackTrace();
 					}
 
+					IServiceFactory serviceFactory = TargetProcessCorePlugin.getDefault().getServiceFactory();
 					try {
 						return new PriorityConverter(serviceFactory.getPriorityServiceStub(targetProcessCredentials),
 								taskData.getRepositoryUrl()).getMylynPriorityFromTaskData(taskData);
@@ -140,12 +138,15 @@ public class TargetProcessRepositoryConnector extends AbstractRepositoryConnecto
 			public String getTaskUrl() {
 				return taskData.getRepositoryUrl();
 			}
+
+			private TaskAttribute getAttribute(TargetProcessAttribute attribute) {
+				return getTaskData().getRoot().getAttribute(attribute.getKey());
+			}
 		};
 	}
 
 	@Override
 	public String getTaskUrl(String repositoryUrl, String taskId) {
-
 		return null;
 	}
 
@@ -191,7 +192,6 @@ public class TargetProcessRepositoryConnector extends AbstractRepositoryConnecto
 	public void updateRepositoryConfiguration(TaskRepository taskRepository, IProgressMonitor monitor)
 			throws CoreException {
 		// TODO Auto-generated method stub
-
 	}
 
 	@Override
@@ -211,7 +211,6 @@ public class TargetProcessRepositoryConnector extends AbstractRepositoryConnecto
 	}
 
 	public TargetProcessClientManager getClientManager() {
-		// TODO Auto-generated method stub
 		return new TargetProcessClientManager();
 	}
 
