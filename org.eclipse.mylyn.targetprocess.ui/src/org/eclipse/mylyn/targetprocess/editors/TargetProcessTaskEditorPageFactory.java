@@ -8,8 +8,7 @@ import org.eclipse.mylyn.tasks.ui.editors.TaskEditorInput;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.forms.editor.IFormPage;
 
-public class TargetProcessTaskEditorPageFactory extends
-		AbstractTaskEditorPageFactory {
+public class TargetProcessTaskEditorPageFactory extends AbstractTaskEditorPageFactory {
 
 	@Override
 	public boolean canCreatePageFor(TaskEditorInput input) {
@@ -22,7 +21,6 @@ public class TargetProcessTaskEditorPageFactory extends
 
 	@Override
 	public IFormPage createPage(TaskEditor parentEditor) {
-		// TODO Auto-generated method stub
 		return new TargetProcessTaskEditorPage(parentEditor);
 	}
 
@@ -34,8 +32,7 @@ public class TargetProcessTaskEditorPageFactory extends
 
 	@Override
 	public String getPageText() {
-		// TODO Auto-generated method stub
-		return "TargetProcess";
+		return "Targetprocess";
 	}
 	
 	@Override
