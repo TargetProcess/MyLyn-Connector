@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="TargetProcess"
-      label="TargetProcess Connector"
-      version="3.4.1.qualifier">
+      id="Targetprocess"
+      label="Targetprocess Connector"
+      version="3.4.3.qualifier"
+      plugin="org.eclipse.mylyn.targetprocess.ui">
 
    <description>
       Targetprocess Connector
@@ -27,7 +28,7 @@ Redistributions in binary form must reproduce the above copyright
 notice, this list of conditions and the following disclaimer
 in the documentation and/or other materials provided with the
 distribution.
-Neither the name of the TargetProcess nor the names of its contributors
+Neither the name of the Targetprocess nor the names of its contributors
 may be used to endorse or promote products derived from this
 software without specific prior written permission.
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
