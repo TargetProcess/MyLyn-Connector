@@ -2,7 +2,7 @@
 <feature
       id="Targetprocess"
       label="Targetprocess Connector"
-      version="3.4.3.qualifier"
+      version="3.6.0.qualifier"
       plugin="org.eclipse.mylyn.targetprocess.ui">
 
    <description>
@@ -15,7 +15,7 @@ from your ToDo list, attach new files or screenshots, add comments.
    </description>
 
    <copyright>
-      Copyright (c) 2009, 2014 Targetprocess, Inc. All rights reserved.
+      Copyright (c) 2009, 2015 Targetprocess, Inc. All rights reserved.
    </copyright>
 
    <license url="">
