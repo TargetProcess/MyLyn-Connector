@@ -45,35 +45,51 @@
 
         
            /**
-            * auto generated Axis2 call back method for getByID method
-            * override this method for handling normal response from getByID operation
+            * auto generated Axis2 call back method for create method
+            * override this method for handling normal response from create operation
             */
-           public void receiveResultgetByID(
-                    org.eclipse.mylyn.targetprocess.modules.services.GeneralUserServiceStub.GetByIDResponse result
+           public void receiveResultcreate(
+                    org.eclipse.mylyn.targetprocess.modules.services.GeneralUserServiceStub.CreateResponse result
                         ) {
            }
 
           /**
            * auto generated Axis2 Error handler
-           * override this method for handling error response from getByID operation
+           * override this method for handling error response from create operation
            */
-            public void receiveErrorgetByID(java.lang.Exception e) {
+            public void receiveErrorcreate(java.lang.Exception e) {
             }
                 
            /**
-            * auto generated Axis2 call back method for updatePartial method
-            * override this method for handling normal response from updatePartial operation
+            * auto generated Axis2 call back method for delete method
+            * override this method for handling normal response from delete operation
             */
-           public void receiveResultupdatePartial(
-                    org.eclipse.mylyn.targetprocess.modules.services.GeneralUserServiceStub.UpdatePartialResponse result
+           public void receiveResultdelete(
+                    org.eclipse.mylyn.targetprocess.modules.services.GeneralUserServiceStub.DeleteResponse result
                         ) {
            }
 
           /**
            * auto generated Axis2 Error handler
-           * override this method for handling error response from updatePartial operation
+           * override this method for handling error response from delete operation
            */
-            public void receiveErrorupdatePartial(java.lang.Exception e) {
+            public void receiveErrordelete(java.lang.Exception e) {
+            }
+                
+           /**
+            * auto generated Axis2 call back method for retrieve method
+            * override this method for handling normal response from retrieve operation
+            */
+           public void receiveResultretrieve(
+                    org.eclipse.mylyn.targetprocess.modules.services.GeneralUserServiceStub.RetrieveResponse result
+                        ) {
+           }
+
+          /**
+           * auto generated Axis2 Error handler
+           * override this method for handling error response from retrieve operation
+           */
+            public void receiveErrorretrieve(java.lang.Exception e) {
             }
                 
            /**
@@ -109,67 +125,51 @@
             }
                 
            /**
-            * auto generated Axis2 call back method for retrieveCount method
-            * override this method for handling normal response from retrieveCount operation
+            * auto generated Axis2 call back method for getIDs method
+            * override this method for handling normal response from getIDs operation
             */
-           public void receiveResultretrieveCount(
-                    org.eclipse.mylyn.targetprocess.modules.services.GeneralUserServiceStub.RetrieveCountResponse result
+           public void receiveResultgetIDs(
+                    org.eclipse.mylyn.targetprocess.modules.services.GeneralUserServiceStub.GetIDsResponse result
                         ) {
            }
 
           /**
            * auto generated Axis2 Error handler
-           * override this method for handling error response from retrieveCount operation
+           * override this method for handling error response from getIDs operation
            */
-            public void receiveErrorretrieveCount(java.lang.Exception e) {
+            public void receiveErrorgetIDs(java.lang.Exception e) {
             }
                 
            /**
-            * auto generated Axis2 call back method for delete method
-            * override this method for handling normal response from delete operation
+            * auto generated Axis2 call back method for getByID method
+            * override this method for handling normal response from getByID operation
             */
-           public void receiveResultdelete(
-                    org.eclipse.mylyn.targetprocess.modules.services.GeneralUserServiceStub.DeleteResponse result
+           public void receiveResultgetByID(
+                    org.eclipse.mylyn.targetprocess.modules.services.GeneralUserServiceStub.GetByIDResponse result
                         ) {
            }
 
           /**
            * auto generated Axis2 Error handler
-           * override this method for handling error response from delete operation
+           * override this method for handling error response from getByID operation
            */
-            public void receiveErrordelete(java.lang.Exception e) {
+            public void receiveErrorgetByID(java.lang.Exception e) {
             }
                 
            /**
-            * auto generated Axis2 call back method for create method
-            * override this method for handling normal response from create operation
+            * auto generated Axis2 call back method for updatePartial method
+            * override this method for handling normal response from updatePartial operation
             */
-           public void receiveResultcreate(
-                    org.eclipse.mylyn.targetprocess.modules.services.GeneralUserServiceStub.CreateResponse result
+           public void receiveResultupdatePartial(
+                    org.eclipse.mylyn.targetprocess.modules.services.GeneralUserServiceStub.UpdatePartialResponse result
                         ) {
            }
 
           /**
            * auto generated Axis2 Error handler
-           * override this method for handling error response from create operation
+           * override this method for handling error response from updatePartial operation
            */
-            public void receiveErrorcreate(java.lang.Exception e) {
-            }
-                
-           /**
-            * auto generated Axis2 call back method for retrieve method
-            * override this method for handling normal response from retrieve operation
-            */
-           public void receiveResultretrieve(
-                    org.eclipse.mylyn.targetprocess.modules.services.GeneralUserServiceStub.RetrieveResponse result
-                        ) {
-           }
-
-          /**
-           * auto generated Axis2 Error handler
-           * override this method for handling error response from retrieve operation
-           */
-            public void receiveErrorretrieve(java.lang.Exception e) {
+            public void receiveErrorupdatePartial(java.lang.Exception e) {
             }
                 
            /**
@@ -189,19 +189,19 @@
             }
                 
            /**
-            * auto generated Axis2 call back method for getIDs method
-            * override this method for handling normal response from getIDs operation
+            * auto generated Axis2 call back method for retrieveCount method
+            * override this method for handling normal response from retrieveCount operation
             */
-           public void receiveResultgetIDs(
-                    org.eclipse.mylyn.targetprocess.modules.services.GeneralUserServiceStub.GetIDsResponse result
+           public void receiveResultretrieveCount(
+                    org.eclipse.mylyn.targetprocess.modules.services.GeneralUserServiceStub.RetrieveCountResponse result
                         ) {
            }
 
           /**
            * auto generated Axis2 Error handler
-           * override this method for handling error response from getIDs operation
+           * override this method for handling error response from retrieveCount operation
            */
-            public void receiveErrorgetIDs(java.lang.Exception e) {
+            public void receiveErrorretrieveCount(java.lang.Exception e) {
             }
                 
 

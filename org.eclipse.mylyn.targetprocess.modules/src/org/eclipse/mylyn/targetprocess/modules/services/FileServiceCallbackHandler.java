@@ -61,35 +61,19 @@
             }
                 
            /**
-            * auto generated Axis2 call back method for appendChunk method
-            * override this method for handling normal response from appendChunk operation
+            * auto generated Axis2 call back method for ping method
+            * override this method for handling normal response from ping operation
             */
-           public void receiveResultappendChunk(
-                    org.eclipse.mylyn.targetprocess.modules.services.FileServiceStub.AppendChunkResponse result
+           public void receiveResultping(
+                    org.eclipse.mylyn.targetprocess.modules.services.FileServiceStub.PingResponse result
                         ) {
            }
 
           /**
            * auto generated Axis2 Error handler
-           * override this method for handling error response from appendChunk operation
+           * override this method for handling error response from ping operation
            */
-            public void receiveErrorappendChunk(java.lang.Exception e) {
-            }
-                
-           /**
-            * auto generated Axis2 call back method for getFileSize method
-            * override this method for handling normal response from getFileSize operation
-            */
-           public void receiveResultgetFileSize(
-                    org.eclipse.mylyn.targetprocess.modules.services.FileServiceStub.GetFileSizeResponse result
-                        ) {
-           }
-
-          /**
-           * auto generated Axis2 Error handler
-           * override this method for handling error response from getFileSize operation
-           */
-            public void receiveErrorgetFileSize(java.lang.Exception e) {
+            public void receiveErrorping(java.lang.Exception e) {
             }
                 
            /**
@@ -125,19 +109,35 @@
             }
                 
            /**
-            * auto generated Axis2 call back method for ping method
-            * override this method for handling normal response from ping operation
+            * auto generated Axis2 call back method for getFileSize method
+            * override this method for handling normal response from getFileSize operation
             */
-           public void receiveResultping(
-                    org.eclipse.mylyn.targetprocess.modules.services.FileServiceStub.PingResponse result
+           public void receiveResultgetFileSize(
+                    org.eclipse.mylyn.targetprocess.modules.services.FileServiceStub.GetFileSizeResponse result
                         ) {
            }
 
           /**
            * auto generated Axis2 Error handler
-           * override this method for handling error response from ping operation
+           * override this method for handling error response from getFileSize operation
            */
-            public void receiveErrorping(java.lang.Exception e) {
+            public void receiveErrorgetFileSize(java.lang.Exception e) {
+            }
+                
+           /**
+            * auto generated Axis2 call back method for appendChunk method
+            * override this method for handling normal response from appendChunk operation
+            */
+           public void receiveResultappendChunk(
+                    org.eclipse.mylyn.targetprocess.modules.services.FileServiceStub.AppendChunkResponse result
+                        ) {
+           }
+
+          /**
+           * auto generated Axis2 Error handler
+           * override this method for handling error response from appendChunk operation
+           */
+            public void receiveErrorappendChunk(java.lang.Exception e) {
             }
                 
 
