@@ -8,7 +8,6 @@ import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.wizard.IWizard;
 import org.eclipse.mylyn.targetprocess.core.TargetProcessCorePlugin;
 import org.eclipse.mylyn.targetprocess.core.TargetProcessEntityKind;
-import org.eclipse.mylyn.targetprocess.core.entityperformer.EntityPerformerFactory;
 import org.eclipse.mylyn.targetprocess.ui.TargetProcessImages;
 import org.eclipse.mylyn.tasks.core.IRepositoryQuery;
 import org.eclipse.mylyn.tasks.core.ITask;
@@ -49,7 +48,7 @@ public class TargetProcessConnectorUi extends AbstractRepositoryConnectorUi {
 	public ITaskRepositoryPage getSettingsPage(TaskRepository taskRepository) {
 		return new TargetProcessRepositorySettingsPage(taskRepository);
 	}
-	
+
 	@Override
 	public String getReplyText(TaskRepository taskRepository, ITask task, ITaskComment taskComment, boolean includeTask) {
 		if (taskComment == null) {
@@ -72,24 +71,20 @@ public class TargetProcessConnectorUi extends AbstractRepositoryConnectorUi {
 		/*
 		EntityPerformerFactory performerFactory = new EntityPerformerFactory();
 		performerFactory.createPerformer(task);
-		
-		if(task.getTaskKind().equals(TargetProcessEntityKind.BUG.getName()))
-		{
+
+		if(task.getTaskKind().equals(TargetProcessEntityKind.BUG.getName())) {
 			return "Bug";
-		}
-		else if(task.getTaskKind().equals(TargetProcessEntityKind.REQUEST.toString())){
+		} else if(task.getTaskKind().equals(TargetProcessEntityKind.REQUEST.toString())) {
 			return "Request";
-		}
-		else if(task.getTaskKind().equals(TargetProcessEntityKind.TASK.toString())){
+		} else if(task.getTaskKind().equals(TargetProcessEntityKind.TASK.toString())) {
 			return "Task";
-		
-		}
-		else if(task.getTaskKind().equals(TargetProcessEntityKind.USERSTORY.toString())){
+		} else if(task.getTaskKind().equals(TargetProcessEntityKind.USERSTORY.toString())) {
 			return "User Story";
-		
-		}	*/
-		return TargetProcessEntityKind.parseFromString(task.getTaskKind()).getReadableName();		
+		}
+		*/
+		return TargetProcessEntityKind.parseFromString(task.getTaskKind()).getReadableName();
 	}
+
 	@Override
 	public List<LegendElement> getLegendElements() {
 		List<LegendElement> legendItems = new ArrayList<LegendElement>();

@@ -5,6 +5,7 @@ import java.util.HashSet;
 import java.util.List;
 
 import org.apache.commons.httpclient.URI;
+import org.apache.commons.lang.StringUtils;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
@@ -181,15 +182,12 @@ public class TargetProcessRepositorySettingsPage extends AbstractRepositorySetti
 	}
 
 	private String credentialsComplete() {
-		if (isMissingCredentials()) {
-			return Messages.AbstractRepositorySettingsPage_Enter_a_user_id_Message0;
-		}
-		return null;
+		return isMissingCredentials() ? Messages.AbstractRepositorySettingsPage_Enter_a_user_id_Message0 : null;
 	}
 
 	protected boolean isMissingCredentials() {
-		return targetProcessLoginEditor.getStringValue().trim().equals("") //$NON-NLS-1$
-				|| targetProcessPasswordEditor.getStringValue().trim().equals(""); //$NON-NLS-1$
+		return StringUtils.isBlank(targetProcessLoginEditor.getStringValue())
+				|| StringUtils.isBlank(targetProcessPasswordEditor.getStringValue());
 	}
 
 	@Override
@@ -219,7 +217,7 @@ public class TargetProcessRepositorySettingsPage extends AbstractRepositorySetti
 	}
 
 	private boolean validateField(TargetProcessFieldEditor stringFieldEditor, boolean showErrorMessage) {
-		if (stringFieldEditor.getStringValue().trim() == "") {
+		if (StringUtils.isBlank(stringFieldEditor.getStringValue())) {
 			if (showErrorMessage) {
 				stringFieldEditor.showErrorMessage();
 			}

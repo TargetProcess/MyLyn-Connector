@@ -1,5 +1,6 @@
 package org.eclipse.mylyn.targetprocess.ui.taskslist;
 
+import org.apache.commons.lang.StringUtils;
 import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.preference.StringFieldEditor;
 import org.eclipse.jface.wizard.IWizardPage;
@@ -26,14 +27,14 @@ public class TargetProcessQueryWizardPage extends AbstractRepositoryQueryPage {
 
 	private StringFieldEditor queryTitleEditor;
 
-	private TaskRepository repository;
+	// private TaskRepository repository;
 
 	public TargetProcessQueryWizardPage(TaskRepository repository) {
 		super(TITLE, repository);
 		setTitle(TITLE);
 		setDescription(DESCRIPTION);
 		setImageDescriptor(TasksUiImages.BANNER_REPOSITORY);
-		this.repository = repository;
+		// this.repository = repository;
 	}
 
 	@Override
@@ -101,8 +102,9 @@ public class TargetProcessQueryWizardPage extends AbstractRepositoryQueryPage {
 
 	@Override
 	public void applyTo(IRepositoryQuery query) {
-		if (getQueryTitle().trim().length() > 0)
+		if (StringUtils.isNotBlank(getQueryTitle())) {
 			query.setSummary(getQueryTitle());
+		}
 	}
 
 	@Override

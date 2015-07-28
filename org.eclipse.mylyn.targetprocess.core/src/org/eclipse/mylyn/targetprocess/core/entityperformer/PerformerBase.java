@@ -10,6 +10,7 @@ import java.util.HashMap;
 import java.util.Set;
 
 import org.apache.commons.lang.StringEscapeUtils;
+import org.apache.commons.lang.StringUtils;
 import org.eclipse.mylyn.targetprocess.core.EntityStateManager;
 import org.eclipse.mylyn.targetprocess.core.TargetProcessAttachmentMapper;
 import org.eclipse.mylyn.targetprocess.core.TargetProcessAttribute;
@@ -171,15 +172,12 @@ public abstract class PerformerBase implements IPerformer {
 		if (entityStates.getEntityStateDTO() != null) {
 			MyAssignmentsServiceStub.EntityStateDTO currentState = findEntity(entityStateID,
 					entityStates.getEntityStateDTO());
-			if (currentState != null) {
-				if (currentState.getNextStates() != null && currentState.getNextStates().trim().length() > 0) {
-
-					String[] ids = currentState.getNextStates().split(",");
-					for (String stringId : ids) {
-						MyAssignmentsServiceStub.EntityStateDTO nextState = findEntity(Integer.parseInt(stringId),
-								entityStates.getEntityStateDTO());
-						stateAttribute.putOption(stringId, nextState.getName());
-					}
+			if (currentState != null && StringUtils.isNotBlank(currentState.getNextStates())) {
+				String[] ids = currentState.getNextStates().split(",");
+				for (String stringId : ids) {
+					MyAssignmentsServiceStub.EntityStateDTO nextState = findEntity(Integer.parseInt(stringId),
+							entityStates.getEntityStateDTO());
+					stateAttribute.putOption(stringId, nextState.getName());
 				}
 			}
 		}
@@ -367,7 +365,7 @@ public abstract class PerformerBase implements IPerformer {
 	}
 
 	protected static boolean stringIsNullOrEmpty(String value) {
-		return value == null || value.trim().length() == 0;
+		return StringUtils.isBlank(value);
 	}
 
 	protected String getDescriptionAttributeValue(TaskData taskData) {
