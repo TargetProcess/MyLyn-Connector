@@ -2261,6 +2261,50 @@
                             
 
                         /**
+                        * field for Locale
+                        */
+
+                        
+                                    protected java.lang.String localLocale ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localLocaleTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getLocale(){
+                               return localLocale;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Locale
+                               */
+                               public void setLocale(java.lang.String param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localLocaleTracker = true;
+                                       } else {
+                                          localLocaleTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localLocale=param;
+                                    
+
+                               }
+                            
+
+                        /**
                         * field for RoleID
                         */
 
@@ -2329,6 +2373,110 @@
                                        }
                                    
                                             this.localDefaultRoleName=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for LastLoginDate
+                        */
+
+                        
+                                    protected java.util.Calendar localLastLoginDate ;
+                                
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.util.Calendar
+                           */
+                           public  java.util.Calendar getLastLoginDate(){
+                               return localLastLoginDate;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param LastLoginDate
+                               */
+                               public void setLastLoginDate(java.util.Calendar param){
+                            
+                                            this.localLastLoginDate=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for DefaultRoleID
+                        */
+
+                        
+                                    protected int localDefaultRoleID ;
+                                
+
+                           /**
+                           * Auto generated getter method
+                           * @return int
+                           */
+                           public  int getDefaultRoleID(){
+                               return localDefaultRoleID;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param DefaultRoleID
+                               */
+                               public void setDefaultRoleID(int param){
+                            
+                                            this.localDefaultRoleID=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for RoleName
+                        */
+
+                        
+                                    protected java.lang.String localRoleName ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localRoleNameTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getRoleName(){
+                               return localRoleName;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param RoleName
+                               */
+                               public void setRoleName(java.lang.String param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localRoleNameTracker = true;
+                                       } else {
+                                          localRoleNameTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localRoleName=param;
                                     
 
                                }
@@ -3105,7 +3253,41 @@
                                                }
                                     
                                    xmlWriter.writeEndElement();
-                             
+                              if (localLocaleTracker){
+                                    namespace = "http://targetprocess.com";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"Locale", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"Locale");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("Locale");
+                                    }
+                                
+
+                                          if (localLocale==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("Locale cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localLocale);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             }
                                     namespace = "http://targetprocess.com";
                                     if (! namespace.equals("")) {
                                         prefix = xmlWriter.getPrefix(namespace);
@@ -3164,6 +3346,103 @@
 
                                         
                                                    xmlWriter.writeCharacters(localDefaultRoleName);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             }
+                                    namespace = "http://targetprocess.com";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"LastLoginDate", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"LastLoginDate");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("LastLoginDate");
+                                    }
+                                
+
+                                          if (localLastLoginDate==null){
+                                              // write the nil attribute
+                                              
+                                                     writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localLastLoginDate));
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             
+                                    namespace = "http://targetprocess.com";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"DefaultRoleID", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"DefaultRoleID");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("DefaultRoleID");
+                                    }
+                                
+                                               if (localDefaultRoleID==java.lang.Integer.MIN_VALUE) {
+                                           
+                                                         writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
+                                                      
+                                               } else {
+                                                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localDefaultRoleID));
+                                               }
+                                    
+                                   xmlWriter.writeEndElement();
+                              if (localRoleNameTracker){
+                                    namespace = "http://targetprocess.com";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"RoleName", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"RoleName");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("RoleName");
+                                    }
+                                
+
+                                          if (localRoleName==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("RoleName cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localRoleName);
                                             
                                           }
                                     
@@ -3480,7 +3759,16 @@
                                  
                                 elementList.add(
                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localIsObserver));
-                            
+                             if (localLocaleTracker){
+                                      elementList.add(new javax.xml.namespace.QName("http://targetprocess.com",
+                                                                      "Locale"));
+                                 
+                                        if (localLocale != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localLocale));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("Locale cannot be null!!");
+                                        }
+                                    }
                                       elementList.add(new javax.xml.namespace.QName("http://targetprocess.com",
                                                                       "RoleID"));
                                  
@@ -3494,6 +3782,27 @@
                                             elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localDefaultRoleName));
                                         } else {
                                            throw new org.apache.axis2.databinding.ADBException("DefaultRoleName cannot be null!!");
+                                        }
+                                    }
+                                      elementList.add(new javax.xml.namespace.QName("http://targetprocess.com",
+                                                                      "LastLoginDate"));
+                                 
+                                         elementList.add(localLastLoginDate==null?null:
+                                         org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localLastLoginDate));
+                                    
+                                      elementList.add(new javax.xml.namespace.QName("http://targetprocess.com",
+                                                                      "DefaultRoleID"));
+                                 
+                                elementList.add(
+                                   org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localDefaultRoleID));
+                             if (localRoleNameTracker){
+                                      elementList.add(new javax.xml.namespace.QName("http://targetprocess.com",
+                                                                      "RoleName"));
+                                 
+                                        if (localRoleName != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localRoleName));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("RoleName cannot be null!!");
                                         }
                                     }
 
@@ -4100,6 +4409,24 @@
                                     
                                     while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
                                 
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://targetprocess.com","Locale").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setLocale(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
                                     if (reader.isStartElement() && new javax.xml.namespace.QName("http://targetprocess.com","RoleID").equals(reader.getName())){
                                 
                                        nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
@@ -4135,6 +4462,82 @@
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setDefaultRoleName(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://targetprocess.com","LastLoginDate").equals(reader.getName())){
+                                
+                                       nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                       if (!"true".equals(nillableValue) && !"1".equals(nillableValue)){
+                                    
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setLastLoginDate(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToDateTime(content));
+                                            
+                                       } else {
+                                           
+                                           
+                                           reader.getElementText(); // throw away text nodes if any.
+                                       }
+                                      
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                else{
+                                    // A start element we are not expecting indicates an invalid parameter was passed
+                                    throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getLocalName());
+                                }
+                            
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://targetprocess.com","DefaultRoleID").equals(reader.getName())){
+                                
+                                       nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                       if (!"true".equals(nillableValue) && !"1".equals(nillableValue)){
+                                    
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setDefaultRoleID(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToInt(content));
+                                            
+                                       } else {
+                                           
+                                           
+                                                   object.setDefaultRoleID(java.lang.Integer.MIN_VALUE);
+                                               
+                                           reader.getElementText(); // throw away text nodes if any.
+                                       }
+                                      
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                else{
+                                    // A start element we are not expecting indicates an invalid parameter was passed
+                                    throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getLocalName());
+                                }
+                            
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://targetprocess.com","RoleName").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setRoleName(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
                                               
                                         reader.next();
@@ -14421,6 +14824,80 @@
                                }
                             
 
+                        /**
+                        * field for CkFinderFileType
+                        */
+
+                        
+                                    protected CkFinderFileTypeEnum localCkFinderFileType ;
+                                
+
+                           /**
+                           * Auto generated getter method
+                           * @return CkFinderFileTypeEnum
+                           */
+                           public  CkFinderFileTypeEnum getCkFinderFileType(){
+                               return localCkFinderFileType;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param CkFinderFileType
+                               */
+                               public void setCkFinderFileType(CkFinderFileTypeEnum param){
+                            
+                                            this.localCkFinderFileType=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for SubFolder
+                        */
+
+                        
+                                    protected java.lang.String localSubFolder ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localSubFolderTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getSubFolder(){
+                               return localSubFolder;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param SubFolder
+                               */
+                               public void setSubFolder(java.lang.String param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localSubFolderTracker = true;
+                                       } else {
+                                          localSubFolderTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localSubFolder=param;
+                                    
+
+                               }
+                            
+
      /**
      * isReaderMTOMAware
      * @return true if the reader supports MTOM
@@ -14921,6 +15398,71 @@
                                     
                                    xmlWriter.writeEndElement();
                              }
+                                    if (localCkFinderFileType==null){
+
+                                            java.lang.String namespace2 = "http://targetprocess.com";
+
+                                        if (! namespace2.equals("")) {
+                                            java.lang.String prefix2 = xmlWriter.getPrefix(namespace2);
+
+                                            if (prefix2 == null) {
+                                                prefix2 = generatePrefix(namespace2);
+
+                                                xmlWriter.writeStartElement(prefix2,"CkFinderFileType", namespace2);
+                                                xmlWriter.writeNamespace(prefix2, namespace2);
+                                                xmlWriter.setPrefix(prefix2, namespace2);
+
+                                            } else {
+                                                xmlWriter.writeStartElement(namespace2,"CkFinderFileType");
+                                            }
+
+                                        } else {
+                                            xmlWriter.writeStartElement("CkFinderFileType");
+                                        }
+
+
+                                       // write the nil attribute
+                                      writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
+                                      xmlWriter.writeEndElement();
+                                    }else{
+                                     localCkFinderFileType.serialize(new javax.xml.namespace.QName("http://targetprocess.com","CkFinderFileType"),
+                                        factory,xmlWriter);
+                                    }
+                                 if (localSubFolderTracker){
+                                    namespace = "http://targetprocess.com";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"SubFolder", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"SubFolder");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("SubFolder");
+                                    }
+                                
+
+                                          if (localSubFolder==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("SubFolder cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localSubFolder);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             }
                     xmlWriter.writeEndElement();
                
 
@@ -15177,6 +15719,22 @@
                                             elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localGeneralType));
                                         } else {
                                            throw new org.apache.axis2.databinding.ADBException("GeneralType cannot be null!!");
+                                        }
+                                    }
+                            elementList.add(new javax.xml.namespace.QName("http://targetprocess.com",
+                                                                      "CkFinderFileType"));
+                            
+                            
+                                    elementList.add(localCkFinderFileType==null?null:
+                                    localCkFinderFileType);
+                                 if (localSubFolderTracker){
+                                      elementList.add(new javax.xml.namespace.QName("http://targetprocess.com",
+                                                                      "SubFolder"));
+                                 
+                                        if (localSubFolder != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localSubFolder));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("SubFolder cannot be null!!");
                                         }
                                     }
 
@@ -15572,6 +16130,49 @@
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setGeneralType(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://targetprocess.com","CkFinderFileType").equals(reader.getName())){
+                                
+                                      nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                      if ("true".equals(nillableValue) || "1".equals(nillableValue)){
+                                          object.setCkFinderFileType(null);
+                                          reader.next();
+                                            
+                                            reader.next();
+                                          
+                                      }else{
+                                    
+                                                object.setCkFinderFileType(CkFinderFileTypeEnum.Factory.parse(reader));
+                                              
+                                        reader.next();
+                                    }
+                              }  // End of if for expected property start element
+                                
+                                else{
+                                    // A start element we are not expecting indicates an invalid parameter was passed
+                                    throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getLocalName());
+                                }
+                            
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://targetprocess.com","SubFolder").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setSubFolder(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
                                               
                                         reader.next();
@@ -16139,6 +16740,80 @@
                                public void setWorkflowID(int param){
                             
                                             this.localWorkflowID=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for ParentEntityStateName
+                        */
+
+                        
+                                    protected java.lang.String localParentEntityStateName ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localParentEntityStateNameTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getParentEntityStateName(){
+                               return localParentEntityStateName;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param ParentEntityStateName
+                               */
+                               public void setParentEntityStateName(java.lang.String param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localParentEntityStateNameTracker = true;
+                                       } else {
+                                          localParentEntityStateNameTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localParentEntityStateName=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for EntityTypeID
+                        */
+
+                        
+                                    protected int localEntityTypeID ;
+                                
+
+                           /**
+                           * Auto generated getter method
+                           * @return int
+                           */
+                           public  int getEntityTypeID(){
+                               return localEntityTypeID;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param EntityTypeID
+                               */
+                               public void setEntityTypeID(int param){
+                            
+                                            this.localEntityTypeID=param;
                                     
 
                                }
@@ -16725,6 +17400,69 @@
                                                }
                                     
                                    xmlWriter.writeEndElement();
+                              if (localParentEntityStateNameTracker){
+                                    namespace = "http://targetprocess.com";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"ParentEntityStateName", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"ParentEntityStateName");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("ParentEntityStateName");
+                                    }
+                                
+
+                                          if (localParentEntityStateName==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("ParentEntityStateName cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localParentEntityStateName);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             }
+                                    namespace = "http://targetprocess.com";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"EntityTypeID", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"EntityTypeID");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("EntityTypeID");
+                                    }
+                                
+                                               if (localEntityTypeID==java.lang.Integer.MIN_VALUE) {
+                                           
+                                                         writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
+                                                      
+                                               } else {
+                                                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localEntityTypeID));
+                                               }
+                                    
+                                   xmlWriter.writeEndElement();
                              
                     xmlWriter.writeEndElement();
                
@@ -17001,6 +17739,21 @@
                                  
                                 elementList.add(
                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localWorkflowID));
+                             if (localParentEntityStateNameTracker){
+                                      elementList.add(new javax.xml.namespace.QName("http://targetprocess.com",
+                                                                      "ParentEntityStateName"));
+                                 
+                                        if (localParentEntityStateName != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localParentEntityStateName));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("ParentEntityStateName cannot be null!!");
+                                        }
+                                    }
+                                      elementList.add(new javax.xml.namespace.QName("http://targetprocess.com",
+                                                                      "EntityTypeID"));
+                                 
+                                elementList.add(
+                                   org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localEntityTypeID));
                             
 
                 return new org.apache.axis2.databinding.utils.reader.ADBXMLStreamReaderImpl(qName, elementList.toArray(), attribList.toArray());
@@ -17465,6 +18218,54 @@
                                            
                                            
                                                    object.setWorkflowID(java.lang.Integer.MIN_VALUE);
+                                               
+                                           reader.getElementText(); // throw away text nodes if any.
+                                       }
+                                      
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                else{
+                                    // A start element we are not expecting indicates an invalid parameter was passed
+                                    throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getLocalName());
+                                }
+                            
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://targetprocess.com","ParentEntityStateName").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setParentEntityStateName(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://targetprocess.com","EntityTypeID").equals(reader.getName())){
+                                
+                                       nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                       if (!"true".equals(nillableValue) && !"1".equals(nillableValue)){
+                                    
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setEntityTypeID(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToInt(content));
+                                            
+                                       } else {
+                                           
+                                           
+                                                   object.setEntityTypeID(java.lang.Integer.MIN_VALUE);
                                                
                                            reader.getElementText(); // throw away text nodes if any.
                                        }
@@ -17955,6 +18756,469 @@
                                 // A start element we are not expecting indicates a trailing invalid property
                                 throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getLocalName());
                             
+
+
+
+            } catch (javax.xml.stream.XMLStreamException e) {
+                throw new java.lang.Exception(e);
+            }
+
+            return object;
+        }
+
+        }//end of factory class
+
+        
+
+        }
+           
+          
+        public static class CkFinderFileTypeEnum
+        implements org.apache.axis2.databinding.ADBBean{
+        
+                public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName(
+                "http://targetprocess.com",
+                "CkFinderFileTypeEnum",
+                "ns1");
+
+            
+
+        private static java.lang.String generatePrefix(java.lang.String namespace) {
+            if(namespace.equals("http://targetprocess.com")){
+                return "ns1";
+            }
+            return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
+        }
+
+        
+
+                        /**
+                        * field for CkFinderFileTypeEnum
+                        */
+
+                        
+                                    protected java.lang.String localCkFinderFileTypeEnum ;
+                                
+                            private static java.util.HashMap _table_ = new java.util.HashMap();
+
+                            // Constructor
+                            
+                                protected CkFinderFileTypeEnum(java.lang.String value, boolean isRegisterValue) {
+                                    localCkFinderFileTypeEnum = value;
+                                    if (isRegisterValue){
+                                        
+                                               _table_.put(localCkFinderFileTypeEnum, this);
+                                           
+                                    }
+
+                                }
+                            
+                                    public static final java.lang.String _None =
+                                        org.apache.axis2.databinding.utils.ConverterUtil.convertToString("None");
+                                
+                                    public static final java.lang.String _Files =
+                                        org.apache.axis2.databinding.utils.ConverterUtil.convertToString("Files");
+                                
+                                    public static final java.lang.String _Images =
+                                        org.apache.axis2.databinding.utils.ConverterUtil.convertToString("Images");
+                                
+                                    public static final java.lang.String _Flash =
+                                        org.apache.axis2.databinding.utils.ConverterUtil.convertToString("Flash");
+                                
+                                public static final CkFinderFileTypeEnum None =
+                                    new CkFinderFileTypeEnum(_None,true);
+                            
+                                public static final CkFinderFileTypeEnum Files =
+                                    new CkFinderFileTypeEnum(_Files,true);
+                            
+                                public static final CkFinderFileTypeEnum Images =
+                                    new CkFinderFileTypeEnum(_Images,true);
+                            
+                                public static final CkFinderFileTypeEnum Flash =
+                                    new CkFinderFileTypeEnum(_Flash,true);
+                            
+
+                                public java.lang.String getValue() { return localCkFinderFileTypeEnum;}
+
+                                public boolean equals(java.lang.Object obj) {return (obj == this);}
+                                public int hashCode() { return toString().hashCode();}
+                                public java.lang.String toString() {
+                                
+                                        return localCkFinderFileTypeEnum.toString();
+                                    
+
+                                }
+
+                        
+
+     /**
+     * isReaderMTOMAware
+     * @return true if the reader supports MTOM
+     */
+   public static boolean isReaderMTOMAware(javax.xml.stream.XMLStreamReader reader) {
+        boolean isReaderMTOMAware = false;
+        
+        try{
+          isReaderMTOMAware = java.lang.Boolean.TRUE.equals(reader.getProperty(org.apache.axiom.om.OMConstants.IS_DATA_HANDLERS_AWARE));
+        }catch(java.lang.IllegalArgumentException e){
+          isReaderMTOMAware = false;
+        }
+        return isReaderMTOMAware;
+   }
+     
+     
+        /**
+        *
+        * @param parentQName
+        * @param factory
+        * @return org.apache.axiom.om.OMElement
+        */
+       public org.apache.axiom.om.OMElement getOMElement (
+               final javax.xml.namespace.QName parentQName,
+               final org.apache.axiom.om.OMFactory factory) throws org.apache.axis2.databinding.ADBException{
+
+
+        
+                org.apache.axiom.om.OMDataSource dataSource =
+                       new org.apache.axis2.databinding.ADBDataSource(this,MY_QNAME){
+
+                 public void serialize(org.apache.axis2.databinding.utils.writer.MTOMAwareXMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
+                       CkFinderFileTypeEnum.this.serialize(MY_QNAME,factory,xmlWriter);
+                 }
+               };
+               return new org.apache.axiom.om.impl.llom.OMSourcedElementImpl(
+               MY_QNAME,factory,dataSource);
+            
+       }
+
+         public void serialize(final javax.xml.namespace.QName parentQName,
+                                       final org.apache.axiom.om.OMFactory factory,
+                                       org.apache.axis2.databinding.utils.writer.MTOMAwareXMLStreamWriter xmlWriter)
+                                throws javax.xml.stream.XMLStreamException, org.apache.axis2.databinding.ADBException{
+                           serialize(parentQName,factory,xmlWriter,false);
+         }
+
+         public void serialize(final javax.xml.namespace.QName parentQName,
+                               final org.apache.axiom.om.OMFactory factory,
+                               org.apache.axis2.databinding.utils.writer.MTOMAwareXMLStreamWriter xmlWriter,
+                               boolean serializeType)
+            throws javax.xml.stream.XMLStreamException, org.apache.axis2.databinding.ADBException{
+            
+                
+                //We can safely assume an element has only one type associated with it
+                
+                            java.lang.String namespace = parentQName.getNamespaceURI();
+                            java.lang.String localName = parentQName.getLocalPart();
+                        
+                            if (! namespace.equals("")) {
+                                java.lang.String prefix = xmlWriter.getPrefix(namespace);
+
+                                if (prefix == null) {
+                                    prefix = generatePrefix(namespace);
+
+                                    xmlWriter.writeStartElement(prefix, localName, namespace);
+                                    xmlWriter.writeNamespace(prefix, namespace);
+                                    xmlWriter.setPrefix(prefix, namespace);
+
+                                } else {
+                                    xmlWriter.writeStartElement(namespace, localName);
+                                }
+
+                            } else {
+                                xmlWriter.writeStartElement(localName);
+                            }
+
+                            // add the type details if this is used in a simple type
+                               if (serializeType){
+                                   java.lang.String namespacePrefix = registerPrefix(xmlWriter,"http://targetprocess.com");
+                                   if ((namespacePrefix != null) && (namespacePrefix.trim().length() > 0)){
+                                       writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","type",
+                                           namespacePrefix+":CkFinderFileTypeEnum",
+                                           xmlWriter);
+                                   } else {
+                                       writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","type",
+                                           "CkFinderFileTypeEnum",
+                                           xmlWriter);
+                                   }
+                               }
+                            
+                                          if (localCkFinderFileTypeEnum==null){
+                                            
+                                                     throw new org.apache.axis2.databinding.ADBException("Value cannot be null !!");
+                                                
+                                         }else{
+                                        
+                                                       xmlWriter.writeCharacters(localCkFinderFileTypeEnum);
+                                            
+                                         }
+                                    
+                            xmlWriter.writeEndElement();
+
+                    
+
+        }
+
+         /**
+          * Util method to write an attribute with the ns prefix
+          */
+          private void writeAttribute(java.lang.String prefix,java.lang.String namespace,java.lang.String attName,
+                                      java.lang.String attValue,javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException{
+              if (xmlWriter.getPrefix(namespace) == null) {
+                       xmlWriter.writeNamespace(prefix, namespace);
+                       xmlWriter.setPrefix(prefix, namespace);
+
+              }
+
+              xmlWriter.writeAttribute(namespace,attName,attValue);
+
+         }
+
+        /**
+          * Util method to write an attribute without the ns prefix
+          */
+          private void writeAttribute(java.lang.String namespace,java.lang.String attName,
+                                      java.lang.String attValue,javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException{
+                if (namespace.equals(""))
+              {
+                  xmlWriter.writeAttribute(attName,attValue);
+              }
+              else
+              {
+                  registerPrefix(xmlWriter, namespace);
+                  xmlWriter.writeAttribute(namespace,attName,attValue);
+              }
+          }
+
+
+           /**
+             * Util method to write an attribute without the ns prefix
+             */
+            private void writeQNameAttribute(java.lang.String namespace, java.lang.String attName,
+                                             javax.xml.namespace.QName qname, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
+
+                java.lang.String attributeNamespace = qname.getNamespaceURI();
+                java.lang.String attributePrefix = xmlWriter.getPrefix(attributeNamespace);
+                if (attributePrefix == null) {
+                    attributePrefix = registerPrefix(xmlWriter, attributeNamespace);
+                }
+                java.lang.String attributeValue;
+                if (attributePrefix.trim().length() > 0) {
+                    attributeValue = attributePrefix + ":" + qname.getLocalPart();
+                } else {
+                    attributeValue = qname.getLocalPart();
+                }
+
+                if (namespace.equals("")) {
+                    xmlWriter.writeAttribute(attName, attributeValue);
+                } else {
+                    registerPrefix(xmlWriter, namespace);
+                    xmlWriter.writeAttribute(namespace, attName, attributeValue);
+                }
+            }
+        /**
+         *  method to handle Qnames
+         */
+
+        private void writeQName(javax.xml.namespace.QName qname,
+                                javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
+            java.lang.String namespaceURI = qname.getNamespaceURI();
+            if (namespaceURI != null) {
+                java.lang.String prefix = xmlWriter.getPrefix(namespaceURI);
+                if (prefix == null) {
+                    prefix = generatePrefix(namespaceURI);
+                    xmlWriter.writeNamespace(prefix, namespaceURI);
+                    xmlWriter.setPrefix(prefix,namespaceURI);
+                }
+
+                if (prefix.trim().length() > 0){
+                    xmlWriter.writeCharacters(prefix + ":" + org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
+                } else {
+                    // i.e this is the default namespace
+                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
+                }
+
+            } else {
+                xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
+            }
+        }
+
+        private void writeQNames(javax.xml.namespace.QName[] qnames,
+                                 javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
+
+            if (qnames != null) {
+                // we have to store this data until last moment since it is not possible to write any
+                // namespace data after writing the charactor data
+                java.lang.StringBuffer stringToWrite = new java.lang.StringBuffer();
+                java.lang.String namespaceURI = null;
+                java.lang.String prefix = null;
+
+                for (int i = 0; i < qnames.length; i++) {
+                    if (i > 0) {
+                        stringToWrite.append(" ");
+                    }
+                    namespaceURI = qnames[i].getNamespaceURI();
+                    if (namespaceURI != null) {
+                        prefix = xmlWriter.getPrefix(namespaceURI);
+                        if ((prefix == null) || (prefix.length() == 0)) {
+                            prefix = generatePrefix(namespaceURI);
+                            xmlWriter.writeNamespace(prefix, namespaceURI);
+                            xmlWriter.setPrefix(prefix,namespaceURI);
+                        }
+
+                        if (prefix.trim().length() > 0){
+                            stringToWrite.append(prefix).append(":").append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
+                        } else {
+                            stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
+                        }
+                    } else {
+                        stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
+                    }
+                }
+                xmlWriter.writeCharacters(stringToWrite.toString());
+            }
+
+        }
+
+
+         /**
+         * Register a namespace prefix
+         */
+         private java.lang.String registerPrefix(javax.xml.stream.XMLStreamWriter xmlWriter, java.lang.String namespace) throws javax.xml.stream.XMLStreamException {
+                java.lang.String prefix = xmlWriter.getPrefix(namespace);
+
+                if (prefix == null) {
+                    prefix = generatePrefix(namespace);
+
+                    while (xmlWriter.getNamespaceContext().getNamespaceURI(prefix) != null) {
+                        prefix = org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
+                    }
+
+                    xmlWriter.writeNamespace(prefix, namespace);
+                    xmlWriter.setPrefix(prefix, namespace);
+                }
+
+                return prefix;
+            }
+
+
+  
+        /**
+        * databinding method to get an XML representation of this object
+        *
+        */
+        public javax.xml.stream.XMLStreamReader getPullParser(javax.xml.namespace.QName qName)
+                    throws org.apache.axis2.databinding.ADBException{
+
+
+        
+                
+                //We can safely assume an element has only one type associated with it
+                 return new org.apache.axis2.databinding.utils.reader.ADBXMLStreamReaderImpl(MY_QNAME,
+                            new java.lang.Object[]{
+                            org.apache.axis2.databinding.utils.reader.ADBXMLStreamReader.ELEMENT_TEXT,
+                            org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localCkFinderFileTypeEnum)
+                            },
+                            null);
+
+        }
+
+  
+
+     /**
+      *  Factory class that keeps the parse method
+      */
+    public static class Factory{
+
+        
+        
+                public static CkFinderFileTypeEnum fromValue(java.lang.String value)
+                      throws java.lang.IllegalArgumentException {
+                    CkFinderFileTypeEnum enumeration = (CkFinderFileTypeEnum)
+                       
+                               _table_.get(value);
+                           
+
+                    if (enumeration==null) throw new java.lang.IllegalArgumentException();
+                    return enumeration;
+                }
+                public static CkFinderFileTypeEnum fromString(java.lang.String value,java.lang.String namespaceURI)
+                      throws java.lang.IllegalArgumentException {
+                    try {
+                       
+                                       return fromValue(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(value));
+                                   
+
+                    } catch (java.lang.Exception e) {
+                        throw new java.lang.IllegalArgumentException();
+                    }
+                }
+
+                public static CkFinderFileTypeEnum fromString(javax.xml.stream.XMLStreamReader xmlStreamReader,
+                                                                    java.lang.String content) {
+                    if (content.indexOf(":") > -1){
+                        java.lang.String prefix = content.substring(0,content.indexOf(":"));
+                        java.lang.String namespaceUri = xmlStreamReader.getNamespaceContext().getNamespaceURI(prefix);
+                        return CkFinderFileTypeEnum.Factory.fromString(content,namespaceUri);
+                    } else {
+                       return CkFinderFileTypeEnum.Factory.fromString(content,"");
+                    }
+                }
+            
+
+        /**
+        * static method to create the object
+        * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
+        *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
+        * Postcondition: If this object is an element, the reader is positioned at its end element
+        *                If this object is a complex type, the reader is positioned at the end element of its outer element
+        */
+        public static CkFinderFileTypeEnum parse(javax.xml.stream.XMLStreamReader reader) throws java.lang.Exception{
+            CkFinderFileTypeEnum object = null;
+                // initialize a hash map to keep values
+                java.util.Map attributeMap = new java.util.HashMap();
+                java.util.List extraAttributeList = new java.util.ArrayList();
+            
+
+            int event;
+            java.lang.String nillableValue = null;
+            java.lang.String prefix ="";
+            java.lang.String namespaceuri ="";
+            try {
+                
+                while (!reader.isStartElement() && !reader.isEndElement())
+                    reader.next();
+
+                
+
+                
+                // Note all attributes that were handled. Used to differ normal attributes
+                // from anyAttributes.
+                java.util.Vector handledAttributes = new java.util.Vector();
+                
+
+                    
+                while(!reader.isEndElement()) {
+                    if (reader.isStartElement()  || reader.hasText()){
+                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                        if (content.indexOf(":") > 0) {
+                                            // this seems to be a Qname so find the namespace and send
+                                            prefix = content.substring(0, content.indexOf(":"));
+                                            namespaceuri = reader.getNamespaceURI(prefix);
+                                            object = CkFinderFileTypeEnum.Factory.fromString(content,namespaceuri);
+                                        } else {
+                                            // this seems to be not a qname send and empty namespace incase of it is
+                                            // check is done in fromString method
+                                            object = CkFinderFileTypeEnum.Factory.fromString(content,"");
+                                        }
+                                        
+                                        
+                             } else {
+                                reader.next();
+                             }  
+                           }  // end of while loop
+                        
 
 
 
@@ -20554,6 +21818,16 @@
                   "EntityStateDTO".equals(typeName)){
                    
                             return  EntityStateDTO.Factory.parse(reader);
+                        
+
+                  }
+
+              
+                  if (
+                  "http://targetprocess.com".equals(namespaceURI) &&
+                  "CkFinderFileTypeEnum".equals(typeName)){
+                   
+                            return  CkFinderFileTypeEnum.Factory.parse(reader);
                         
 
                   }
