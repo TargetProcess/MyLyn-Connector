@@ -41,7 +41,7 @@ public class TargetProcessTaskDataHandler extends AbstractTaskDataHandler {
 		// TODO Auto-generated method stub
 		return true;
 	}
-		
+
 	@Override
 	public RepositoryResponse postTaskData(TaskRepository repository, TaskData taskData,
 			Set<TaskAttribute> changedAttributes, IProgressMonitor monitor) throws CoreException {
@@ -153,6 +153,5 @@ public class TargetProcessTaskDataHandler extends AbstractTaskDataHandler {
 	public void postUpdateAttachment(TaskRepository taskRepository, TaskAttribute taskAttribute, String string,
 			IProgressMonitor monitor) throws CoreException {
 		// TODO Auto-generated method stub
-		
 	}
 }

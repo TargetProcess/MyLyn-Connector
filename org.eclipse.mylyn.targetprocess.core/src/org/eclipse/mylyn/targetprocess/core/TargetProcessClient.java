@@ -8,7 +8,6 @@ import java.net.URL;
 import java.rmi.RemoteException;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.Set;
 
 import javax.activation.DataHandler;
@@ -55,14 +54,15 @@ import org.eclipse.mylyn.tasks.core.data.TaskDataCollector;
 
 public class TargetProcessClient {
 
+	protected static final String USER_AGENT = "TargetProcessConnector"; //$NON-NLS-1$
+	private static final int MAX_RETRIEVED_PER_QUERY = 50;
+
 	private URL repositoryUrl;
 	private final HttpClient httpClient = new HttpClient(WebUtil.getConnectionManager());
 	private RepositoryConfiguration repositoryConfiguration;
 	private AuthenticationCredentials credentials;
 	private IServiceFactory serviceFactory;
 	private boolean isWindowsAuthentication;
-	protected static final String USER_AGENT = "TargetProcessConnector"; //$NON-NLS-1$
-	private static final int MAX_RETRIEVED_PER_QUERY = 50;
 
 	public TargetProcessClient(AbstractWebLocation location, AuthenticationCredentials credentials,
 			IServiceFactory serviceFactory, boolean isWindowsAuthentication) throws MalformedURLException {
@@ -118,7 +118,28 @@ public class TargetProcessClient {
 				entityCollector.exportTo(resultCollector);
 			}
 		}
+	}
 
+	private Set<String> getIdsToRetrieve(Set<String> taskIds) {
+		Set<String> idsToRetrieve = new HashSet<String>();
+		for (String id : taskIds) {
+			idsToRetrieve.add(id);
+			if (idsToRetrieve.size() >= MAX_RETRIEVED_PER_QUERY) {
+				break;
+			}
+		}
+		return idsToRetrieve;
+	}
+
+	private MyAssignmentsToDo getMyAssignment(String taskId, TargetProcessCredentials targetProcessCredentials)
+			throws RemoteException {
+		IMyAssignmentsServiceStub myAssigmentService = serviceFactory
+				.getMyAssignmentServiceStub(targetProcessCredentials);
+
+		GetMyAssignmentById getMyAssignmentById = new GetMyAssignmentById();
+		getMyAssignmentById.setId(Integer.parseInt(taskId));
+
+		return myAssigmentService.getMyAssignmentById(getMyAssignmentById).getGetMyAssignmentByIdResult();
 	}
 
 	public void getTaskData(Set<String> taskIds, TaskDataCollector collector2, TaskAttributeMapper attributeMapper,
@@ -142,35 +163,19 @@ public class TargetProcessClient {
 		while (taskIds.size() > 0) {
 
 			try {
-
-				Set<String> idsToRetrieve = new HashSet<String>();
-				Iterator<String> itr = taskIds.iterator();
-				for (int x = 0; itr.hasNext() && x < MAX_RETRIEVED_PER_QUERY; x++) {
-					idsToRetrieve.add(itr.next());
-				}
+				Set<String> idsToRetrieve = getIdsToRetrieve(taskIds);
 
 				if (idsToRetrieve.size() == 0) {
 					return;
 				}
 
-				itr = idsToRetrieve.iterator();
-				int x = 0;
-				for (; itr.hasNext(); x++) {
-					String taskId = itr.next();
+				for (String taskId : idsToRetrieve) {
 					try {
 						TaskRepository repository = attributeMapper.getTaskRepository();
 						TargetProcessCredentials targetProcessCredentials = TargetProcessCredentialsFactory
 								.createTargetProcessCredentials(repository);
 
-						EntityCollector entityCollector = new EntityCollector(serviceFactory, targetProcessCredentials);
-
-						IMyAssignmentsServiceStub myAssigmentService = serviceFactory
-								.getMyAssignmentServiceStub(targetProcessCredentials);
-
-						GetMyAssignmentById getMyAssignmentById2 = new GetMyAssignmentById();
-						getMyAssignmentById2.setId(Integer.parseInt(taskId));
-						MyAssignmentsToDo result = myAssigmentService.getMyAssignmentById(getMyAssignmentById2)
-								.getGetMyAssignmentByIdResult();
+						MyAssignmentsToDo result = getMyAssignment(taskId, targetProcessCredentials);
 
 						boolean entityNotFound = true;
 						if (result != null) {
@@ -179,6 +184,10 @@ public class TargetProcessClient {
 								AssignableToDoDTO[] assignableToDoDTO = assignableEntities.getAssignableToDoDTO();
 								if (assignableToDoDTO != null && assignableToDoDTO.length > 0) {
 									entityNotFound = false;
+
+									EntityCollector entityCollector = new EntityCollector(serviceFactory,
+											targetProcessCredentials);
+
 									TaskData taskData = entityCollector
 											.accept(assignableToDoDTO[0], result, repository);
 									taskDataMap.put(taskId, taskData);
@@ -229,9 +238,7 @@ public class TargetProcessClient {
 		RepositoryConfigurationFactory configFactory = new RepositoryConfigurationFactory();
 
 		repositoryConfiguration = configFactory.getConfiguration();
-
 		if (repositoryConfiguration != null) {
-
 			repositoryConfiguration.setRepositoryUrl(repositoryUrl.toString());
 			return repositoryConfiguration;
 		}

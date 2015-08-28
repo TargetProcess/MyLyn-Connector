@@ -49,8 +49,7 @@ public class UpdateAttachmentJob extends Job {
 
 	@Override
 	protected IStatus run(IProgressMonitor monitor) {
-		final ITask task;
-		task = editor.getTaskEditorInput().getTask();
+		final ITask task = editor.getTaskEditorInput().getTask();
 
 		if (!task.getConnectorKind().equals(TargetProcessCorePlugin.CONNECTOR_KIND)) {
 			return Status.OK_STATUS;

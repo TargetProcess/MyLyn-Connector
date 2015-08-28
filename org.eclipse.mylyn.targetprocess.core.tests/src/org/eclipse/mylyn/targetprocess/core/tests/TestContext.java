@@ -6,6 +6,7 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
 
+import org.apache.commons.lang.StringUtils;
 import org.eclipse.mylyn.targetprocess.core.entityperformer.EntityPerformerFactory;
 import org.eclipse.mylyn.targetprocess.modules.services.BugServiceStub;
 import org.eclipse.mylyn.targetprocess.modules.services.MyAssignmentsServiceStub;
@@ -177,7 +178,7 @@ public class TestContext {
 		BugDTO colosedBug = addBug(userDTO, closedBugState);
 		colosedBug.setEndDate(Calendar.getInstance());
 		ArrayOfTeamDTO teams = new ArrayOfTeamDTO();
-		
+
 		TeamDTO teamDTO = new TeamDTO();
 		teamDTO.setID(genId());
 		teamDTO.setTeamID(teamDTO.getID());
@@ -190,8 +191,8 @@ public class TestContext {
 		teamDTO.setRoleName("developer");
 		teams.addTeamDTO(teamDTO);
 
-		assignableTeams.put(colosedBug.getBugID(), teams);		
-		
+		assignableTeams.put(colosedBug.getBugID(), teams);
+
 		return colosedBug;
 	}
 
@@ -202,16 +203,17 @@ public class TestContext {
 
 		for (AssignableSimpleDTO assignable : myAssignmentsList.getAssignables().getAssignableSimpleDTO()) {
 			AssignableToDoDTO assignableToDoDto = null;
-			if (assignable.getEntityTypeName().equals(EntityPerformerFactory.TP_BUSINESS_OBJECTS_BUG)) {
+			String entityTypeName = assignable.getEntityTypeName();
+			if (entityTypeName.equals(EntityPerformerFactory.TP_BUSINESS_OBJECTS_BUG)) {
 				assignableToDoDto = createAssignableToDoDTOFromBug(assignable, todo);
-			} else if (assignable.getEntityTypeName().equals(EntityPerformerFactory.TP_BUSINESS_OBJECTS_REQUEST)) {
+			} else if (entityTypeName.equals(EntityPerformerFactory.TP_BUSINESS_OBJECTS_REQUEST)) {
 				assignableToDoDto = createAssignableToDoDTOFromRequest(assignable, todo);
-			} else if (assignable.getEntityTypeName().equals(EntityPerformerFactory.TP_BUSINESS_OBJECTS_USER_STORY)) {
+			} else if (entityTypeName.equals(EntityPerformerFactory.TP_BUSINESS_OBJECTS_USER_STORY)) {
 				assignableToDoDto = createAssignableToDoDTOFromUserStory(assignable, todo);
-			} else if (assignable.getEntityTypeName().equals(EntityPerformerFactory.TP_BUSINESS_OBJECTS_TASK)) {
+			} else if (entityTypeName.equals(EntityPerformerFactory.TP_BUSINESS_OBJECTS_TASK)) {
 				assignableToDoDto = createAssignableToDoDTOFromTask(assignable, todo);
 			}
-			assignableToDoDto.setEntityTypeName(assignable.getEntityTypeName());
+			assignableToDoDto.setEntityTypeName(entityTypeName);
 			assignables.addAssignableToDoDTO(assignableToDoDto);
 			addUser(todo, assignableToDoDto.getOwnerID());
 		}
@@ -240,8 +242,7 @@ public class TestContext {
 		// (assignable.getEntityTypeName().equals(EntityPerformerFactory.TP_BUSINESS_OBJECTS_BUG))
 		// {
 		assignableToDoDto = createAssignableToDoDTOFromBug(assignable, todo);
-		if (this.getEntityStateById(bugDTO.getEntityStateID()).getFinal())
-		{
+		if (getEntityStateById(bugDTO.getEntityStateID()).getFinal()) {
 			assignableToDoDto.setEndDate(Calendar.getInstance());
 		}
 
@@ -352,10 +353,9 @@ public class TestContext {
 	}
 
 	private void addEntityStates(int entityStateID, MyAssignmentsToDo todo) {
-
 		EntityStateDTO state = getEntityStateById(entityStateID);
 		addStateInToDo(todo, state);
-		if (state.getNextStates() != null && state.getNextStates().trim().length() != 0) {
+		if (StringUtils.isNotBlank(state.getNextStates())) {
 			String[] ids = state.getNextStates().split(",");
 			for (String stringId : ids) {
 				state = getEntityStateById(Integer.parseInt(stringId));

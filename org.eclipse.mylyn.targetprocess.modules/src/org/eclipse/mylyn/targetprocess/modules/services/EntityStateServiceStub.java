@@ -10431,6 +10431,184 @@
                                }
                             
 
+                        /**
+                        * field for EntityTypeID
+                        */
+
+                        
+                                    protected int localEntityTypeID ;
+                                
+
+                           /**
+                           * Auto generated getter method
+                           * @return int
+                           */
+                           public  int getEntityTypeID(){
+                               return localEntityTypeID;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param EntityTypeID
+                               */
+                               public void setEntityTypeID(int param){
+                            
+                                            this.localEntityTypeID=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for StateID
+                        */
+
+                        
+                                    protected int localStateID ;
+                                
+
+                           /**
+                           * Auto generated getter method
+                           * @return int
+                           */
+                           public  int getStateID(){
+                               return localStateID;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param StateID
+                               */
+                               public void setStateID(int param){
+                            
+                                            this.localStateID=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for ProcessID
+                        */
+
+                        
+                                    protected int localProcessID ;
+                                
+
+                           /**
+                           * Auto generated getter method
+                           * @return int
+                           */
+                           public  int getProcessID(){
+                               return localProcessID;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param ProcessID
+                               */
+                               public void setProcessID(int param){
+                            
+                                            this.localProcessID=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for ProcessName
+                        */
+
+                        
+                                    protected java.lang.String localProcessName ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localProcessNameTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getProcessName(){
+                               return localProcessName;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param ProcessName
+                               */
+                               public void setProcessName(java.lang.String param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localProcessNameTracker = true;
+                                       } else {
+                                          localProcessNameTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localProcessName=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for EntityStateName
+                        */
+
+                        
+                                    protected java.lang.String localEntityStateName ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localEntityStateNameTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getEntityStateName(){
+                               return localEntityStateName;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param EntityStateName
+                               */
+                               public void setEntityStateName(java.lang.String param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localEntityStateNameTracker = true;
+                                       } else {
+                                          localEntityStateNameTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localEntityStateName=param;
+                                    
+
+                               }
+                            
+
      /**
      * isReaderMTOMAware
      * @return true if the reader supports MTOM
@@ -10710,6 +10888,161 @@
                                     
                                    xmlWriter.writeEndElement();
                              }
+                                    namespace = "http://targetprocess.com";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"EntityTypeID", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"EntityTypeID");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("EntityTypeID");
+                                    }
+                                
+                                               if (localEntityTypeID==java.lang.Integer.MIN_VALUE) {
+                                           
+                                                         writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
+                                                      
+                                               } else {
+                                                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localEntityTypeID));
+                                               }
+                                    
+                                   xmlWriter.writeEndElement();
+                             
+                                    namespace = "http://targetprocess.com";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"StateID", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"StateID");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("StateID");
+                                    }
+                                
+                                               if (localStateID==java.lang.Integer.MIN_VALUE) {
+                                           
+                                                         writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
+                                                      
+                                               } else {
+                                                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localStateID));
+                                               }
+                                    
+                                   xmlWriter.writeEndElement();
+                             
+                                    namespace = "http://targetprocess.com";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"ProcessID", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"ProcessID");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("ProcessID");
+                                    }
+                                
+                                               if (localProcessID==java.lang.Integer.MIN_VALUE) {
+                                           
+                                                         writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
+                                                      
+                                               } else {
+                                                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localProcessID));
+                                               }
+                                    
+                                   xmlWriter.writeEndElement();
+                              if (localProcessNameTracker){
+                                    namespace = "http://targetprocess.com";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"ProcessName", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"ProcessName");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("ProcessName");
+                                    }
+                                
+
+                                          if (localProcessName==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("ProcessName cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localProcessName);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             } if (localEntityStateNameTracker){
+                                    namespace = "http://targetprocess.com";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"EntityStateName", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"EntityStateName");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("EntityStateName");
+                                    }
+                                
+
+                                          if (localEntityStateName==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("EntityStateName cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localEntityStateName);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             }
                     xmlWriter.writeEndElement();
                
 
@@ -10916,6 +11249,42 @@
                                             elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localStateName));
                                         } else {
                                            throw new org.apache.axis2.databinding.ADBException("StateName cannot be null!!");
+                                        }
+                                    }
+                                      elementList.add(new javax.xml.namespace.QName("http://targetprocess.com",
+                                                                      "EntityTypeID"));
+                                 
+                                elementList.add(
+                                   org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localEntityTypeID));
+                            
+                                      elementList.add(new javax.xml.namespace.QName("http://targetprocess.com",
+                                                                      "StateID"));
+                                 
+                                elementList.add(
+                                   org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localStateID));
+                            
+                                      elementList.add(new javax.xml.namespace.QName("http://targetprocess.com",
+                                                                      "ProcessID"));
+                                 
+                                elementList.add(
+                                   org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localProcessID));
+                             if (localProcessNameTracker){
+                                      elementList.add(new javax.xml.namespace.QName("http://targetprocess.com",
+                                                                      "ProcessName"));
+                                 
+                                        if (localProcessName != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localProcessName));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("ProcessName cannot be null!!");
+                                        }
+                                    } if (localEntityStateNameTracker){
+                                      elementList.add(new javax.xml.namespace.QName("http://targetprocess.com",
+                                                                      "EntityStateName"));
+                                 
+                                        if (localEntityStateName != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localEntityStateName));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("EntityStateName cannot be null!!");
                                         }
                                     }
 
@@ -11134,6 +11503,132 @@
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setStateName(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://targetprocess.com","EntityTypeID").equals(reader.getName())){
+                                
+                                       nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                       if (!"true".equals(nillableValue) && !"1".equals(nillableValue)){
+                                    
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setEntityTypeID(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToInt(content));
+                                            
+                                       } else {
+                                           
+                                           
+                                                   object.setEntityTypeID(java.lang.Integer.MIN_VALUE);
+                                               
+                                           reader.getElementText(); // throw away text nodes if any.
+                                       }
+                                      
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                else{
+                                    // A start element we are not expecting indicates an invalid parameter was passed
+                                    throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getLocalName());
+                                }
+                            
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://targetprocess.com","StateID").equals(reader.getName())){
+                                
+                                       nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                       if (!"true".equals(nillableValue) && !"1".equals(nillableValue)){
+                                    
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setStateID(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToInt(content));
+                                            
+                                       } else {
+                                           
+                                           
+                                                   object.setStateID(java.lang.Integer.MIN_VALUE);
+                                               
+                                           reader.getElementText(); // throw away text nodes if any.
+                                       }
+                                      
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                else{
+                                    // A start element we are not expecting indicates an invalid parameter was passed
+                                    throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getLocalName());
+                                }
+                            
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://targetprocess.com","ProcessID").equals(reader.getName())){
+                                
+                                       nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                       if (!"true".equals(nillableValue) && !"1".equals(nillableValue)){
+                                    
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setProcessID(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToInt(content));
+                                            
+                                       } else {
+                                           
+                                           
+                                                   object.setProcessID(java.lang.Integer.MIN_VALUE);
+                                               
+                                           reader.getElementText(); // throw away text nodes if any.
+                                       }
+                                      
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                else{
+                                    // A start element we are not expecting indicates an invalid parameter was passed
+                                    throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getLocalName());
+                                }
+                            
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://targetprocess.com","ProcessName").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setProcessName(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://targetprocess.com","EntityStateName").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setEntityStateName(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
                                               
                                         reader.next();
@@ -13132,6 +13627,80 @@
                                }
                             
 
+                        /**
+                        * field for ParentEntityStateName
+                        */
+
+                        
+                                    protected java.lang.String localParentEntityStateName ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localParentEntityStateNameTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getParentEntityStateName(){
+                               return localParentEntityStateName;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param ParentEntityStateName
+                               */
+                               public void setParentEntityStateName(java.lang.String param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localParentEntityStateNameTracker = true;
+                                       } else {
+                                          localParentEntityStateNameTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localParentEntityStateName=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for EntityTypeID
+                        */
+
+                        
+                                    protected int localEntityTypeID ;
+                                
+
+                           /**
+                           * Auto generated getter method
+                           * @return int
+                           */
+                           public  int getEntityTypeID(){
+                               return localEntityTypeID;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param EntityTypeID
+                               */
+                               public void setEntityTypeID(int param){
+                            
+                                            this.localEntityTypeID=param;
+                                    
+
+                               }
+                            
+
      /**
      * isReaderMTOMAware
      * @return true if the reader supports MTOM
@@ -13713,6 +14282,69 @@
                                                }
                                     
                                    xmlWriter.writeEndElement();
+                              if (localParentEntityStateNameTracker){
+                                    namespace = "http://targetprocess.com";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"ParentEntityStateName", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"ParentEntityStateName");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("ParentEntityStateName");
+                                    }
+                                
+
+                                          if (localParentEntityStateName==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("ParentEntityStateName cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localParentEntityStateName);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             }
+                                    namespace = "http://targetprocess.com";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"EntityTypeID", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"EntityTypeID");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("EntityTypeID");
+                                    }
+                                
+                                               if (localEntityTypeID==java.lang.Integer.MIN_VALUE) {
+                                           
+                                                         writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
+                                                      
+                                               } else {
+                                                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localEntityTypeID));
+                                               }
+                                    
+                                   xmlWriter.writeEndElement();
                              
                     xmlWriter.writeEndElement();
                
@@ -13989,6 +14621,21 @@
                                  
                                 elementList.add(
                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localWorkflowID));
+                             if (localParentEntityStateNameTracker){
+                                      elementList.add(new javax.xml.namespace.QName("http://targetprocess.com",
+                                                                      "ParentEntityStateName"));
+                                 
+                                        if (localParentEntityStateName != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localParentEntityStateName));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("ParentEntityStateName cannot be null!!");
+                                        }
+                                    }
+                                      elementList.add(new javax.xml.namespace.QName("http://targetprocess.com",
+                                                                      "EntityTypeID"));
+                                 
+                                elementList.add(
+                                   org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localEntityTypeID));
                             
 
                 return new org.apache.axis2.databinding.utils.reader.ADBXMLStreamReaderImpl(qName, elementList.toArray(), attribList.toArray());
@@ -14453,6 +15100,54 @@
                                            
                                            
                                                    object.setWorkflowID(java.lang.Integer.MIN_VALUE);
+                                               
+                                           reader.getElementText(); // throw away text nodes if any.
+                                       }
+                                      
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                else{
+                                    // A start element we are not expecting indicates an invalid parameter was passed
+                                    throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getLocalName());
+                                }
+                            
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://targetprocess.com","ParentEntityStateName").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setParentEntityStateName(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://targetprocess.com","EntityTypeID").equals(reader.getName())){
+                                
+                                       nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                       if (!"true".equals(nillableValue) && !"1".equals(nillableValue)){
+                                    
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setEntityTypeID(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToInt(content));
+                                            
+                                       } else {
+                                           
+                                           
+                                                   object.setEntityTypeID(java.lang.Integer.MIN_VALUE);
                                                
                                            reader.getElementText(); // throw away text nodes if any.
                                        }

@@ -49,9 +49,7 @@ public class TaskServiceStubMock extends ServiceStubMockBase<ITaskServiceStub> i
 	@Override
 	public RetrieveCommentsForTaskResponse retrieveCommentsForTask(RetrieveCommentsForTask task) throws RemoteException {
 		if (mock != null) {
-			if (mock != null) {
-				mock.retrieveCommentsForTask(task);
-			}
+			mock.retrieveCommentsForTask(task);
 		}
 
 		CommentDTO[] comments = context.retrieveCommentsForTask(task.getTaskID());
