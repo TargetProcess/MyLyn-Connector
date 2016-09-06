@@ -18213,6 +18213,36 @@
                                }
                             
 
+                        /**
+                        * field for CalculationModelContainsCollections
+                        */
+
+                        
+                                    protected boolean localCalculationModelContainsCollections ;
+                                
+
+                           /**
+                           * Auto generated getter method
+                           * @return boolean
+                           */
+                           public  boolean getCalculationModelContainsCollections(){
+                               return localCalculationModelContainsCollections;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param CalculationModelContainsCollections
+                               */
+                               public void setCalculationModelContainsCollections(boolean param){
+                            
+                                            this.localCalculationModelContainsCollections=param;
+                                    
+
+                               }
+                            
+
      /**
      * isReaderMTOMAware
      * @return true if the reader supports MTOM
@@ -18621,6 +18651,35 @@
                                     
                                    xmlWriter.writeEndElement();
                              
+                                    namespace = "http://targetprocess.com";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"CalculationModelContainsCollections", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"CalculationModelContainsCollections");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("CalculationModelContainsCollections");
+                                    }
+                                
+                                               if (false) {
+                                           
+                                                         writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
+                                                      
+                                               } else {
+                                                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localCalculationModelContainsCollections));
+                                               }
+                                    
+                                   xmlWriter.writeEndElement();
+                             
                     xmlWriter.writeEndElement();
                
 
@@ -18880,6 +18939,12 @@
                                  
                                 elementList.add(
                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localEntityTypeID));
+                            
+                                      elementList.add(new javax.xml.namespace.QName("http://targetprocess.com",
+                                                                      "CalculationModelContainsCollections"));
+                                 
+                                elementList.add(
+                                   org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localCalculationModelContainsCollections));
                             
 
                 return new org.apache.axis2.databinding.utils.reader.ADBXMLStreamReaderImpl(qName, elementList.toArray(), attribList.toArray());
@@ -19164,6 +19229,34 @@
                                            
                                                    object.setEntityTypeID(java.lang.Integer.MIN_VALUE);
                                                
+                                           reader.getElementText(); // throw away text nodes if any.
+                                       }
+                                      
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                else{
+                                    // A start element we are not expecting indicates an invalid parameter was passed
+                                    throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getLocalName());
+                                }
+                            
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://targetprocess.com","CalculationModelContainsCollections").equals(reader.getName())){
+                                
+                                       nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                       if (!"true".equals(nillableValue) && !"1".equals(nillableValue)){
+                                    
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setCalculationModelContainsCollections(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToBoolean(content));
+                                            
+                                       } else {
+                                           
+                                           
                                            reader.getElementText(); // throw away text nodes if any.
                                        }
                                       
@@ -38199,6 +38292,36 @@
                                }
                             
 
+                        /**
+                        * field for LastStateChangeDate
+                        */
+
+                        
+                                    protected java.util.Calendar localLastStateChangeDate ;
+                                
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.util.Calendar
+                           */
+                           public  java.util.Calendar getLastStateChangeDate(){
+                               return localLastStateChangeDate;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param LastStateChangeDate
+                               */
+                               public void setLastStateChangeDate(java.util.Calendar param){
+                            
+                                            this.localLastStateChangeDate=param;
+                                    
+
+                               }
+                            
+
      /**
      * isReaderMTOMAware
      * @return true if the reader supports MTOM
@@ -41664,6 +41787,40 @@
                                     
                                    xmlWriter.writeEndElement();
                              
+                                    namespace = "http://targetprocess.com";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"LastStateChangeDate", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"LastStateChangeDate");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("LastStateChangeDate");
+                                    }
+                                
+
+                                          if (localLastStateChangeDate==null){
+                                              // write the nil attribute
+                                              
+                                                     writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localLastStateChangeDate));
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             
                     xmlWriter.writeEndElement();
                
 
@@ -42672,6 +42829,12 @@
                                 elementList.add(
                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localResponsibleSquadID));
                             
+                                      elementList.add(new javax.xml.namespace.QName("http://targetprocess.com",
+                                                                      "LastStateChangeDate"));
+                                 
+                                         elementList.add(localLastStateChangeDate==null?null:
+                                         org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localLastStateChangeDate));
+                                    
 
                 return new org.apache.axis2.databinding.utils.reader.ADBXMLStreamReaderImpl(qName, elementList.toArray(), attribList.toArray());
             
@@ -44923,6 +45086,34 @@
                                            
                                                    object.setResponsibleSquadID(java.lang.Integer.MIN_VALUE);
                                                
+                                           reader.getElementText(); // throw away text nodes if any.
+                                       }
+                                      
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                else{
+                                    // A start element we are not expecting indicates an invalid parameter was passed
+                                    throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getLocalName());
+                                }
+                            
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://targetprocess.com","LastStateChangeDate").equals(reader.getName())){
+                                
+                                       nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                       if (!"true".equals(nillableValue) && !"1".equals(nillableValue)){
+                                    
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setLastStateChangeDate(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToDateTime(content));
+                                            
+                                       } else {
+                                           
+                                           
                                            reader.getElementText(); // throw away text nodes if any.
                                        }
                                       
