@@ -1,7 +1,7 @@
 Mylyn Connector for Targetprocess
 =================================
 
-Supported Eclipse versions: 3.7.2 - 4.5
+Supported Eclipse versions: 3.7.2 - 4.6
 
 How to generate connector for new version of Targetprocess
 ----------------------------------------------------------
