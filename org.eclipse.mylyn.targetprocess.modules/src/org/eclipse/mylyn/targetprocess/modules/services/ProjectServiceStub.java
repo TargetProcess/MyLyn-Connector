@@ -12749,6 +12749,96 @@
                                }
                             
 
+                        /**
+                        * field for Effort
+                        */
+
+                        
+                                    protected java.math.BigDecimal localEffort ;
+                                
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.math.BigDecimal
+                           */
+                           public  java.math.BigDecimal getEffort(){
+                               return localEffort;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Effort
+                               */
+                               public void setEffort(java.math.BigDecimal param){
+                            
+                                            this.localEffort=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for EffortCompleted
+                        */
+
+                        
+                                    protected java.math.BigDecimal localEffortCompleted ;
+                                
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.math.BigDecimal
+                           */
+                           public  java.math.BigDecimal getEffortCompleted(){
+                               return localEffortCompleted;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param EffortCompleted
+                               */
+                               public void setEffortCompleted(java.math.BigDecimal param){
+                            
+                                            this.localEffortCompleted=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for EffortToDo
+                        */
+
+                        
+                                    protected java.math.BigDecimal localEffortToDo ;
+                                
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.math.BigDecimal
+                           */
+                           public  java.math.BigDecimal getEffortToDo(){
+                               return localEffortToDo;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param EffortToDo
+                               */
+                               public void setEffortToDo(java.math.BigDecimal param){
+                            
+                                            this.localEffortToDo=param;
+                                    
+
+                               }
+                            
+
      /**
      * isReaderMTOMAware
      * @return true if the reader supports MTOM
@@ -16453,6 +16543,108 @@
                                     
                                    xmlWriter.writeEndElement();
                              
+                                    namespace = "http://targetprocess.com";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"Effort", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"Effort");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("Effort");
+                                    }
+                                
+
+                                          if (localEffort==null){
+                                              // write the nil attribute
+                                              
+                                                     writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localEffort));
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             
+                                    namespace = "http://targetprocess.com";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"EffortCompleted", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"EffortCompleted");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("EffortCompleted");
+                                    }
+                                
+
+                                          if (localEffortCompleted==null){
+                                              // write the nil attribute
+                                              
+                                                     writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localEffortCompleted));
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             
+                                    namespace = "http://targetprocess.com";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"EffortToDo", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"EffortToDo");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("EffortToDo");
+                                    }
+                                
+
+                                          if (localEffortToDo==null){
+                                              // write the nil attribute
+                                              
+                                                     writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localEffortToDo));
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             
                     xmlWriter.writeEndElement();
                
 
@@ -17525,6 +17717,24 @@
                                 elementList.add(
                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localEntityTypeID));
                             
+                                      elementList.add(new javax.xml.namespace.QName("http://targetprocess.com",
+                                                                      "Effort"));
+                                 
+                                         elementList.add(localEffort==null?null:
+                                         org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localEffort));
+                                    
+                                      elementList.add(new javax.xml.namespace.QName("http://targetprocess.com",
+                                                                      "EffortCompleted"));
+                                 
+                                         elementList.add(localEffortCompleted==null?null:
+                                         org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localEffortCompleted));
+                                    
+                                      elementList.add(new javax.xml.namespace.QName("http://targetprocess.com",
+                                                                      "EffortToDo"));
+                                 
+                                         elementList.add(localEffortToDo==null?null:
+                                         org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localEffortToDo));
+                                    
 
                 return new org.apache.axis2.databinding.utils.reader.ADBXMLStreamReaderImpl(qName, elementList.toArray(), attribList.toArray());
             
@@ -19945,6 +20155,90 @@
                                            
                                                    object.setEntityTypeID(java.lang.Integer.MIN_VALUE);
                                                
+                                           reader.getElementText(); // throw away text nodes if any.
+                                       }
+                                      
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                else{
+                                    // A start element we are not expecting indicates an invalid parameter was passed
+                                    throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getLocalName());
+                                }
+                            
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://targetprocess.com","Effort").equals(reader.getName())){
+                                
+                                       nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                       if (!"true".equals(nillableValue) && !"1".equals(nillableValue)){
+                                    
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setEffort(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToDecimal(content));
+                                            
+                                       } else {
+                                           
+                                           
+                                           reader.getElementText(); // throw away text nodes if any.
+                                       }
+                                      
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                else{
+                                    // A start element we are not expecting indicates an invalid parameter was passed
+                                    throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getLocalName());
+                                }
+                            
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://targetprocess.com","EffortCompleted").equals(reader.getName())){
+                                
+                                       nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                       if (!"true".equals(nillableValue) && !"1".equals(nillableValue)){
+                                    
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setEffortCompleted(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToDecimal(content));
+                                            
+                                       } else {
+                                           
+                                           
+                                           reader.getElementText(); // throw away text nodes if any.
+                                       }
+                                      
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                else{
+                                    // A start element we are not expecting indicates an invalid parameter was passed
+                                    throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getLocalName());
+                                }
+                            
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://targetprocess.com","EffortToDo").equals(reader.getName())){
+                                
+                                       nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                       if (!"true".equals(nillableValue) && !"1".equals(nillableValue)){
+                                    
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setEffortToDo(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToDecimal(content));
+                                            
+                                       } else {
+                                           
+                                           
                                            reader.getElementText(); // throw away text nodes if any.
                                        }
                                       
@@ -24898,6 +25192,36 @@
                                }
                             
 
+                        /**
+                        * field for CalculationModelContainsCollections
+                        */
+
+                        
+                                    protected boolean localCalculationModelContainsCollections ;
+                                
+
+                           /**
+                           * Auto generated getter method
+                           * @return boolean
+                           */
+                           public  boolean getCalculationModelContainsCollections(){
+                               return localCalculationModelContainsCollections;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param CalculationModelContainsCollections
+                               */
+                               public void setCalculationModelContainsCollections(boolean param){
+                            
+                                            this.localCalculationModelContainsCollections=param;
+                                    
+
+                               }
+                            
+
      /**
      * isReaderMTOMAware
      * @return true if the reader supports MTOM
@@ -25306,6 +25630,35 @@
                                     
                                    xmlWriter.writeEndElement();
                              
+                                    namespace = "http://targetprocess.com";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"CalculationModelContainsCollections", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"CalculationModelContainsCollections");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("CalculationModelContainsCollections");
+                                    }
+                                
+                                               if (false) {
+                                           
+                                                         writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
+                                                      
+                                               } else {
+                                                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localCalculationModelContainsCollections));
+                                               }
+                                    
+                                   xmlWriter.writeEndElement();
+                             
                     xmlWriter.writeEndElement();
                
 
@@ -25565,6 +25918,12 @@
                                  
                                 elementList.add(
                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localEntityTypeID));
+                            
+                                      elementList.add(new javax.xml.namespace.QName("http://targetprocess.com",
+                                                                      "CalculationModelContainsCollections"));
+                                 
+                                elementList.add(
+                                   org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localCalculationModelContainsCollections));
                             
 
                 return new org.apache.axis2.databinding.utils.reader.ADBXMLStreamReaderImpl(qName, elementList.toArray(), attribList.toArray());
@@ -25849,6 +26208,34 @@
                                            
                                                    object.setEntityTypeID(java.lang.Integer.MIN_VALUE);
                                                
+                                           reader.getElementText(); // throw away text nodes if any.
+                                       }
+                                      
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                else{
+                                    // A start element we are not expecting indicates an invalid parameter was passed
+                                    throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getLocalName());
+                                }
+                            
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://targetprocess.com","CalculationModelContainsCollections").equals(reader.getName())){
+                                
+                                       nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                       if (!"true".equals(nillableValue) && !"1".equals(nillableValue)){
+                                    
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setCalculationModelContainsCollections(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToBoolean(content));
+                                            
+                                       } else {
+                                           
+                                           
                                            reader.getElementText(); // throw away text nodes if any.
                                        }
                                       
