@@ -18,7 +18,8 @@ How to generate connector for new version of Targetprocess
   Warning `[WARN] Type {http://targetprocess.com}anyType missing!` could be ignored.
 - Launch Eclipse 4.4
 - Refresh project `org.eclipse.mylyn.targetprocess.modules`, make sure all projects are rebuilt without errors
-- Open file `feature.xml` (it is in `TargetProcess` project), click `Export Wizard`, create zip archive
+- Open file `feature.xml` (it is in `TargetProcess` project),
+  update field `Version`, click `Export Wizard`, create zip archive
 
 How to test connector in Eclipse
 --------------------------------
