@@ -11614,96 +11614,6 @@
                             
 
                         /**
-                        * field for InboundMailCreateRequests
-                        */
-
-                        
-                                    protected boolean localInboundMailCreateRequests ;
-                                
-
-                           /**
-                           * Auto generated getter method
-                           * @return boolean
-                           */
-                           public  boolean getInboundMailCreateRequests(){
-                               return localInboundMailCreateRequests;
-                           }
-
-                           
-                        
-                            /**
-                               * Auto generated setter method
-                               * @param param InboundMailCreateRequests
-                               */
-                               public void setInboundMailCreateRequests(boolean param){
-                            
-                                            this.localInboundMailCreateRequests=param;
-                                    
-
-                               }
-                            
-
-                        /**
-                        * field for InboundMailAutomaticalEmailCheckTime
-                        */
-
-                        
-                                    protected int localInboundMailAutomaticalEmailCheckTime ;
-                                
-
-                           /**
-                           * Auto generated getter method
-                           * @return int
-                           */
-                           public  int getInboundMailAutomaticalEmailCheckTime(){
-                               return localInboundMailAutomaticalEmailCheckTime;
-                           }
-
-                           
-                        
-                            /**
-                               * Auto generated setter method
-                               * @param param InboundMailAutomaticalEmailCheckTime
-                               */
-                               public void setInboundMailAutomaticalEmailCheckTime(int param){
-                            
-                                            this.localInboundMailAutomaticalEmailCheckTime=param;
-                                    
-
-                               }
-                            
-
-                        /**
-                        * field for IsInboundMailEnabled
-                        */
-
-                        
-                                    protected boolean localIsInboundMailEnabled ;
-                                
-
-                           /**
-                           * Auto generated getter method
-                           * @return boolean
-                           */
-                           public  boolean getIsInboundMailEnabled(){
-                               return localIsInboundMailEnabled;
-                           }
-
-                           
-                        
-                            /**
-                               * Auto generated setter method
-                               * @param param IsInboundMailEnabled
-                               */
-                               public void setIsInboundMailEnabled(boolean param){
-                            
-                                            this.localIsInboundMailEnabled=param;
-                                    
-
-                               }
-                            
-
-                        /**
                         * field for InboundMailReplyAddress
                         */
 
@@ -11742,272 +11652,6 @@
                                        }
                                    
                                             this.localInboundMailReplyAddress=param;
-                                    
-
-                               }
-                            
-
-                        /**
-                        * field for InboundMailAutoCheck
-                        */
-
-                        
-                                    protected boolean localInboundMailAutoCheck ;
-                                
-
-                           /**
-                           * Auto generated getter method
-                           * @return boolean
-                           */
-                           public  boolean getInboundMailAutoCheck(){
-                               return localInboundMailAutoCheck;
-                           }
-
-                           
-                        
-                            /**
-                               * Auto generated setter method
-                               * @param param InboundMailAutoCheck
-                               */
-                               public void setInboundMailAutoCheck(boolean param){
-                            
-                                            this.localInboundMailAutoCheck=param;
-                                    
-
-                               }
-                            
-
-                        /**
-                        * field for InboundMailServer
-                        */
-
-                        
-                                    protected java.lang.String localInboundMailServer ;
-                                
-                           /*  This tracker boolean wil be used to detect whether the user called the set method
-                          *   for this attribute. It will be used to determine whether to include this field
-                           *   in the serialized XML
-                           */
-                           protected boolean localInboundMailServerTracker = false ;
-                           
-
-                           /**
-                           * Auto generated getter method
-                           * @return java.lang.String
-                           */
-                           public  java.lang.String getInboundMailServer(){
-                               return localInboundMailServer;
-                           }
-
-                           
-                        
-                            /**
-                               * Auto generated setter method
-                               * @param param InboundMailServer
-                               */
-                               public void setInboundMailServer(java.lang.String param){
-                            
-                                       if (param != null){
-                                          //update the setting tracker
-                                          localInboundMailServerTracker = true;
-                                       } else {
-                                          localInboundMailServerTracker = false;
-                                              
-                                       }
-                                   
-                                            this.localInboundMailServer=param;
-                                    
-
-                               }
-                            
-
-                        /**
-                        * field for InboundMailPort
-                        */
-
-                        
-                                    protected int localInboundMailPort ;
-                                
-
-                           /**
-                           * Auto generated getter method
-                           * @return int
-                           */
-                           public  int getInboundMailPort(){
-                               return localInboundMailPort;
-                           }
-
-                           
-                        
-                            /**
-                               * Auto generated setter method
-                               * @param param InboundMailPort
-                               */
-                               public void setInboundMailPort(int param){
-                            
-                                            this.localInboundMailPort=param;
-                                    
-
-                               }
-                            
-
-                        /**
-                        * field for InboundMailUseSSL
-                        */
-
-                        
-                                    protected boolean localInboundMailUseSSL ;
-                                
-
-                           /**
-                           * Auto generated getter method
-                           * @return boolean
-                           */
-                           public  boolean getInboundMailUseSSL(){
-                               return localInboundMailUseSSL;
-                           }
-
-                           
-                        
-                            /**
-                               * Auto generated setter method
-                               * @param param InboundMailUseSSL
-                               */
-                               public void setInboundMailUseSSL(boolean param){
-                            
-                                            this.localInboundMailUseSSL=param;
-                                    
-
-                               }
-                            
-
-                        /**
-                        * field for InboundMailLogin
-                        */
-
-                        
-                                    protected java.lang.String localInboundMailLogin ;
-                                
-                           /*  This tracker boolean wil be used to detect whether the user called the set method
-                          *   for this attribute. It will be used to determine whether to include this field
-                           *   in the serialized XML
-                           */
-                           protected boolean localInboundMailLoginTracker = false ;
-                           
-
-                           /**
-                           * Auto generated getter method
-                           * @return java.lang.String
-                           */
-                           public  java.lang.String getInboundMailLogin(){
-                               return localInboundMailLogin;
-                           }
-
-                           
-                        
-                            /**
-                               * Auto generated setter method
-                               * @param param InboundMailLogin
-                               */
-                               public void setInboundMailLogin(java.lang.String param){
-                            
-                                       if (param != null){
-                                          //update the setting tracker
-                                          localInboundMailLoginTracker = true;
-                                       } else {
-                                          localInboundMailLoginTracker = false;
-                                              
-                                       }
-                                   
-                                            this.localInboundMailLogin=param;
-                                    
-
-                               }
-                            
-
-                        /**
-                        * field for InboundMailPassword
-                        */
-
-                        
-                                    protected java.lang.String localInboundMailPassword ;
-                                
-                           /*  This tracker boolean wil be used to detect whether the user called the set method
-                          *   for this attribute. It will be used to determine whether to include this field
-                           *   in the serialized XML
-                           */
-                           protected boolean localInboundMailPasswordTracker = false ;
-                           
-
-                           /**
-                           * Auto generated getter method
-                           * @return java.lang.String
-                           */
-                           public  java.lang.String getInboundMailPassword(){
-                               return localInboundMailPassword;
-                           }
-
-                           
-                        
-                            /**
-                               * Auto generated setter method
-                               * @param param InboundMailPassword
-                               */
-                               public void setInboundMailPassword(java.lang.String param){
-                            
-                                       if (param != null){
-                                          //update the setting tracker
-                                          localInboundMailPasswordTracker = true;
-                                       } else {
-                                          localInboundMailPasswordTracker = false;
-                                              
-                                       }
-                                   
-                                            this.localInboundMailPassword=param;
-                                    
-
-                               }
-                            
-
-                        /**
-                        * field for InboundMailProtocol
-                        */
-
-                        
-                                    protected java.lang.String localInboundMailProtocol ;
-                                
-                           /*  This tracker boolean wil be used to detect whether the user called the set method
-                          *   for this attribute. It will be used to determine whether to include this field
-                           *   in the serialized XML
-                           */
-                           protected boolean localInboundMailProtocolTracker = false ;
-                           
-
-                           /**
-                           * Auto generated getter method
-                           * @return java.lang.String
-                           */
-                           public  java.lang.String getInboundMailProtocol(){
-                               return localInboundMailProtocol;
-                           }
-
-                           
-                        
-                            /**
-                               * Auto generated setter method
-                               * @param param InboundMailProtocol
-                               */
-                               public void setInboundMailProtocol(java.lang.String param){
-                            
-                                       if (param != null){
-                                          //update the setting tracker
-                                          localInboundMailProtocolTracker = true;
-                                       } else {
-                                          localInboundMailProtocolTracker = false;
-                                              
-                                       }
-                                   
-                                            this.localInboundMailProtocol=param;
                                     
 
                                }
@@ -12834,6 +12478,36 @@
                                public void setEffortToDo(java.math.BigDecimal param){
                             
                                             this.localEffortToDo=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for LastStateChangeDate
+                        */
+
+                        
+                                    protected java.util.Calendar localLastStateChangeDate ;
+                                
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.util.Calendar
+                           */
+                           public  java.util.Calendar getLastStateChangeDate(){
+                               return localLastStateChangeDate;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param LastStateChangeDate
+                               */
+                               public void setLastStateChangeDate(java.util.Calendar param){
+                            
+                                            this.localLastStateChangeDate=param;
                                     
 
                                }
@@ -15584,93 +15258,6 @@
                                                }
                                     
                                    xmlWriter.writeEndElement();
-                             
-                                    namespace = "http://targetprocess.com";
-                                    if (! namespace.equals("")) {
-                                        prefix = xmlWriter.getPrefix(namespace);
-
-                                        if (prefix == null) {
-                                            prefix = generatePrefix(namespace);
-
-                                            xmlWriter.writeStartElement(prefix,"InboundMailCreateRequests", namespace);
-                                            xmlWriter.writeNamespace(prefix, namespace);
-                                            xmlWriter.setPrefix(prefix, namespace);
-
-                                        } else {
-                                            xmlWriter.writeStartElement(namespace,"InboundMailCreateRequests");
-                                        }
-
-                                    } else {
-                                        xmlWriter.writeStartElement("InboundMailCreateRequests");
-                                    }
-                                
-                                               if (false) {
-                                           
-                                                         writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
-                                                      
-                                               } else {
-                                                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localInboundMailCreateRequests));
-                                               }
-                                    
-                                   xmlWriter.writeEndElement();
-                             
-                                    namespace = "http://targetprocess.com";
-                                    if (! namespace.equals("")) {
-                                        prefix = xmlWriter.getPrefix(namespace);
-
-                                        if (prefix == null) {
-                                            prefix = generatePrefix(namespace);
-
-                                            xmlWriter.writeStartElement(prefix,"InboundMailAutomaticalEmailCheckTime", namespace);
-                                            xmlWriter.writeNamespace(prefix, namespace);
-                                            xmlWriter.setPrefix(prefix, namespace);
-
-                                        } else {
-                                            xmlWriter.writeStartElement(namespace,"InboundMailAutomaticalEmailCheckTime");
-                                        }
-
-                                    } else {
-                                        xmlWriter.writeStartElement("InboundMailAutomaticalEmailCheckTime");
-                                    }
-                                
-                                               if (localInboundMailAutomaticalEmailCheckTime==java.lang.Integer.MIN_VALUE) {
-                                           
-                                                         writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
-                                                      
-                                               } else {
-                                                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localInboundMailAutomaticalEmailCheckTime));
-                                               }
-                                    
-                                   xmlWriter.writeEndElement();
-                             
-                                    namespace = "http://targetprocess.com";
-                                    if (! namespace.equals("")) {
-                                        prefix = xmlWriter.getPrefix(namespace);
-
-                                        if (prefix == null) {
-                                            prefix = generatePrefix(namespace);
-
-                                            xmlWriter.writeStartElement(prefix,"IsInboundMailEnabled", namespace);
-                                            xmlWriter.writeNamespace(prefix, namespace);
-                                            xmlWriter.setPrefix(prefix, namespace);
-
-                                        } else {
-                                            xmlWriter.writeStartElement(namespace,"IsInboundMailEnabled");
-                                        }
-
-                                    } else {
-                                        xmlWriter.writeStartElement("IsInboundMailEnabled");
-                                    }
-                                
-                                               if (false) {
-                                           
-                                                         writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
-                                                      
-                                               } else {
-                                                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localIsInboundMailEnabled));
-                                               }
-                                    
-                                   xmlWriter.writeEndElement();
                               if (localInboundMailReplyAddressTracker){
                                     namespace = "http://targetprocess.com";
                                     if (! namespace.equals("")) {
@@ -15701,229 +15288,6 @@
 
                                         
                                                    xmlWriter.writeCharacters(localInboundMailReplyAddress);
-                                            
-                                          }
-                                    
-                                   xmlWriter.writeEndElement();
-                             }
-                                    namespace = "http://targetprocess.com";
-                                    if (! namespace.equals("")) {
-                                        prefix = xmlWriter.getPrefix(namespace);
-
-                                        if (prefix == null) {
-                                            prefix = generatePrefix(namespace);
-
-                                            xmlWriter.writeStartElement(prefix,"InboundMailAutoCheck", namespace);
-                                            xmlWriter.writeNamespace(prefix, namespace);
-                                            xmlWriter.setPrefix(prefix, namespace);
-
-                                        } else {
-                                            xmlWriter.writeStartElement(namespace,"InboundMailAutoCheck");
-                                        }
-
-                                    } else {
-                                        xmlWriter.writeStartElement("InboundMailAutoCheck");
-                                    }
-                                
-                                               if (false) {
-                                           
-                                                         writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
-                                                      
-                                               } else {
-                                                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localInboundMailAutoCheck));
-                                               }
-                                    
-                                   xmlWriter.writeEndElement();
-                              if (localInboundMailServerTracker){
-                                    namespace = "http://targetprocess.com";
-                                    if (! namespace.equals("")) {
-                                        prefix = xmlWriter.getPrefix(namespace);
-
-                                        if (prefix == null) {
-                                            prefix = generatePrefix(namespace);
-
-                                            xmlWriter.writeStartElement(prefix,"InboundMailServer", namespace);
-                                            xmlWriter.writeNamespace(prefix, namespace);
-                                            xmlWriter.setPrefix(prefix, namespace);
-
-                                        } else {
-                                            xmlWriter.writeStartElement(namespace,"InboundMailServer");
-                                        }
-
-                                    } else {
-                                        xmlWriter.writeStartElement("InboundMailServer");
-                                    }
-                                
-
-                                          if (localInboundMailServer==null){
-                                              // write the nil attribute
-                                              
-                                                     throw new org.apache.axis2.databinding.ADBException("InboundMailServer cannot be null!!");
-                                                  
-                                          }else{
-
-                                        
-                                                   xmlWriter.writeCharacters(localInboundMailServer);
-                                            
-                                          }
-                                    
-                                   xmlWriter.writeEndElement();
-                             }
-                                    namespace = "http://targetprocess.com";
-                                    if (! namespace.equals("")) {
-                                        prefix = xmlWriter.getPrefix(namespace);
-
-                                        if (prefix == null) {
-                                            prefix = generatePrefix(namespace);
-
-                                            xmlWriter.writeStartElement(prefix,"InboundMailPort", namespace);
-                                            xmlWriter.writeNamespace(prefix, namespace);
-                                            xmlWriter.setPrefix(prefix, namespace);
-
-                                        } else {
-                                            xmlWriter.writeStartElement(namespace,"InboundMailPort");
-                                        }
-
-                                    } else {
-                                        xmlWriter.writeStartElement("InboundMailPort");
-                                    }
-                                
-                                               if (localInboundMailPort==java.lang.Integer.MIN_VALUE) {
-                                           
-                                                         writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
-                                                      
-                                               } else {
-                                                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localInboundMailPort));
-                                               }
-                                    
-                                   xmlWriter.writeEndElement();
-                             
-                                    namespace = "http://targetprocess.com";
-                                    if (! namespace.equals("")) {
-                                        prefix = xmlWriter.getPrefix(namespace);
-
-                                        if (prefix == null) {
-                                            prefix = generatePrefix(namespace);
-
-                                            xmlWriter.writeStartElement(prefix,"InboundMailUseSSL", namespace);
-                                            xmlWriter.writeNamespace(prefix, namespace);
-                                            xmlWriter.setPrefix(prefix, namespace);
-
-                                        } else {
-                                            xmlWriter.writeStartElement(namespace,"InboundMailUseSSL");
-                                        }
-
-                                    } else {
-                                        xmlWriter.writeStartElement("InboundMailUseSSL");
-                                    }
-                                
-                                               if (false) {
-                                           
-                                                         writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
-                                                      
-                                               } else {
-                                                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localInboundMailUseSSL));
-                                               }
-                                    
-                                   xmlWriter.writeEndElement();
-                              if (localInboundMailLoginTracker){
-                                    namespace = "http://targetprocess.com";
-                                    if (! namespace.equals("")) {
-                                        prefix = xmlWriter.getPrefix(namespace);
-
-                                        if (prefix == null) {
-                                            prefix = generatePrefix(namespace);
-
-                                            xmlWriter.writeStartElement(prefix,"InboundMailLogin", namespace);
-                                            xmlWriter.writeNamespace(prefix, namespace);
-                                            xmlWriter.setPrefix(prefix, namespace);
-
-                                        } else {
-                                            xmlWriter.writeStartElement(namespace,"InboundMailLogin");
-                                        }
-
-                                    } else {
-                                        xmlWriter.writeStartElement("InboundMailLogin");
-                                    }
-                                
-
-                                          if (localInboundMailLogin==null){
-                                              // write the nil attribute
-                                              
-                                                     throw new org.apache.axis2.databinding.ADBException("InboundMailLogin cannot be null!!");
-                                                  
-                                          }else{
-
-                                        
-                                                   xmlWriter.writeCharacters(localInboundMailLogin);
-                                            
-                                          }
-                                    
-                                   xmlWriter.writeEndElement();
-                             } if (localInboundMailPasswordTracker){
-                                    namespace = "http://targetprocess.com";
-                                    if (! namespace.equals("")) {
-                                        prefix = xmlWriter.getPrefix(namespace);
-
-                                        if (prefix == null) {
-                                            prefix = generatePrefix(namespace);
-
-                                            xmlWriter.writeStartElement(prefix,"InboundMailPassword", namespace);
-                                            xmlWriter.writeNamespace(prefix, namespace);
-                                            xmlWriter.setPrefix(prefix, namespace);
-
-                                        } else {
-                                            xmlWriter.writeStartElement(namespace,"InboundMailPassword");
-                                        }
-
-                                    } else {
-                                        xmlWriter.writeStartElement("InboundMailPassword");
-                                    }
-                                
-
-                                          if (localInboundMailPassword==null){
-                                              // write the nil attribute
-                                              
-                                                     throw new org.apache.axis2.databinding.ADBException("InboundMailPassword cannot be null!!");
-                                                  
-                                          }else{
-
-                                        
-                                                   xmlWriter.writeCharacters(localInboundMailPassword);
-                                            
-                                          }
-                                    
-                                   xmlWriter.writeEndElement();
-                             } if (localInboundMailProtocolTracker){
-                                    namespace = "http://targetprocess.com";
-                                    if (! namespace.equals("")) {
-                                        prefix = xmlWriter.getPrefix(namespace);
-
-                                        if (prefix == null) {
-                                            prefix = generatePrefix(namespace);
-
-                                            xmlWriter.writeStartElement(prefix,"InboundMailProtocol", namespace);
-                                            xmlWriter.writeNamespace(prefix, namespace);
-                                            xmlWriter.setPrefix(prefix, namespace);
-
-                                        } else {
-                                            xmlWriter.writeStartElement(namespace,"InboundMailProtocol");
-                                        }
-
-                                    } else {
-                                        xmlWriter.writeStartElement("InboundMailProtocol");
-                                    }
-                                
-
-                                          if (localInboundMailProtocol==null){
-                                              // write the nil attribute
-                                              
-                                                     throw new org.apache.axis2.databinding.ADBException("InboundMailProtocol cannot be null!!");
-                                                  
-                                          }else{
-
-                                        
-                                                   xmlWriter.writeCharacters(localInboundMailProtocol);
                                             
                                           }
                                     
@@ -16640,6 +16004,40 @@
 
                                         
                                                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localEffortToDo));
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             
+                                    namespace = "http://targetprocess.com";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"LastStateChangeDate", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"LastStateChangeDate");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("LastStateChangeDate");
+                                    }
+                                
+
+                                          if (localLastStateChangeDate==null){
+                                              // write the nil attribute
+                                              
+                                                     writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localLastStateChangeDate));
                                             
                                           }
                                     
@@ -17482,24 +16880,6 @@
                                  
                                 elementList.add(
                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localIsProduct));
-                            
-                                      elementList.add(new javax.xml.namespace.QName("http://targetprocess.com",
-                                                                      "InboundMailCreateRequests"));
-                                 
-                                elementList.add(
-                                   org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localInboundMailCreateRequests));
-                            
-                                      elementList.add(new javax.xml.namespace.QName("http://targetprocess.com",
-                                                                      "InboundMailAutomaticalEmailCheckTime"));
-                                 
-                                elementList.add(
-                                   org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localInboundMailAutomaticalEmailCheckTime));
-                            
-                                      elementList.add(new javax.xml.namespace.QName("http://targetprocess.com",
-                                                                      "IsInboundMailEnabled"));
-                                 
-                                elementList.add(
-                                   org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localIsInboundMailEnabled));
                              if (localInboundMailReplyAddressTracker){
                                       elementList.add(new javax.xml.namespace.QName("http://targetprocess.com",
                                                                       "InboundMailReplyAddress"));
@@ -17508,60 +16888,6 @@
                                             elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localInboundMailReplyAddress));
                                         } else {
                                            throw new org.apache.axis2.databinding.ADBException("InboundMailReplyAddress cannot be null!!");
-                                        }
-                                    }
-                                      elementList.add(new javax.xml.namespace.QName("http://targetprocess.com",
-                                                                      "InboundMailAutoCheck"));
-                                 
-                                elementList.add(
-                                   org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localInboundMailAutoCheck));
-                             if (localInboundMailServerTracker){
-                                      elementList.add(new javax.xml.namespace.QName("http://targetprocess.com",
-                                                                      "InboundMailServer"));
-                                 
-                                        if (localInboundMailServer != null){
-                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localInboundMailServer));
-                                        } else {
-                                           throw new org.apache.axis2.databinding.ADBException("InboundMailServer cannot be null!!");
-                                        }
-                                    }
-                                      elementList.add(new javax.xml.namespace.QName("http://targetprocess.com",
-                                                                      "InboundMailPort"));
-                                 
-                                elementList.add(
-                                   org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localInboundMailPort));
-                            
-                                      elementList.add(new javax.xml.namespace.QName("http://targetprocess.com",
-                                                                      "InboundMailUseSSL"));
-                                 
-                                elementList.add(
-                                   org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localInboundMailUseSSL));
-                             if (localInboundMailLoginTracker){
-                                      elementList.add(new javax.xml.namespace.QName("http://targetprocess.com",
-                                                                      "InboundMailLogin"));
-                                 
-                                        if (localInboundMailLogin != null){
-                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localInboundMailLogin));
-                                        } else {
-                                           throw new org.apache.axis2.databinding.ADBException("InboundMailLogin cannot be null!!");
-                                        }
-                                    } if (localInboundMailPasswordTracker){
-                                      elementList.add(new javax.xml.namespace.QName("http://targetprocess.com",
-                                                                      "InboundMailPassword"));
-                                 
-                                        if (localInboundMailPassword != null){
-                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localInboundMailPassword));
-                                        } else {
-                                           throw new org.apache.axis2.databinding.ADBException("InboundMailPassword cannot be null!!");
-                                        }
-                                    } if (localInboundMailProtocolTracker){
-                                      elementList.add(new javax.xml.namespace.QName("http://targetprocess.com",
-                                                                      "InboundMailProtocol"));
-                                 
-                                        if (localInboundMailProtocol != null){
-                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localInboundMailProtocol));
-                                        } else {
-                                           throw new org.apache.axis2.databinding.ADBException("InboundMailProtocol cannot be null!!");
                                         }
                                     }
                                       elementList.add(new javax.xml.namespace.QName("http://targetprocess.com",
@@ -17735,6 +17061,12 @@
                                          elementList.add(localEffortToDo==null?null:
                                          org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localEffortToDo));
                                     
+                                      elementList.add(new javax.xml.namespace.QName("http://targetprocess.com",
+                                                                      "LastStateChangeDate"));
+                                 
+                                         elementList.add(localLastStateChangeDate==null?null:
+                                         org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localLastStateChangeDate));
+                                    
 
                 return new org.apache.axis2.databinding.utils.reader.ADBXMLStreamReaderImpl(qName, elementList.toArray(), attribList.toArray());
             
@@ -17810,7 +17142,7 @@
                     
                     reader.next();
                 
-                        java.util.ArrayList list102 = new java.util.ArrayList();
+                        java.util.ArrayList list92 = new java.util.ArrayList();
                     
                                     
                                     while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
@@ -19372,255 +18704,11 @@
                                     
                                     while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
                                 
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://targetprocess.com","InboundMailCreateRequests").equals(reader.getName())){
-                                
-                                       nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
-                                       if (!"true".equals(nillableValue) && !"1".equals(nillableValue)){
-                                    
-                                    java.lang.String content = reader.getElementText();
-                                    
-                                              object.setInboundMailCreateRequests(
-                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToBoolean(content));
-                                            
-                                       } else {
-                                           
-                                           
-                                           reader.getElementText(); // throw away text nodes if any.
-                                       }
-                                      
-                                        reader.next();
-                                    
-                              }  // End of if for expected property start element
-                                
-                                else{
-                                    // A start element we are not expecting indicates an invalid parameter was passed
-                                    throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getLocalName());
-                                }
-                            
-                                    
-                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
-                                
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://targetprocess.com","InboundMailAutomaticalEmailCheckTime").equals(reader.getName())){
-                                
-                                       nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
-                                       if (!"true".equals(nillableValue) && !"1".equals(nillableValue)){
-                                    
-                                    java.lang.String content = reader.getElementText();
-                                    
-                                              object.setInboundMailAutomaticalEmailCheckTime(
-                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToInt(content));
-                                            
-                                       } else {
-                                           
-                                           
-                                                   object.setInboundMailAutomaticalEmailCheckTime(java.lang.Integer.MIN_VALUE);
-                                               
-                                           reader.getElementText(); // throw away text nodes if any.
-                                       }
-                                      
-                                        reader.next();
-                                    
-                              }  // End of if for expected property start element
-                                
-                                else{
-                                    // A start element we are not expecting indicates an invalid parameter was passed
-                                    throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getLocalName());
-                                }
-                            
-                                    
-                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
-                                
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://targetprocess.com","IsInboundMailEnabled").equals(reader.getName())){
-                                
-                                       nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
-                                       if (!"true".equals(nillableValue) && !"1".equals(nillableValue)){
-                                    
-                                    java.lang.String content = reader.getElementText();
-                                    
-                                              object.setIsInboundMailEnabled(
-                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToBoolean(content));
-                                            
-                                       } else {
-                                           
-                                           
-                                           reader.getElementText(); // throw away text nodes if any.
-                                       }
-                                      
-                                        reader.next();
-                                    
-                              }  // End of if for expected property start element
-                                
-                                else{
-                                    // A start element we are not expecting indicates an invalid parameter was passed
-                                    throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getLocalName());
-                                }
-                            
-                                    
-                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
-                                
                                     if (reader.isStartElement() && new javax.xml.namespace.QName("http://targetprocess.com","InboundMailReplyAddress").equals(reader.getName())){
                                 
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setInboundMailReplyAddress(
-                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
-                                              
-                                        reader.next();
-                                    
-                              }  // End of if for expected property start element
-                                
-                                    else {
-                                        
-                                    }
-                                
-                                    
-                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
-                                
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://targetprocess.com","InboundMailAutoCheck").equals(reader.getName())){
-                                
-                                       nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
-                                       if (!"true".equals(nillableValue) && !"1".equals(nillableValue)){
-                                    
-                                    java.lang.String content = reader.getElementText();
-                                    
-                                              object.setInboundMailAutoCheck(
-                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToBoolean(content));
-                                            
-                                       } else {
-                                           
-                                           
-                                           reader.getElementText(); // throw away text nodes if any.
-                                       }
-                                      
-                                        reader.next();
-                                    
-                              }  // End of if for expected property start element
-                                
-                                else{
-                                    // A start element we are not expecting indicates an invalid parameter was passed
-                                    throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getLocalName());
-                                }
-                            
-                                    
-                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
-                                
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://targetprocess.com","InboundMailServer").equals(reader.getName())){
-                                
-                                    java.lang.String content = reader.getElementText();
-                                    
-                                              object.setInboundMailServer(
-                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
-                                              
-                                        reader.next();
-                                    
-                              }  // End of if for expected property start element
-                                
-                                    else {
-                                        
-                                    }
-                                
-                                    
-                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
-                                
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://targetprocess.com","InboundMailPort").equals(reader.getName())){
-                                
-                                       nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
-                                       if (!"true".equals(nillableValue) && !"1".equals(nillableValue)){
-                                    
-                                    java.lang.String content = reader.getElementText();
-                                    
-                                              object.setInboundMailPort(
-                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToInt(content));
-                                            
-                                       } else {
-                                           
-                                           
-                                                   object.setInboundMailPort(java.lang.Integer.MIN_VALUE);
-                                               
-                                           reader.getElementText(); // throw away text nodes if any.
-                                       }
-                                      
-                                        reader.next();
-                                    
-                              }  // End of if for expected property start element
-                                
-                                else{
-                                    // A start element we are not expecting indicates an invalid parameter was passed
-                                    throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getLocalName());
-                                }
-                            
-                                    
-                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
-                                
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://targetprocess.com","InboundMailUseSSL").equals(reader.getName())){
-                                
-                                       nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
-                                       if (!"true".equals(nillableValue) && !"1".equals(nillableValue)){
-                                    
-                                    java.lang.String content = reader.getElementText();
-                                    
-                                              object.setInboundMailUseSSL(
-                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToBoolean(content));
-                                            
-                                       } else {
-                                           
-                                           
-                                           reader.getElementText(); // throw away text nodes if any.
-                                       }
-                                      
-                                        reader.next();
-                                    
-                              }  // End of if for expected property start element
-                                
-                                else{
-                                    // A start element we are not expecting indicates an invalid parameter was passed
-                                    throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getLocalName());
-                                }
-                            
-                                    
-                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
-                                
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://targetprocess.com","InboundMailLogin").equals(reader.getName())){
-                                
-                                    java.lang.String content = reader.getElementText();
-                                    
-                                              object.setInboundMailLogin(
-                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
-                                              
-                                        reader.next();
-                                    
-                              }  // End of if for expected property start element
-                                
-                                    else {
-                                        
-                                    }
-                                
-                                    
-                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
-                                
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://targetprocess.com","InboundMailPassword").equals(reader.getName())){
-                                
-                                    java.lang.String content = reader.getElementText();
-                                    
-                                              object.setInboundMailPassword(
-                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
-                                              
-                                        reader.next();
-                                    
-                              }  // End of if for expected property start element
-                                
-                                    else {
-                                        
-                                    }
-                                
-                                    
-                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
-                                
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://targetprocess.com","InboundMailProtocol").equals(reader.getName())){
-                                
-                                    java.lang.String content = reader.getElementText();
-                                    
-                                              object.setInboundMailProtocol(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
                                               
                                         reader.next();
@@ -19921,11 +19009,11 @@
                                     
                                     
                                     // Process the array and step past its final element's end.
-                                    list102.add(Field.Factory.parse(reader));
+                                    list92.add(Field.Factory.parse(reader));
                                                                 
                                                         //loop until we find a start element that is not part of this array
-                                                        boolean loopDone102 = false;
-                                                        while(!loopDone102){
+                                                        boolean loopDone92 = false;
+                                                        while(!loopDone92){
                                                             // We should be at the end element, but make sure
                                                             while (!reader.isEndElement())
                                                                 reader.next();
@@ -19936,13 +19024,13 @@
                                                                 reader.next();
                                                             if (reader.isEndElement()){
                                                                 //two continuous end elements means we are exiting the xml structure
-                                                                loopDone102 = true;
+                                                                loopDone92 = true;
                                                             } else {
                                                                 if (new javax.xml.namespace.QName("http://targetprocess.com","CustomFieldsMetaInfo").equals(reader.getName())){
-                                                                    list102.add(Field.Factory.parse(reader));
+                                                                    list92.add(Field.Factory.parse(reader));
                                                                         
                                                                 }else{
-                                                                    loopDone102 = true;
+                                                                    loopDone92 = true;
                                                                 }
                                                             }
                                                         }
@@ -19951,7 +19039,7 @@
                                                         object.setCustomFieldsMetaInfo((Field[])
                                                             org.apache.axis2.databinding.utils.ConverterUtil.convertToArray(
                                                                 Field.class,
-                                                                list102));
+                                                                list92));
                                                             
                               }  // End of if for expected property start element
                                 
@@ -20235,6 +19323,34 @@
                                     
                                               object.setEffortToDo(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToDecimal(content));
+                                            
+                                       } else {
+                                           
+                                           
+                                           reader.getElementText(); // throw away text nodes if any.
+                                       }
+                                      
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                else{
+                                    // A start element we are not expecting indicates an invalid parameter was passed
+                                    throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getLocalName());
+                                }
+                            
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://targetprocess.com","LastStateChangeDate").equals(reader.getName())){
+                                
+                                       nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                       if (!"true".equals(nillableValue) && !"1".equals(nillableValue)){
+                                    
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setLastStateChangeDate(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToDateTime(content));
                                             
                                        } else {
                                            
@@ -22440,6 +21556,66 @@
                                }
                             
 
+                        /**
+                        * field for IsPrivate
+                        */
+
+                        
+                                    protected boolean localIsPrivate ;
+                                
+
+                           /**
+                           * Auto generated getter method
+                           * @return boolean
+                           */
+                           public  boolean getIsPrivate(){
+                               return localIsPrivate;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param IsPrivate
+                               */
+                               public void setIsPrivate(boolean param){
+                            
+                                            this.localIsPrivate=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for IsPinned
+                        */
+
+                        
+                                    protected boolean localIsPinned ;
+                                
+
+                           /**
+                           * Auto generated getter method
+                           * @return boolean
+                           */
+                           public  boolean getIsPinned(){
+                               return localIsPinned;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param IsPinned
+                               */
+                               public void setIsPinned(boolean param){
+                            
+                                            this.localIsPinned=param;
+                                    
+
+                               }
+                            
+
      /**
      * isReaderMTOMAware
      * @return true if the reader supports MTOM
@@ -22814,6 +21990,64 @@
                                     
                                    xmlWriter.writeEndElement();
                              }
+                                    namespace = "http://targetprocess.com";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"IsPrivate", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"IsPrivate");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("IsPrivate");
+                                    }
+                                
+                                               if (false) {
+                                           
+                                                         writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
+                                                      
+                                               } else {
+                                                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localIsPrivate));
+                                               }
+                                    
+                                   xmlWriter.writeEndElement();
+                             
+                                    namespace = "http://targetprocess.com";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"IsPinned", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"IsPinned");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("IsPinned");
+                                    }
+                                
+                                               if (false) {
+                                           
+                                                         writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
+                                                      
+                                               } else {
+                                                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localIsPinned));
+                                               }
+                                    
+                                   xmlWriter.writeEndElement();
+                             
                     xmlWriter.writeEndElement();
                
 
@@ -23042,6 +22276,18 @@
                                            throw new org.apache.axis2.databinding.ADBException("GeneralType cannot be null!!");
                                         }
                                     }
+                                      elementList.add(new javax.xml.namespace.QName("http://targetprocess.com",
+                                                                      "IsPrivate"));
+                                 
+                                elementList.add(
+                                   org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localIsPrivate));
+                            
+                                      elementList.add(new javax.xml.namespace.QName("http://targetprocess.com",
+                                                                      "IsPinned"));
+                                 
+                                elementList.add(
+                                   org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localIsPinned));
+                            
 
                 return new org.apache.axis2.databinding.utils.reader.ADBXMLStreamReaderImpl(qName, elementList.toArray(), attribList.toArray());
             
@@ -23348,7 +22594,63 @@
                                     else {
                                         
                                     }
-                                  
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://targetprocess.com","IsPrivate").equals(reader.getName())){
+                                
+                                       nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                       if (!"true".equals(nillableValue) && !"1".equals(nillableValue)){
+                                    
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setIsPrivate(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToBoolean(content));
+                                            
+                                       } else {
+                                           
+                                           
+                                           reader.getElementText(); // throw away text nodes if any.
+                                       }
+                                      
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                else{
+                                    // A start element we are not expecting indicates an invalid parameter was passed
+                                    throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getLocalName());
+                                }
+                            
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://targetprocess.com","IsPinned").equals(reader.getName())){
+                                
+                                       nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                       if (!"true".equals(nillableValue) && !"1".equals(nillableValue)){
+                                    
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setIsPinned(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToBoolean(content));
+                                            
+                                       } else {
+                                           
+                                           
+                                           reader.getElementText(); // throw away text nodes if any.
+                                       }
+                                      
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                else{
+                                    // A start element we are not expecting indicates an invalid parameter was passed
+                                    throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getLocalName());
+                                }
+                              
                             while (!reader.isStartElement() && !reader.isEndElement())
                                 reader.next();
                             
