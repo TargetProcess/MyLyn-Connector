@@ -7564,6 +7564,36 @@
                                }
                             
 
+                        /**
+                        * field for IsSystem
+                        */
+
+                        
+                                    protected boolean localIsSystem ;
+                                
+
+                           /**
+                           * Auto generated getter method
+                           * @return boolean
+                           */
+                           public  boolean getIsSystem(){
+                               return localIsSystem;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param IsSystem
+                               */
+                               public void setIsSystem(boolean param){
+                            
+                                            this.localIsSystem=param;
+                                    
+
+                               }
+                            
+
      /**
      * isReaderMTOMAware
      * @return true if the reader supports MTOM
@@ -8001,6 +8031,35 @@
                                     
                                    xmlWriter.writeEndElement();
                              
+                                    namespace = "http://targetprocess.com";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"IsSystem", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"IsSystem");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("IsSystem");
+                                    }
+                                
+                                               if (false) {
+                                           
+                                                         throw new org.apache.axis2.databinding.ADBException("IsSystem cannot be null!!");
+                                                      
+                                               } else {
+                                                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localIsSystem));
+                                               }
+                                    
+                                   xmlWriter.writeEndElement();
+                             
                     xmlWriter.writeEndElement();
                
 
@@ -8266,6 +8325,12 @@
                                  
                                 elementList.add(
                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localCalculationModelContainsCollections));
+                            
+                                      elementList.add(new javax.xml.namespace.QName("http://targetprocess.com",
+                                                                      "IsSystem"));
+                                 
+                                elementList.add(
+                                   org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localIsSystem));
                             
 
                 return new org.apache.axis2.databinding.utils.reader.ADBXMLStreamReaderImpl(qName, elementList.toArray(), attribList.toArray());
@@ -8581,6 +8646,25 @@
                                            reader.getElementText(); // throw away text nodes if any.
                                        }
                                       
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                else{
+                                    // A start element we are not expecting indicates an invalid parameter was passed
+                                    throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getLocalName());
+                                }
+                            
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://targetprocess.com","IsSystem").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setIsSystem(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToBoolean(content));
+                                              
                                         reader.next();
                                     
                               }  // End of if for expected property start element
@@ -16720,6 +16804,50 @@
                              }
                              
 
+                        /**
+                        * field for GlobalId
+                        */
+
+                        
+                                    protected java.lang.String localGlobalId ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localGlobalIdTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getGlobalId(){
+                               return localGlobalId;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param GlobalId
+                               */
+                               public void setGlobalId(java.lang.String param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localGlobalIdTracker = true;
+                                       } else {
+                                          localGlobalIdTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localGlobalId=param;
+                                    
+
+                               }
+                            
+
      /**
      * isReaderMTOMAware
      * @return true if the reader supports MTOM
@@ -19292,7 +19420,41 @@
                                                throw new org.apache.axis2.databinding.ADBException("CustomFieldsMetaInfo cannot be null!!");
                                         
                                     }
-                                 }
+                                 } if (localGlobalIdTracker){
+                                    namespace = "http://targetprocess.com";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"GlobalId", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"GlobalId");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("GlobalId");
+                                    }
+                                
+
+                                          if (localGlobalId==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("GlobalId cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localGlobalId);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             }
                     xmlWriter.writeEndElement();
                
 
@@ -20114,7 +20276,16 @@
                                     
                              }
 
-                        }
+                        } if (localGlobalIdTracker){
+                                      elementList.add(new javax.xml.namespace.QName("http://targetprocess.com",
+                                                                      "GlobalId"));
+                                 
+                                        if (localGlobalId != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localGlobalId));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("GlobalId cannot be null!!");
+                                        }
+                                    }
 
                 return new org.apache.axis2.databinding.utils.reader.ADBXMLStreamReaderImpl(qName, elementList.toArray(), attribList.toArray());
             
@@ -21620,6 +21791,24 @@
                                                                 Field.class,
                                                                 list74));
                                                             
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://targetprocess.com","GlobalId").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setGlobalId(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
                               }  // End of if for expected property start element
                                 
                                     else {
