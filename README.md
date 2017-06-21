@@ -21,12 +21,28 @@ How to generate connector for new version of Targetprocess
 - Open file `feature.xml` (it is in `TargetProcess` project),
   update field `Version`, click `Export Wizard`, create zip archive
 
-How to test connector in Eclipse
---------------------------------
+How to run/test while developing plugin in Eclipse (development)
+----------------------------------------------------------------
 
 - Create Run Configuration: Run - Run Configurations... - Choose "Eclipse Application" - New launch configuration,
   Run a product: `org.eclipse.platform.ide`
 - Run
+- Open View named `Task Repositories` (Window -> Show View), then choose `Add Task Repository`
+- Fill in connection settings: URL "http://localhost/targetprocess", Repository Name "TP", Login, Password
+- Press "Check connection" button, you should see "Authentication credentials are valid"
+- Press OK, then agree to create new task query
+- Open View `Task List`, there you should see your task query with list of loaded tasks
+
+How to test donwloaded connector in Eclipse (production)
+--------------------------------------------------------
+
+- Download ZIP archive with connector
+- Run Eclipse
+- Add installation site: Window - Preferences - Install/Update - Available Software Sites - press `Add...`,
+  fill `Name` field, then press `Archive...`, choose downloaded archive, save preferences
+- Install connector: Help - Install New Software, choose installation site in `Work with:` field,
+  uncheck `Group items by category` option, select `Targetprocess Connector`, finish installation
+- Restart Eclipse if needed
 - Open View named `Task Repositories` (Window -> Show View), then choose `Add Task Repository`
 - Fill in connection settings: URL "http://localhost/targetprocess", Repository Name "TP", Login, Password
 - Press "Check connection" button, you should see "Authentication credentials are valid"
