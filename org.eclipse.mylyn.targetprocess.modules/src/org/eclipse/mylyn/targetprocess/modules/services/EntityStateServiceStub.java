@@ -286,7 +286,7 @@
      */
     public EntityStateServiceStub(org.apache.axis2.context.ConfigurationContext configurationContext) throws org.apache.axis2.AxisFault {
         
-                    this(configurationContext,"http://localhost/targetprocess/services/EntityStateService.asmx" );
+                    this(configurationContext,"http://plan.tpondemand.com/services/EntityStateService.asmx" );
                 
     }
 
@@ -295,7 +295,7 @@
      */
     public EntityStateServiceStub() throws org.apache.axis2.AxisFault {
         
-                    this("http://localhost/targetprocess/services/EntityStateService.asmx" );
+                    this("http://plan.tpondemand.com/services/EntityStateService.asmx" );
                 
     }
 
@@ -4612,7 +4612,7 @@
         }
         return false;
     }
-     //http://localhost/targetprocess/services/EntityStateService.asmx
+     //http://plan.tpondemand.com/services/EntityStateService.asmx
         public static class RetrievePageResponse
         implements org.apache.axis2.databinding.ADBBean{
         
