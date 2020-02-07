@@ -214,7 +214,7 @@
      */
     public GeneralUserServiceStub(org.apache.axis2.context.ConfigurationContext configurationContext) throws org.apache.axis2.AxisFault {
         
-                    this(configurationContext,"http://plan.tpondemand.com/services/GeneralUserService.asmx" );
+                    this(configurationContext,"http://localhost/targetprocess/services/GeneralUserService.asmx" );
                 
     }
 
@@ -223,7 +223,7 @@
      */
     public GeneralUserServiceStub() throws org.apache.axis2.AxisFault {
         
-                    this("http://plan.tpondemand.com/services/GeneralUserService.asmx" );
+                    this("http://localhost/targetprocess/services/GeneralUserService.asmx" );
                 
     }
 
@@ -2938,7 +2938,7 @@
         }
         return false;
     }
-     //http://plan.tpondemand.com/services/GeneralUserService.asmx
+     //http://localhost/targetprocess/services/GeneralUserService.asmx
         public static class RetrievePageResponse
         implements org.apache.axis2.databinding.ADBBean{
         
@@ -7417,6 +7417,50 @@
                             
 
                         /**
+                        * field for Description
+                        */
+
+                        
+                                    protected java.lang.String localDescription ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localDescriptionTracker = false ;
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getDescription(){
+                               return localDescription;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Description
+                               */
+                               public void setDescription(java.lang.String param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localDescriptionTracker = true;
+                                       } else {
+                                          localDescriptionTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localDescription=param;
+                                    
+
+                               }
+                            
+
+                        /**
                         * field for CalculationModel
                         */
 
@@ -7904,6 +7948,40 @@
                                           }
                                     
                                    xmlWriter.writeEndElement();
+                             } if (localDescriptionTracker){
+                                    namespace = "http://targetprocess.com";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"Description", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"Description");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("Description");
+                                    }
+                                
+
+                                          if (localDescription==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("Description cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localDescription);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
                              } if (localCalculationModelTracker){
                                     namespace = "http://targetprocess.com";
                                     if (! namespace.equals("")) {
@@ -8295,6 +8373,15 @@
                                         } else {
                                            throw new org.apache.axis2.databinding.ADBException("DefaultValue cannot be null!!");
                                         }
+                                    } if (localDescriptionTracker){
+                                      elementList.add(new javax.xml.namespace.QName("http://targetprocess.com",
+                                                                      "Description"));
+                                 
+                                        if (localDescription != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localDescription));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("Description cannot be null!!");
+                                        }
                                     } if (localCalculationModelTracker){
                                       elementList.add(new javax.xml.namespace.QName("http://targetprocess.com",
                                                                       "CalculationModel"));
@@ -8551,6 +8638,24 @@
                                     java.lang.String content = reader.getElementText();
                                     
                                               object.setDefaultValue(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://targetprocess.com","Description").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setDescription(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
                                               
                                         reader.next();

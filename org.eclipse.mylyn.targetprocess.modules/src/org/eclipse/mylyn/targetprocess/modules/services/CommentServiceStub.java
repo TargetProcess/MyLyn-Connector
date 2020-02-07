@@ -250,7 +250,7 @@
      */
     public CommentServiceStub(org.apache.axis2.context.ConfigurationContext configurationContext) throws org.apache.axis2.AxisFault {
         
-                    this(configurationContext,"http://plan.tpondemand.com/services/CommentService.asmx" );
+                    this(configurationContext,"http://localhost/targetprocess/services/CommentService.asmx" );
                 
     }
 
@@ -259,7 +259,7 @@
      */
     public CommentServiceStub() throws org.apache.axis2.AxisFault {
         
-                    this("http://plan.tpondemand.com/services/CommentService.asmx" );
+                    this("http://localhost/targetprocess/services/CommentService.asmx" );
                 
     }
 
@@ -3775,7 +3775,7 @@
         }
         return false;
     }
-     //http://plan.tpondemand.com/services/CommentService.asmx
+     //http://localhost/targetprocess/services/CommentService.asmx
         public static class RetrievePageResponse
         implements org.apache.axis2.databinding.ADBBean{
         
