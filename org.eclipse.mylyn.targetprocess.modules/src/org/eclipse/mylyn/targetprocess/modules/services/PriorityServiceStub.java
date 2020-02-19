@@ -226,7 +226,7 @@
      */
     public PriorityServiceStub(org.apache.axis2.context.ConfigurationContext configurationContext) throws org.apache.axis2.AxisFault {
         
-                    this(configurationContext,"http://plan.tpondemand.com/services/PriorityService.asmx" );
+                    this(configurationContext,"http://localhost/targetprocess/services/PriorityService.asmx" );
                 
     }
 
@@ -235,7 +235,7 @@
      */
     public PriorityServiceStub() throws org.apache.axis2.AxisFault {
         
-                    this("http://plan.tpondemand.com/services/PriorityService.asmx" );
+                    this("http://localhost/targetprocess/services/PriorityService.asmx" );
                 
     }
 
@@ -3217,7 +3217,7 @@
         }
         return false;
     }
-     //http://plan.tpondemand.com/services/PriorityService.asmx
+     //http://localhost/targetprocess/services/PriorityService.asmx
         public static class RetrievePageResponse
         implements org.apache.axis2.databinding.ADBBean{
         

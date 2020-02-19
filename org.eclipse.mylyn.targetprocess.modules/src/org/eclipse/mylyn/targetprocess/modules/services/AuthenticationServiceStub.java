@@ -118,7 +118,7 @@
      */
     public AuthenticationServiceStub(org.apache.axis2.context.ConfigurationContext configurationContext) throws org.apache.axis2.AxisFault {
         
-                    this(configurationContext,"http://plan.tpondemand.com/services/AuthenticationService.asmx" );
+                    this(configurationContext,"http://localhost/targetprocess/services/AuthenticationService.asmx" );
                 
     }
 
@@ -127,7 +127,7 @@
      */
     public AuthenticationServiceStub() throws org.apache.axis2.AxisFault {
         
-                    this("http://plan.tpondemand.com/services/AuthenticationService.asmx" );
+                    this("http://localhost/targetprocess/services/AuthenticationService.asmx" );
                 
     }
 
@@ -706,7 +706,7 @@
         }
         return false;
     }
-     //http://plan.tpondemand.com/services/AuthenticationService.asmx
+     //http://localhost/targetprocess/services/AuthenticationService.asmx
         public static class Authenticate
         implements org.apache.axis2.databinding.ADBBean{
         
