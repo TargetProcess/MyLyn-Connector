@@ -11,6 +11,7 @@ import org.apache.axis2.client.ServiceClient;
 import org.apache.axis2.client.Stub;
 import org.apache.axis2.context.ConfigurationContext;
 import org.apache.axis2.context.ConfigurationContextFactory;
+import org.apache.axis2.transport.http.HttpTransportProperties;
 import org.apache.rampart.handler.WSSHandlerConstants;
 import org.apache.rampart.handler.config.OutflowConfiguration;
 import org.eclipse.mylyn.targetprocess.modules.services.AuthenticationServiceStub;
@@ -62,6 +63,14 @@ public class ServiceFactory implements IServiceFactory {
 		options.setProperty(WSSHandlerConstants.OUTFLOW_SECURITY, ofc.getProperty());
 		options.setProperty(org.apache.axis2.transport.http.HTTPConstants.CHUNKED, Boolean.FALSE);
 		options.setProperty(org.apache.axis2.Constants.Configuration.CHARACTER_SET_ENCODING, "UTF-8");
+		
+		HttpTransportProperties.Authenticator auth = new HttpTransportProperties.Authenticator();
+		auth.setUsername(login);
+		auth.setPassword(password);
+		auth.setPreemptiveAuthentication(true);
+		
+		options.setProperty(org.apache.axis2.transport.http.HTTPConstants.AUTHENTICATE, auth);
+		options.setManageSession(true);
 
 		client.setOptions(options);
 	}
