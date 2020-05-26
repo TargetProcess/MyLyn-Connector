@@ -2,7 +2,7 @@
 <feature
       id="Targetprocess"
       label="Targetprocess Connector"
-      version="3.14.4.qualifier"
+      version="3.14.5.qualifier"
       plugin="org.eclipse.mylyn.targetprocess.ui">
 
    <description>
