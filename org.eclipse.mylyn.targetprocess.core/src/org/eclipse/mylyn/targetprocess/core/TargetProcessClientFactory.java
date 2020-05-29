@@ -10,12 +10,8 @@ import org.eclipse.mylyn.tasks.core.TaskRepositoryLocationFactory;
 
 public class TargetProcessClientFactory {
 
-	protected static TaskRepositoryLocationFactory taskRepositoryLocationFactory = new TaskRepositoryLocationFactory();
-
-	public static TargetProcessClient createClient(TaskRepository taskRepository)
+	public static TargetProcessClient createClient(AbstractWebLocation location, TaskRepository taskRepository)
 			throws MalformedURLException {
-		AbstractWebLocation location = taskRepositoryLocationFactory
-				.createWebLocation(taskRepository);
 		AuthenticationCredentials credentials = taskRepository
 				.getCredentials(AuthenticationType.REPOSITORY);
 

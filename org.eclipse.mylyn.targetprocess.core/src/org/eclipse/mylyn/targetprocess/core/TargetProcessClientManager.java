@@ -8,11 +8,16 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
+import org.eclipse.mylyn.commons.net.AbstractWebLocation;
+import org.eclipse.mylyn.commons.net.AuthenticationCredentials;
+import org.eclipse.mylyn.commons.net.AuthenticationType;
+import org.eclipse.mylyn.commons.net.UnsupportedRequestException;
 import org.eclipse.mylyn.tasks.core.IRepositoryListener;
 import org.eclipse.mylyn.tasks.core.TaskRepository;
+import org.eclipse.mylyn.tasks.core.TaskRepositoryLocationFactory;
 
 public class TargetProcessClientManager implements IRepositoryListener {
-
+	protected static TaskRepositoryLocationFactory taskRepositoryLocationFactory = new TaskRepositoryLocationFactory();
 	private final Map<String, TargetProcessClient> clientByUrl = new HashMap<String, TargetProcessClient>();
 
 	public TargetProcessClientManager() {
@@ -24,7 +29,8 @@ public class TargetProcessClientManager implements IRepositoryListener {
 			client = clientByUrl.get(taskRepository.getRepositoryUrl());
 			if (client == null) {
 				try {
-					client = createClient(taskRepository);
+					AbstractWebLocation location = taskRepositoryLocationFactory.createWebLocation(taskRepository);
+					client = createClient(location, taskRepository, monitor);
 				} catch (MalformedURLException e) {
 					throw new CoreException( new Status(IStatus.ERROR, TargetProcessCorePlugin.ID_PLUGIN,
 							"Malformed Repository Url", e)); //$NON-NLS-1$
@@ -37,8 +43,15 @@ public class TargetProcessClientManager implements IRepositoryListener {
 		return client;
 	}
 
-	protected TargetProcessClient createClient(TaskRepository taskRepository) throws MalformedURLException {
-		return TargetProcessClientFactory.createClient(taskRepository);
+	protected TargetProcessClient createClient(AbstractWebLocation location, TaskRepository taskRepository, IProgressMonitor monitor) throws MalformedURLException {
+		 if (location.getCredentials(AuthenticationType.REPOSITORY).getPassword().length() == 0) {
+			 try {
+				 location.requestCredentials(AuthenticationType.REPOSITORY, "Input password", monitor);
+			 }
+			 catch(UnsupportedRequestException  e) {
+			 }
+		 }
+		return TargetProcessClientFactory.createClient(location, taskRepository);
 	}
 
 	public void repositoryAdded(TaskRepository repository) {
@@ -63,6 +76,5 @@ public class TargetProcessClientManager implements IRepositoryListener {
 	public void repositoryUrlChanged(TaskRepository repository, String oldUrl) {
 		// ignore
 	}
-
 
 }
